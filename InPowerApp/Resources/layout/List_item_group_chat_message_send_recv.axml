@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/ll_LinearLayoutRight"
+        android:padding="1dp"
+        android:gravity="right">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_cornerForRight"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="5dp"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:paddingRight="15dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/ll_LinearLayoutForImageAttachRight"
+                android:visibility="gone">
+                <ImageView
+                    android:id="@+id/iv_AttachImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:text="Send MSG"
+                    android:id="@+id/tv_messageRight"
+                    android:autoLink="web"
+                    android:background="@drawable/rounded_cornerForRight"
+                    android:textSize="14dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/message_timeRight"
+                    android:text="07:19 PM"
+                    android:layout_gravity="bottom|left"
+                    android:textColor="#8c8c8c"
+                    android:textSize="8dp" />
+                <ImageView
+                    android:id="@+id/iv_StatusRight"
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginLeft="5dp" />
+            </LinearLayout>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/imageViewarrow_bgRight"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginLeft="-15dp"
+            android:src="@drawable/arrow_bg11" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/ll_LinearLayoutLeft"
+        android:padding="1dp">
+        <ImageView
+            android:id="@+id/imageViewarrow_bgLeft"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/arrow_bg22"
+            android:layout_marginRight="-15dp" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/rounded_cornerLeft"
+            android:layout_marginRight="75dp"
+            android:layout_marginTop="5dp"
+            android:padding="5dp">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:id="@+id/ll_LinearLayoutForImageAttachLeft"
+                android:visibility="gone">
+                <ImageView
+                    android:id="@+id/iv_AttachImageLeft"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_SenderNameLeft"
+                    android:text="Sender Name"
+                    android:textSize="14dp"
+                    android:textColor="#C43C6B" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:text="Received MSG"
+                    android:id="@+id/tv_messageLeft"
+                    android:autoLink="web"
+                    android:textSize="14dp"
+                    android:paddingRight="10dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/message_timeLeft"
+                    android:text="07:19 PM"
+                    android:layout_gravity="bottom"
+                    android:textColor="#8c8c8c"
+                    android:textSize="8dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

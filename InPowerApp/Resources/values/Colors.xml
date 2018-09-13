@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="black">#000000</color>
+  <color name="counter_text_color">#c5c4c4</color>
+  <color name="list_item_title">#fff</color>
+  <color name="list_background">#303030</color>
+  <color name="list_background_pressed">#2C1D30</color>
+  <color name="list_divider">#FFFFFF</color>
+  <color name="counter_text_bg">#626262</color>
+  <color name="counter_text_color">#c5c4c4</color>
+  <color name="colorTransperentWhite">#cccccc</color>
+  <color name="white">#ffffff</color>
+  <color name="rightcolorchat">#FFFED9</color>
+  <color name="colorPrimary">#8BC34A</color>
+  <color name="colorPrimaryDark">#689F38</color>
+  <color name="colorAccent">#FF4081</color>
+</resources>

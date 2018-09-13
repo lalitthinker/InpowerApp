@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#44b3c6">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/instructionsViewPager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/DotLinearLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp">
+        <Button
+            android:text="BACK"
+            android:layout_height="fill_parent"
+            android:id="@+id/btnBackinstructionsViewPager"
+            android:background="@drawable/rounded_corneryellow"
+            android:visibility="invisible"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content" />
+        <LinearLayout
+            android:id="@+id/DotRelativeLayout"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_weight="0.1" />
+        <Button
+            android:text="NEXT"
+            android:layout_height="fill_parent"
+            android:id="@+id/btnNextinstructionsViewPager"
+            android:background="@drawable/rounded_corneryellow"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_width="wrap_content" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/DotLinearLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1">
+        <Button
+            android:text="SKIP"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:id="@+id/btnSkipinstructionsViewPager"
+            android:background="@drawable/rounded_corneryellow"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/LinearLayout"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.1" />
+</LinearLayout>

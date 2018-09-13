@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:myapp="http://schemas.android.com/apk/res-auto">
+  <item android:id="@+id/action_GroupSearch"
+  android:icon="@drawable/searchGroup"
+  android:title="Search"
+  myapp:showAsAction="ifRoom|collapseActionView"
+          myapp:actionViewClass="android.support.v7.widget.SearchView"/>
+</menu>

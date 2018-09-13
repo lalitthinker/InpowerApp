@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal|center"
+    android:background="#f2f5f8"
+    android:orientation="vertical">
+    <ScrollView
+        android:id="@+id/scrollSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layoutHeader"
+        android:fillViewport="true"
+        android:scrollingCache="false">
+        <LinearLayout
+            android:id="@+id/layoutScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f2f5f8"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/txtInvate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:text="Invite:"
+                android:textColor="#2C1D30"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/checkbx_rounded"
+                android:orientation="vertical"
+                android:padding="10dp">
+                <RelativeLayout
+                    android:id="@+id/relItemFacebook"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/checkbx_rounded"
+                    android:padding="10dp"
+                    android:layout_marginTop="5dp">
+                    <TextView
+                        android:id="@+id/txtFromFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:drawableRight="@drawable/settings_right_arrow"
+                        android:text="INVITE FRIENDS FROM FACEBOOK"
+                        android:textColor="#2C1D30"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/relItemViaSMS"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/checkbx_rounded"
+                    android:padding="10dp">
+                    <TextView
+                        android:id="@+id/txtInviteViaSMS"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="10dp"
+                        android:drawableRight="@drawable/settings_right_arrow"
+                        android:text="INVITE FRIENDS VIA SMS"
+                        android:textColor="#2C1D30"
+                        android:textSize="15dp" />
+                </RelativeLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/linSocialNetworks"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical" />
+            <LinearLayout
+                android:id="@+id/lstOtherOptions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/layoutProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txtProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="12dp"
+                        android:text="Profile:"
+                        android:textColor="#2C1D30"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/checkbx_rounded"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/txtDeleteAccount"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginTop="5dp"
+                                android:background="@drawable/checkbx_rounded"
+                                android:drawableRight="@drawable/settings_right_arrow"
+                                android:text="DELETE ACCOUNT"
+                                android:textColor="#2C1D30"
+                                android:layout_weight="1"
+                                android:padding="10dp" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/btnChangePassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/checkbx_rounded"
+                            android:drawableRight="@drawable/settings_right_arrow"
+                            android:layout_marginTop="10dp"
+                            android:text="CHANGE PASSWORD"
+                            android:textColor="#2C1D30"
+                            android:layout_weight="1"
+                            android:padding="10dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/checkbx_rounded"
+                            android:layout_marginTop="10dp">
+                            <TextView
+                                android:id="@+id/txtShoutOut"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_weight="1"
+                                android:text="SILENT MODE"
+                                android:textColor="#2C1D30"
+                                android:padding="10dp" />
+                            <ToggleButton
+                                android:id="@+id/toggleButtonShoutOut"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="center_vertical"
+                                android:background="@drawable/togglechecker"
+                                android:text="ToggleButton"
+                                android:textOff=""
+                                android:textOn="" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/layoutApplication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/txtApplication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginTop="12dp"
+                        android:text="About:"
+                        android:textColor="#2C1D30"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/checkbx_rounded"
+                        android:orientation="vertical"
+                        android:padding="10dp">
+                        <TextView
+                            android:id="@+id/btnBlockedContacts"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/checkbx_rounded"
+                            android:drawableRight="@drawable/settings_right_arrow"
+                            android:layout_centerVertical="true"
+                            android:layout_weight="1"
+                            android:layout_marginTop="5dp"
+                            android:text="BLOCKED CONTACTS"
+                            android:textColor="#2C1D30"
+                            android:padding="10dp" />
+                        <TextView
+                            android:id="@+id/txtPolicyPrivacy"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/checkbx_rounded"
+                            android:drawableRight="@drawable/settings_right_arrow"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:layout_centerVertical="true"
+                            android:text="PRIVACY POLICY"
+                            android:textColor="#2C1D30"
+                            android:padding="10dp" />
+                        <TextView
+                            android:id="@+id/txtTermsOfUse"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/checkbx_rounded"
+                            android:drawableRight="@drawable/settings_right_arrow"
+                            android:layout_marginTop="10dp"
+                            android:layout_weight="1"
+                            android:layout_centerVertical="true"
+                            android:text="TERMS OF USE"
+                            android:textSize="15dp"
+                            android:textColor="#2C1D30"
+                            android:padding="10dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
