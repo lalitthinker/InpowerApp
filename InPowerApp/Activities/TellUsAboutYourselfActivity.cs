@@ -101,7 +101,7 @@ namespace InPowerApp.Activities
                                 if (txtConfirmPassword.Text != "")
                                 {
 
-                                    if (txtConfirmPassword.Text == txtConfirmPassword.Text)
+                                    if (txtConfirmPassword.Text == txtPassword.Text)
                                     {
                                         if (CrossConnectivity.Current.IsConnected)
                                         {

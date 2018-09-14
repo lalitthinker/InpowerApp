@@ -13,79 +13,72 @@
         android:id="@+id/Divider"
         android:background="#FFFFFF"
         android:layout_marginBottom="3dp" />
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <ScrollView
-            android:id="@+id/scrollSettings"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fillViewport="true"
-            android:scrollingCache="false">
+    <ScrollView
+        android:id="@+id/scrollSettings"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollingCache="false">
+        <LinearLayout
+			 android:id="@+id/hidekeybordlayout"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
             <LinearLayout
                 android:orientation="vertical"
-                android:gravity="center"
                 android:layout_width="fill_parent"
-                android:layout_height="fill_parent">
+                android:layout_height="fill_parent"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp">
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:paddingStart="30dp"
-                    android:paddingEnd="30dp">
-                    <LinearLayout
-                        android:orientation="vertical"
+                    android:layout_height="40dp">
+                    <TextView
                         android:layout_width="fill_parent"
-                        android:layout_height="40dp">
-                        <TextView
+                        android:layout_height="fill_parent"
+                        android:id="@+id/lblWRYIheader"
+                        android:text="---------- So What Are Your Interests? ----------"
+                        android:gravity="center" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:gravity="center"
+                    android:layout_height="60dp">
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="0dp"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="2.75"
+                        android:id="@+id/textInputLayout1">
+                        <EditText
                             android:layout_width="fill_parent"
                             android:layout_height="fill_parent"
-                            android:id="@+id/lblWRYIheader"
-                            android:text="---------- So What Are Your Interests? ----------"
-                            android:gravity="center" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="fill_parent"
+                            android:id="@+id/txtSuggestInterests"
+                            android:hint="Suggest Interest"
+                            android:inputType="text" />
+                    </android.support.design.widget.TextInputLayout>
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:id="@+id/btnSuggestInterestsRequest"
+                        android:text="Request"
                         android:gravity="center"
-                        android:layout_height="60dp">
-                        <android.support.design.widget.TextInputLayout
-                            android:layout_width="0dp"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="2.75"
-                            android:id="@+id/textInputLayout1">
-                            <EditText
-                                android:layout_width="fill_parent"
-                                android:layout_height="fill_parent"
-                                android:id="@+id/txtSuggestInterests"
-                                android:hint="Suggest Interest"
-                                android:inputType="text" />
-                        </android.support.design.widget.TextInputLayout>
-                        <Button
-                            android:layout_width="0dp"
-                            android:layout_height="40dp"
-                            android:layout_weight="1"
-                            android:id="@+id/btnSuggestInterestsRequest"
-                            android:text="Request"
-                            android:gravity="center"
-                            android:background="@drawable/rounded_corneryellow" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent">
-                        <ListView
-                            android:minWidth="25px"
-                            android:minHeight="25px"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:id="@+id/lvInterestList"
-                            android:divider="#000"
-                            android:dividerHeight="2dp"
-                            android:layout_marginBottom="13dp" />
-                    </LinearLayout>
+                        android:background="@drawable/rounded_corneryellow" />
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent">
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lvInterestList"
+                        android:layout_marginBottom="10dp" />
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
-    </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
