@@ -424,6 +424,8 @@ namespace InPowerApp.Fragments
             //MenuItemCompat.SetOnActionExpandListener(searchItems, new SearchViewExpandListener((IFilter)mAdapter));
 
             var searchItem = MenuItemCompat.GetActionView(searchItems);
+
+
             _searchView = searchItem.JavaCast<Android.Support.V7.Widget.SearchView>();
             if(_adapter!=null)
             {

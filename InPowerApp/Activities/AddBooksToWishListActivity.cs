@@ -270,15 +270,19 @@ namespace InPowerApp.Activities
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-
             if (item.ItemId == Android.Resource.Id.Home)
             {
-                Intent intent = new Intent(this, typeof(MainActivity));
-                StartActivity(Intent);
-                this.Finish();
+              //  this.Finish();
+                var intent = new Intent(this, typeof(MainActivity));
+              //  intent.AddFlags(ActivityFlags.SingleTop);
+
+                StartActivity(intent);
+
+
             }
-               
             return base.OnOptionsItemSelected(item);
+
+
         }
 
         public void OnLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom)

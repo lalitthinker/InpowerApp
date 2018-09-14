@@ -37,8 +37,6 @@ namespace InPowerApp.Activities
 
             var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.app_bar);
             SetSupportActionBar(toolbar);
-            SupportActionBar.SetDisplayHomeAsUpEnabled(true);
-            SupportActionBar.SetHomeButtonEnabled(true);
             SupportActionBar.SetTitle(Resource.String.WelcometoInPower);
             SupportActionBar.SetSubtitle(Resource.String.SelectInterests);
             lvInterestList = (ListView)FindViewById(Resource.Id.lvInterestList);

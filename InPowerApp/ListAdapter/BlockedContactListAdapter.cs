@@ -179,7 +179,7 @@ namespace InPowerApp.ListAdapter
             alert.SetButton("OK", (c, ev) =>
             {
 
-                RemoveFromBlackListAsync(Convert.ToInt64(item.ContactId));
+                RemoveFromBlackListAsync(Convert.ToInt64(item.id));
             });
             alert.SetButton2("CANCEL", (c, ev) =>
             {
@@ -199,11 +199,12 @@ namespace InPowerApp.ListAdapter
                 };
 
                 var result = await new SettingService().PostUnBlockUserInterest(model);
+           
                if (result.Status == 1)
                 {
-                   
-                    ChatConversationRepository.UpdateUnBlock(id);
-                    CommonHelper.DismissProgressBar(context);
+                ChatConversationRepository.UpdateBlock(id, false);
+               
+                CommonHelper.DismissProgressBar(context);
                     Toast.MakeText(context, result.Message, ToastLength.Long).Show();
                 }
             else

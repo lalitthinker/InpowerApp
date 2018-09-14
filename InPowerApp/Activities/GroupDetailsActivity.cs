@@ -59,7 +59,7 @@ namespace InPowerApp.Activities
             collapsingToolbar.Title = (GroupObject.GroupName == null ? "" : GroupObject.GroupName); ;
 
             //  SupportActionBar.Title = (GroupObject.GroupName == null ? "" : GroupObject.GroupName); ;
-            //GroupIntrest.Text = "Interest:" + "\t" + "\t" + ((GroupObject.InterestId == null) ? "" : GroupObject.InterestId);
+           // GroupIntrest.Text = "Interest:" + "\t" + "\t" + ((GroupObject.InterestId == null) ? "" : GroupObject.InterestId);
             GroupDescription.Text = "Description:" + "\t" + "\t" + (((GroupObject.GroupDescription == null) ? "" : GroupObject.GroupDescription));
             //   GroupType.Text = "Group Type:" + "\t" + "\t" + ((GroupObject.type == null) ? "" : GroupObject.type);
 
@@ -87,15 +87,24 @@ namespace InPowerApp.Activities
 
         private void GroupImageView_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent();
-            intent.SetAction(Intent.ActionView);
+            if (GroupObject.GroupPictureUrl != "")
+            {
+                Intent intent = new Intent();
+                intent.SetAction(Intent.ActionView);
 
-            var fileAndpath = new Java.IO.File(
-             Android.OS.Environment.GetExternalStoragePublicDirectory(
-                 Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(GroupObject.GroupPictureUrl)));
-            Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
-            intent.SetDataAndType(uri, "image/*");
-            this.StartActivity(intent);
+                var fileAndpath = new Java.IO.File(
+                 Android.OS.Environment.GetExternalStoragePublicDirectory(
+                     Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(GroupObject.GroupPictureUrl)));
+                Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
+                intent.SetDataAndType(uri, "image/*");
+                this.StartActivity(intent);
+
+            }
+            else
+            {
+                Toast.MakeText(this, "Picture not available", ToastLength.Long).Show();
+            }
+           
         }
 
         public void loadContactAdapter()

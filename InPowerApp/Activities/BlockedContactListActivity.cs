@@ -42,12 +42,9 @@ namespace InPowerApp.Activities
 
         }
 
-
-
-
         public void loadLocalData()
         {
-          
+            var BlockedContactList = ChatConversationRepository.GetAllBlockList();
 
             if (BlockedContactList != null && BlockedContactList.Count > 0)
             {
@@ -55,6 +52,12 @@ namespace InPowerApp.Activities
                 // mAdapter.ListReload += ListReload;
                 mRecyclerView.SetAdapter(mAdapter);
                 mAdapter.NotifyDataSetChanged();
+            }
+            else
+            {
+
+                Toast.MakeText(this, "No contact found", ToastLength.Long).Show();
+
             }
         }
 
@@ -80,6 +83,43 @@ namespace InPowerApp.Activities
                 Toast.MakeText(this, "No internet connection", ToastLength.Long).Show();
             }
         }
+
+
+        //public void loadLocalData()
+        //{
+          
+
+        //    if (BlockedContactList != null && BlockedContactList.Count > 0)
+        //    {
+        //        mAdapter = new BlockedContactListAdapter(BlockedContactList, this);
+        //        // mAdapter.ListReload += ListReload;
+        //        mRecyclerView.SetAdapter(mAdapter);
+        //        mAdapter.NotifyDataSetChanged();
+        //    }
+        //}
+
+        //private async Task LoadBlockedContactListAsync()
+        //{
+        //    try
+        //    {
+        //        if (CrossConnectivity.Current.IsConnected)
+        //        {
+        //            var result = await new SettingService().getBlockedContactAll();
+        //            loadLocalData();
+        //        }
+        //        else
+        //        {
+        //            loadLocalData();
+        //        }
+
+
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Toast.MakeText(this, "No internet connection", ToastLength.Long).Show();
+        //    }
+        //}
 
 
 
