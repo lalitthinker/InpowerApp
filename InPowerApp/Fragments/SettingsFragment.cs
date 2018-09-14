@@ -278,11 +278,9 @@ namespace InPowerApp.Fragments
 
             int IconAttribute = Android.Resource.Attribute.AlertDialogIcon;
             EditText input = new EditText(Activity);
-            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MatchParent,
-                LinearLayout.LayoutParams.MatchParent);
-            input.SetHeight(200);
-            input.SetWidth(250);
+            LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
+            input.SetHeight(150);
+            input.SetWidth(200);
 
             input.TextAlignment = TextAlignment.Center;
 

@@ -13,6 +13,7 @@ using Android.Support.V7.App;
 using Android.Graphics.Drawables;
 using PCL.Service;
 using PCL.Model;
+using InPowerApp.Common;
 
 namespace InPowerApp.Activities
 {
@@ -20,6 +21,7 @@ namespace InPowerApp.Activities
     public class ChangePasswordActivity : AppCompatActivity
     {
         ProgressDialog progressDialog;
+        LinearLayout hidekeybordlayout;
         Button btnChangePasswordReset, btnChangePasswordSave;
         EditText txtUserOldPassword, txtUserNewPassword, txtUserNewConfirmPassword;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -42,9 +44,12 @@ namespace InPowerApp.Activities
             txtUserNewPassword = FindViewById<EditText>(Resource.Id.txtUserNewPassword);
             txtUserNewConfirmPassword = FindViewById<EditText>(Resource.Id.txtUserNewConfirmPassword);
 
+            hidekeybordlayout = FindViewById<LinearLayout>(Resource.Id.hidekeybordlayout);
 
             btnChangePasswordReset.Click += BtnChangePasswordReset_Click;
             btnChangePasswordSave.Click += BtnChangePasswordSave_ClickAsync;
+
+            hidekeybordlayout.Touch += Hidekeybordlayout_Touch;
         }
 
         private async void BtnChangePasswordSave_ClickAsync(object sender, EventArgs e)
@@ -143,10 +148,6 @@ namespace InPowerApp.Activities
             txtUserNewConfirmPassword.Text = "";
         }
 
-
-       
-
-
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             if (item.ItemId == Resource.Id.action_menuOKOK)
@@ -161,11 +162,15 @@ namespace InPowerApp.Activities
             return base.OnOptionsItemSelected(item);
         }
 
-      
+
         protected override void OnResume()
         {
             SupportActionBar.SetTitle(Resource.String.ChangePassword);
             base.OnResume();
+        }
+        private void Hidekeybordlayout_Touch(object sender, View.TouchEventArgs e)
+        {
+            CommonHelper.Hidekeyboard(this, Window);
         }
     }
 }

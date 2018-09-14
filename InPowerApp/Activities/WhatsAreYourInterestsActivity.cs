@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using InPowerApp.Common;
 using InPowerApp.ListAdapter;
 using Newtonsoft.Json;
 using PCL.Model;
@@ -25,6 +26,7 @@ namespace InPowerApp.Activities
         Button btnSuggestInterestsRequests;
         ProgressDialog progressDialog;
         ListView lvInterestList;
+        LinearLayout hidekeybordlayout;
         List<InterestResponseViewModel> Interestlist;
         InterestListAdapter interestlistadapter;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -43,7 +45,9 @@ namespace InPowerApp.Activities
             lvInterestList.ItemClick += LvInterestList_ItemClick; ;
             btnSuggestInterestsRequests = FindViewById<Button>(Resource.Id.btnSuggestInterestsRequest);
             txtSuggestInterest = FindViewById<EditText>(Resource.Id.txtSuggestInterests);
+            hidekeybordlayout = FindViewById<LinearLayout>(Resource.Id.hidekeybordlayout);
             btnSuggestInterestsRequests.Click += BtnSuggestInterestsRequest_Click;
+            hidekeybordlayout.Touch += Hidekeybordlayout_Touch;
             loadInterestAdapter();
         }
 
@@ -86,7 +90,7 @@ namespace InPowerApp.Activities
                     }
                     else
                     {
-                        string msg = "Suggested Interest\n Failed to save  this Interests.";
+                        string msg = "Suggested Interest\nFailed to save  this Interests.";
                         Toast.MakeText(this, msg, ToastLength.Long).Show();
                     }
 
@@ -106,7 +110,7 @@ namespace InPowerApp.Activities
         }
 
 
-        public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
+        public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.action_menuOK, menu);
             if (menu != null)
@@ -154,6 +158,11 @@ namespace InPowerApp.Activities
                 await new CommonService().PostInterest(ListinterestRequestViewModels);
             }
 
+        }
+
+        private void Hidekeybordlayout_Touch(object sender, View.TouchEventArgs e)
+        {
+            CommonHelper.Hidekeyboard(this, Window);
         }
     }
 }
