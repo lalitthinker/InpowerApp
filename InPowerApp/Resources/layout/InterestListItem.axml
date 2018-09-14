@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:padding="5dp">
     <LinearLayout
         android:orientation="horizontal"
         android:gravity="center"
@@ -26,7 +27,7 @@
             android:layout_weight="0.3"
             android:id="@+id/chkOk"
             android:gravity="center"
-            android:layout_marginRight="5dp"
+            android:layout_marginRight="10dp"
             android:layout_marginStart="2dp" />
     </LinearLayout>
 </LinearLayout>

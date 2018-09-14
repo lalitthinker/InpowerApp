@@ -109,7 +109,15 @@ namespace InPowerApp.Activities
 
             alert.SetButton("OK", (c, ev) =>
             {
-                BlockContact(ContactObject.ContactId);
+                if(txtBlockContact.Text == "Block")
+                {
+                    BlockContact(ContactObject.ContactId);
+                }
+                else
+                {
+
+                }
+               
             });
             alert.SetButton2("CANCEL", (c, ev) =>
             {
@@ -138,10 +146,7 @@ namespace InPowerApp.Activities
 
         public async void BlockContact(long id)
         {
-          
-
             CommonHelper.ShowProgressBar(this);
-
             var model = new userdetails
             {
                 BlockUserID = id
@@ -151,7 +156,7 @@ namespace InPowerApp.Activities
             if(result.Status==1)
             {
                 txtBlockContact.Text = "UnBlock";
-                ChatConversationRepository.UpdateBlock(ContactObject.ChatConvId);
+                ChatConversationRepository.UpdateBlock(ContactObject.ChatConvId,true);
                 CommonHelper.DismissProgressBar(this);
                 Toast.MakeText(this, result.Message, ToastLength.Long).Show();
             }

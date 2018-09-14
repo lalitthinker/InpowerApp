@@ -388,7 +388,7 @@ namespace InPowerApp.Repositories
             db.Close();
             return chatConv;
         }
-        public static void UpdateBlock(long ChatId)
+        public static void UpdateBlock(long ChatId,bool BlockVal)
         {
            
             var db = new SQLiteConnection(CommonConstant.DBPath);
@@ -398,7 +398,7 @@ namespace InPowerApp.Repositories
                 if (ChatId >0)
                 {
                     var ChatModel = GetConversationbyConversationId(ChatId);
-                    ChatModel.IsBlock = true;
+                    ChatModel.IsBlock = BlockVal;
                     db.Update(ChatModel);
                     db.Commit();
                 }
@@ -419,8 +419,7 @@ namespace InPowerApp.Repositories
             try
             {
                 lstmessages = db.Query<ChatConversation>("select * from 'ChatConversation' where IsBlock =1 and UserId=" + CommonHelper.GetUserId());
-
-
+                
             }
             catch (Exception ex)
             {

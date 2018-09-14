@@ -62,7 +62,15 @@ namespace InPowerApp.Activities
 
             SetContentView(Resource.Layout.Loginfrm);
             FirebaseApp.InitializeApp(this);
-            InstanceToken = FirebaseInstanceId.Instance.Token.ToString();
+            if(FirebaseInstanceId.Instance.Token.ToString()!="")
+            {
+                InstanceToken = FirebaseInstanceId.Instance.Token.ToString();
+            }
+            else
+            {
+                OnResume();
+            }
+          
             BtnFBLogin = FindViewById<LoginButton>(Resource.Id.btnFacebook);
             btnLogInWithEmail = FindViewById<Button>(Resource.Id.btnLogin);
             lblOrRegisterHere = FindViewById<TextView>(Resource.Id.lblOrRegisterHere);
@@ -485,7 +493,14 @@ namespace InPowerApp.Activities
         }
         #endregion
 
-
+        protected override void OnResume()
+        {
+            base.OnResume();
+            if (FirebaseInstanceId.Instance.Token.ToString() != "")
+            {
+                InstanceToken = FirebaseInstanceId.Instance.Token.ToString();
+            }
+        }
     }
 
 

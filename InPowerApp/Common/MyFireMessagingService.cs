@@ -30,7 +30,7 @@ namespace InPowerApp.Common
             var title = notification.Title;
             var body = notification.Body;
             string userid =(CommonHelper.GetUserId().ToString());
-            if (userid != "" && CommonHelper.GetUserId().ToString()== userid)
+            if (userid != "")
             {
                 SendNotification(title, body);
             }
