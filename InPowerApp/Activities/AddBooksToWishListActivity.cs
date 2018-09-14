@@ -270,10 +270,14 @@ namespace InPowerApp.Activities
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-           
-            if (item.ItemId == Android.Resource.Id.Home)
-                Finish();
 
+            if (item.ItemId == Android.Resource.Id.Home)
+            {
+                Intent intent = new Intent(this, typeof(MainActivity));
+                StartActivity(Intent);
+                this.Finish();
+            }
+               
             return base.OnOptionsItemSelected(item);
         }
 
@@ -282,7 +286,7 @@ namespace InPowerApp.Activities
 
         }
 
-        
+       
 
     }
 }

@@ -368,20 +368,7 @@ namespace InPowerApp.ListAdapter
 
 
                 }
-                //try
-                //{
-                //    results.AddRange(
-                //      _adapter.searchChat.Where(
-                //          chat => (
-                //        (GroupRepository.GetGroupByID(Convert.ToInt64(chat.GroupId)) != null) ?
-                //          GroupRepository.GetGroupByID(Convert.ToInt64(chat.GroupId)).GroupName.ToLower().Contains(constraint.ToString()) : false)
-                //          || ((chat.LastMessage != null) ? chat.LastMessage.ToLower().Contains(constraint.ToString()) : false)));
-                //}
-                //catch (System.Exception ex)
-                //{
-
-
-                //}
+               
             }
 
             // Nasty piece of .NET to Java wrapping, be careful with this!

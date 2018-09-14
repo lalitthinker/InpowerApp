@@ -62,7 +62,6 @@ namespace InPowerApp.Fragments
 
             if (CommonHelper.GetShouOut())
             {
-
                 SlientToggleButton.Checked = true;
             }
             else
@@ -282,8 +281,8 @@ namespace InPowerApp.Fragments
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MatchParent,
                 LinearLayout.LayoutParams.MatchParent);
-            input.SetHeight(60);
-            input.SetWidth(200);
+            input.SetHeight(200);
+            input.SetWidth(250);
 
             input.TextAlignment = TextAlignment.Center;
 
@@ -301,7 +300,12 @@ namespace InPowerApp.Fragments
                         if (VerifyPassword != null && VerifyPassword == CommonHelper.PREF_Password())
                         {
                             var result = await new SettingService().PostDeleteAccountInterest(CommonHelper.GetUserId());
-                          
+                            if (result.Status == 1)
+                            {
+                                CommonHelper.ClearPreferences();
+                                Activity.FinishAffinity();
+                            }
+                        
                             HideKeyboard(input);
                             Toast.MakeText(Activity, result.Message, ToastLength.Long).Show();
                             CommonHelper.DismissProgressBar(Activity);
