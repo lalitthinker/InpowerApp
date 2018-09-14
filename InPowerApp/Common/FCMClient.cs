@@ -27,7 +27,7 @@ namespace InPowerApp.Common
             {
                 var refreshedToken = FirebaseInstanceId.Instance.Token;
                 Log.Debug(TAG, "Refreshed token: " + refreshedToken);
-               
+
                 
                 SendRegistrationToServer(refreshedToken);
               
@@ -38,9 +38,7 @@ namespace InPowerApp.Common
                 _objAndroidTokenViewModel.AndroidToken = AndroidToken;
               
                   new CommonService().PostUpdateAndroidToken(_objAndroidTokenViewModel);
-             
-
-
+     
             }
         }
     }

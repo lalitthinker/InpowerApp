@@ -178,7 +178,8 @@ namespace InPowerApp.ListAdapter
             alert.SetMessage("Do you want to UnBlock this user");
             alert.SetButton("OK", (c, ev) =>
             {
-                RemoveFromBlackListAsync(item.ChatId);
+
+                RemoveFromBlackListAsync(Convert.ToInt64(item.ContactId));
             });
             alert.SetButton2("CANCEL", (c, ev) =>
             {
@@ -197,21 +198,21 @@ namespace InPowerApp.ListAdapter
                     BlockUserID = id
                 };
 
-              //  var result = await new SettingService().PostUnBlockUserInterest(model);
-             //   if (result.Status == 1)
-              //  {
+                var result = await new SettingService().PostUnBlockUserInterest(model);
+               if (result.Status == 1)
+                {
                    
-                    ChatConversationRepository.UpdateUnBlock(item.ChatId);
+                    ChatConversationRepository.UpdateUnBlock(id);
                     CommonHelper.DismissProgressBar(context);
-                  //  Toast.MakeText(context, result.Message, ToastLength.Long).Show();
-              //  }
-              //  else
-             //   {
-                   // CommonHelper.DismissProgressBar(context);
-                  //  Toast.MakeText(context, result.Message, ToastLength.Long).Show();
-              //  }
-              //  CommonHelper.DismissProgressBar(context);
+                    Toast.MakeText(context, result.Message, ToastLength.Long).Show();
+                }
+            else
+            {
+                CommonHelper.DismissProgressBar(context);
+                Toast.MakeText(context, result.Message, ToastLength.Long).Show();
             }
+            CommonHelper.DismissProgressBar(context);
+        }
         }
     }
 

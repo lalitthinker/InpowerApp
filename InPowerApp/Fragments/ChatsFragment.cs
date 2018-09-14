@@ -425,14 +425,20 @@ namespace InPowerApp.Fragments
 
             var searchItem = MenuItemCompat.GetActionView(searchItems);
             _searchView = searchItem.JavaCast<Android.Support.V7.Widget.SearchView>();
-            _searchView.QueryTextChange += (s, e) => _adapter.Filter.InvokeFilter(e.NewText.ToLower());
-
-            _searchView.QueryTextSubmit += (s, e) =>
+            if(_adapter!=null)
             {
-                // Handle enter/search button on keyboard here
-                Toast.MakeText(this.Context, "Searched for: " + e.Query, ToastLength.Short).Show();
-                e.Handled = true;
-            };
+
+                _searchView.QueryTextChange += (s, e) => _adapter.Filter.InvokeFilter(e.NewText.ToLower());
+
+                _searchView.QueryTextSubmit += (s, e) =>
+                {
+                    // Handle enter/search button on keyboard here
+                    Toast.MakeText(this.Context, "Searched for: " + e.Query, ToastLength.Short).Show();
+                    e.Handled = true;
+                };
+
+            }
+           
             //  MenuItemCompat.SetOnActionExpandListener(searchItems, new SearchViewExpandListener(_adapter));
         }
 

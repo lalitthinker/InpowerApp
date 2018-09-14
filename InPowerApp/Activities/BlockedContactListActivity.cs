@@ -47,7 +47,7 @@ namespace InPowerApp.Activities
 
         public void loadLocalData()
         {
-            var BlockedContactList = ChatConversationRepository.GetAllBlockList();
+          
 
             if (BlockedContactList != null && BlockedContactList.Count > 0)
             {

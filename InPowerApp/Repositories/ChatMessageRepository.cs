@@ -37,12 +37,13 @@ namespace InPowerApp.Repositories
 
         public static ChatMessage SaveChatMessage(ChatMessageViewModel model, long ChatId)
         {
-            lock (thisLock)
-            {
+           
                 var db = new SQLiteConnection(CommonConstant.DBPath);
 
                 ChatMessage chatMessage = null;
                 try
+            {
+                lock (thisLock)
                 {
                     if (chatMessage == null)
                     {
@@ -63,6 +64,7 @@ namespace InPowerApp.Repositories
                         }
                     }
                     db.Commit();
+                }
 
                 }
                 catch (Exception ex)
@@ -71,7 +73,6 @@ namespace InPowerApp.Repositories
                 }
                 db.Close();
                 return chatMessage;
-            }
         }
         public static ChatMessage updateChatMessage(ChatMessageViewModel model)
         {

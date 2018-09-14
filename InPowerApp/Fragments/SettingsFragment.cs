@@ -62,7 +62,6 @@ namespace InPowerApp.Fragments
 
             if (CommonHelper.GetShouOut())
             {
-
                 SlientToggleButton.Checked = true;
             }
             else
@@ -299,7 +298,12 @@ namespace InPowerApp.Fragments
                         if (VerifyPassword != null && VerifyPassword == CommonHelper.PREF_Password())
                         {
                             var result = await new SettingService().PostDeleteAccountInterest(CommonHelper.GetUserId());
-                          
+                            if (result.Status == 1)
+                            {
+                                CommonHelper.ClearPreferences();
+                                Activity.FinishAffinity();
+                            }
+                        
                             HideKeyboard(input);
                             Toast.MakeText(Activity, result.Message, ToastLength.Long).Show();
                             CommonHelper.DismissProgressBar(Activity);

@@ -92,7 +92,7 @@ namespace PCL.Service
             try
             {
 
-                resp = await _helper.Post(BlockUser, GlobalConstant.SettingUrls.postBlockUser);
+                resp = await _helper.Post(BlockUser, GlobalConstant.SettingUrls.postUnBlockUserUrl);
                 return resp;
             }
             catch (Exception ex)
