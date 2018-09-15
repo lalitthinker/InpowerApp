@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -10,6 +11,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Provider;
 using Android.Runtime;
+using Android.Support.V4.App;
 using Android.Support.V4.Widget;
 using Android.Support.V7.App;
 using Android.Support.V7.Widget;
@@ -42,7 +44,7 @@ namespace InPowerApp.Activities
         RecyclerView.LayoutManager mLayoutManager;
         GroupMessageAdapter mAdapter;
         private Object thisLock = new Object();
-
+        protected const int REQUEST_LOCATION = 0x1;
 
         View Circleview;
       //  private CircleMenu circleMenu;
@@ -74,7 +76,15 @@ namespace InPowerApp.Activities
                 base.OnCreate(savedInstanceState);
 
                 SetContentView(Resource.Layout.ChatGroupMessagelayout);
-
+                var requiredPermissions = new String[]
+          {
+                    Manifest.Permission.Internet,
+                     Manifest.Permission.WriteExternalStorage,
+                      Manifest.Permission.ReadExternalStorage,
+                      Manifest.Permission.Camera,
+                    Manifest.Permission.ReadContacts
+          };
+                ActivityCompat.RequestPermissions(this, requiredPermissions, REQUEST_LOCATION);
 
                 var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.app_bar);
                 SetSupportActionBar(toolbar);

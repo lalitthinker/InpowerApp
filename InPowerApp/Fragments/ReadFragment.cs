@@ -73,7 +73,7 @@ namespace InPowerApp.Fragments
                 mRecyclerView.SetLayoutManager(layoutManager);
             }
             paginationModel.SkipRecords = 0;
-
+            mRecyclerView.Click += MRecyclerView_Click;
             FloatingActionButton fabAddBook = view.FindViewById<FloatingActionButton>(Resource.Id.fabAddBook);
             fabAddBook.Click += FabAddBook_Click;
             if (InternetConnectivityModel.CheckConnection(this.Context))
@@ -87,6 +87,11 @@ namespace InPowerApp.Fragments
                 loadBookAdapter();
             }
             return view;
+        }
+
+        private void MRecyclerView_Click(object sender, EventArgs e)
+        {
+            CommonHelper.Hidekeyboard(Activity, Activity.Window);
         }
 
         private void FabAddBook_Click(object sender, EventArgs e)

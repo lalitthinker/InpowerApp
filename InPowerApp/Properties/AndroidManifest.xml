@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="thethiinker.inPower.app" android:installLocation="auto" android:versionName="1.000.43" android:versionCode="43">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="thethiinker.inPower.app" android:installLocation="auto" android:versionName="1.000.46" android:versionCode="46">
 	<uses-sdk android:minSdkVersion="18" />
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 	<uses-permission android:name="android.permission.INTERNET" />
