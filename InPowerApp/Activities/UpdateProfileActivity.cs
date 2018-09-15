@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Android;
 using Android.App;
 using Android.Content;
 using Android.Content.PM;
@@ -8,6 +9,7 @@ using Android.Graphics.Drawables;
 using Android.Media;
 using Android.OS;
 using Android.Provider;
+using Android.Support.V4.App;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
@@ -39,8 +41,9 @@ namespace InPowerApp.Activities
         Uri contentUri;
         string ProfileImageURL;
         string filePath;
-
+        protected const int REQUEST_LOCATION = 0x1;
         string mediaType;
+
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
 
@@ -100,7 +103,7 @@ namespace InPowerApp.Activities
                     BitmapHelper.bitmap = BitmapHelper._file.Path.LoadAndResizeBitmap(width, height);
                     try
                     {
-                        using (var os = new System.IO.FileStream(System.IO.Path.Combine(BitmapHelper._dir.ToString() , String.Format("myProfile_{0}.jpg", Guid.NewGuid())), System.IO.FileMode.CreateNew))
+                        using (var os = new System.IO.FileStream(System.IO.Path.Combine(BitmapHelper._dir.ToString(), String.Format("myProfile_{0}.jpg", Guid.NewGuid())), System.IO.FileMode.CreateNew))
                         {
                             BitmapHelper.bitmap.Compress(Bitmap.CompressFormat.Jpeg, 95, os);
                             filePath = os.Name;
@@ -138,7 +141,7 @@ namespace InPowerApp.Activities
                     if (string.IsNullOrEmpty(url))
                     {
                         Toast.MakeText(this, "Check Your Internet Connection", ToastLength.Long).Show();
-                        
+
                     }
                     else
                     {
@@ -161,7 +164,7 @@ namespace InPowerApp.Activities
 
 
                             var modelReporeg = JsonConvert.DeserializeObject<UserRegisterResponseViewModel>(Result.Response.ToString());
-                           
+
                             var UserprofileRepo = UserProfileRepository.GetUserProfile(CommonHelper.GetUserId());
                             UserprofileRepo.ZipCode = modelReporeg.ZipCode;
                             UserprofileRepo.City = modelReporeg.City;
@@ -173,7 +176,7 @@ namespace InPowerApp.Activities
 
 
 
-                       
+
 
                             UserProfileRepository.UpdateUserProfile(UserprofileRepo);
                             Toast.MakeText(this, "Profile Complete Successfully", ToastLength.Short).Show();
@@ -212,8 +215,19 @@ namespace InPowerApp.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.UpdateProfilelayout);
+            var requiredPermissions = new String[]
+         {
+                    Manifest.Permission.Internet,
+                     Manifest.Permission.WriteExternalStorage,
+                      Manifest.Permission.ReadExternalStorage,
+                      Manifest.Permission.Camera,
+                    Manifest.Permission.ReadContacts
+         };
+            ActivityCompat.RequestPermissions(this, requiredPermissions, REQUEST_LOCATION);
+        
+    
 
-            var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.app_bar);
+        var toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.app_bar);
             toolbar.TextAlignment = Android.Views.TextAlignment.Center;
            
             SetSupportActionBar(toolbar);

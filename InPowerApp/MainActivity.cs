@@ -26,7 +26,7 @@ using Microsoft.AppCenter.Crashes;
 
 namespace InPowerApp
 {
-    [Activity(Label = "@string/app_name")]
+    [Activity(Label = "@string/app_name", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait, ConfigurationChanges = Android.Content.PM.ConfigChanges.Orientation)]
     public class MainActivity : AppCompatActivity, NavigationView.IOnNavigationItemSelectedListener
     {
        

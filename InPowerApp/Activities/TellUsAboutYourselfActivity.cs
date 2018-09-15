@@ -146,8 +146,8 @@ namespace InPowerApp.Activities
                                                 UserProfileRepository.SaveUserProfile(profile);
                                                 CommonHelper.SetUserPreferences(modelReporeg.UserId.ToString(),modelReporeg.Password.ToLower(), ResultToken.access_token, modelReporeg.Email, modelReporeg.AWSAccessKey,
                                                      modelReporeg.AWSSecretKey, null, null);
-
-                                                Toast.MakeText(this, Result.Message, ToastLength.Short).Show();
+                                                        GlobalConstant.AccessToken = ResultToken.access_token;
+                                             Toast.MakeText(this, Result.Message, ToastLength.Short).Show();
                                                 clearAll();
                                                 CommonHelper.DismissProgressBar(this);
                                                 this.Finish();

@@ -98,13 +98,13 @@ namespace InPowerApp.Activities
                 Toast.MakeText(this, e.ToString(), ToastLength.Long).Show();
             }
         }
-        private async void LoadServerBooks(string SearchText = null)
+        private async void LoadServerBooks(string SearchText = "")
         {
             try
             {
                 paginationModel.SkipRecords = 0;
                 paginationModel.TakeRecords = 30;
-                paginationModel.SearchText = SearchText;
+                paginationModel.SearchText = SearchText.ToString();
                 var result = await new BookShelfService().GetAllBooks(paginationModel);// 0 = WishList ,  1 = Read , 2 = All
                 if (result.Status == 1)
                 {
