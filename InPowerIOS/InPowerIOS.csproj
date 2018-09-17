@@ -174,9 +174,6 @@
     <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
       <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
     </Reference>
-    <Reference Include="TOCrop">
-      <HintPath>..\..\..\..\..\Downloads\xamarin-bindings-master\TOCrop-iOS\bin\Debug\TOCrop.dll</HintPath>
-    </Reference>
     <Reference Include="IQKeyboardManager">
       <HintPath>..\packages\Xamarin.IQKeyboardManager.1.4.1\lib\Xamarin.iOS10\IQKeyboardManager.dll</HintPath>
     </Reference>
