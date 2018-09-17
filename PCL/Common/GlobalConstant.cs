@@ -21,6 +21,11 @@ namespace PCL.Common
         public static string AWS_SECRET_KEY = "AWS_SECRET_KEY";
         public static string PREF_SHOUT_OUT = "isShoutOut";
         //pref 
+        public static bool LoaderShow = true;
+        public static bool ContactInsertStart = true;
+        public static bool ChatInsertStart = true;
+
+
 
         public static string PREF_USERID = "userId";
         public static string PREF_Password = "password";
