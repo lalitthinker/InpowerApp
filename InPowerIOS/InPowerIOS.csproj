@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{AE8F0E5F-89F3-46B9-A84A-5820A8A3F81D}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>InPowerIOS</RootNamespace>
+    <AssemblyName>InPowerIOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>46741</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <DeviceSpecificBuild>false</DeviceSpecificBuild>
+    <MtouchVerbosity>
+    </MtouchVerbosity>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Distribution: Kara Ferrier (5QKVBJ98HF)</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity>
+    </MtouchVerbosity>
+    <CodesignProvision>LalitMacProvProfDevelopment</CodesignProvision>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <DefineConstants>
+    </DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity>
+    </MtouchVerbosity>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer: Kara Ferrier (RW6DAMUGAC)</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>40378</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <MtouchVerbosity>
+    </MtouchVerbosity>
+    <CodesignProvision>ProvProfLalitMacNew</CodesignProvision>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="SidebarNavigation">
+      <HintPath>..\packages\SidebarNavigation.2.0.0\lib\xamarinios10\SidebarNavigation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.3.0\lib\netstandard1.3\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.SimplePing.iOS">
+      <HintPath>..\packages\Xamarin.SimplePing.1.4.0\lib\XamariniOS10\Xamarin.SimplePing.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity.Abstractions">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.4.0.0.190-beta\lib\Xamarin.iOS10\Plugin.Connectivity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Connectivity">
+      <HintPath>..\packages\Xam.Plugin.Connectivity.4.0.0.190-beta\lib\Xamarin.iOS10\Plugin.Connectivity.dll</HintPath>
+    </Reference>
+    <Reference Include="BTProgressHUD">
+      <HintPath>..\packages\BTProgressHUD.1.2.0.6\lib\Xamarin.iOS10\BTProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLStorage">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.0.6.15003\lib\portable-net40+sl50+win+wpa81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.1.0.2.15130\lib\Xamarin.iOS\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.iOS.4.33.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="PCLStorage.Abstractions">
+      <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Toast">
+      <HintPath>..\packages\Toast.iOS.1.1.0\lib\xamarinios10\Toast.dll</HintPath>
+    </Reference>
+    <Reference Include="SDWebImage">
+      <HintPath>..\packages\Xamarin.SDWebImage.4.0.0-beta1\lib\Xamarin.iOS\SDWebImage.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.Core">
+      <HintPath>..\packages\AWSSDK.Core.3.3.24.6\lib\Xamarin.iOS10\AWSSDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="AWSSDK.S3">
+      <HintPath>..\packages\AWSSDK.S3.3.3.20.2\lib\Xamarin.iOS10\AWSSDK.S3.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.5.0.5\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.InstanceID">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.CloudMessaging">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.CloudMessaging.3.0.3\lib\Xamarin.iOS10\Firebase.CloudMessaging.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="Microsoft.AppCenter">
+      <HintPath>..\packages\Microsoft.AppCenter.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.AppCenter.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics">
+      <HintPath>..\packages\Microsoft.AppCenter.Analytics.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Analytics.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.AppCenter.Analytics.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Analytics.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
+      <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
+    </Reference>
+    <Reference Include="TOCrop">
+      <HintPath>..\..\..\..\..\Downloads\xamarin-bindings-master\TOCrop-iOS\bin\Debug\TOCrop.dll</HintPath>
+    </Reference>
+    <Reference Include="IQKeyboardManager">
+      <HintPath>..\packages\Xamarin.IQKeyboardManager.1.4.1\lib\Xamarin.iOS10\IQKeyboardManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242x2208.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750x1334.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %281%29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular%402x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular%403x.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\ReadList.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\WishList.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\ic_chats24.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x960.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320X480.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-7.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-9.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-10.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-11.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-12.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-13.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-14.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125x2436.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40X40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60X60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87X87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120X120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180X180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1242x2208.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-24.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-48.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-96.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-24.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-48.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-96.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-24.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-96.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-48.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-24.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-48.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-96.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Common\ColorExtensions.cs" />
+    <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\CommonHelper.cs" />
+    <Compile Include="Common\ImageClass.cs" />
+    <Compile Include="Common\UrlHelper.cs" />
+    <Compile Include="SideBarMenu\SideMenuController.cs" />
+    <Compile Include="SideBarMenu\SideMenuController.designer.cs">
+      <DependentUpon>SideMenuController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\BaseController.cs" />
+    <Compile Include="SideBarMenu\BaseController.designer.cs">
+      <DependentUpon>BaseController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\RootViewController.cs" />
+    <Compile Include="SideBarMenu\RootViewController.designer.cs">
+      <DependentUpon>RootViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\NavController.cs" />
+    <Compile Include="SideBarMenu\NavController.designer.cs">
+      <DependentUpon>NavController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\MenuListSource.cs" />
+    <Compile Include="SideBarMenu\MenuListItemCell.cs" />
+    <Compile Include="SideBarMenu\MenuListItemCell.designer.cs">
+      <DependentUpon>MenuListItemCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BookModel.cs" />
+    <Compile Include="Models\ChatMessage.cs" />
+    <Compile Include="Models\ChatModel.cs" />
+    <Compile Include="Models\ContactModel.cs" />
+    <Compile Include="Models\GroupModel.cs" />
+    <Compile Include="Models\InternetConnectivityModel.cs" />
+    <Compile Include="Models\PhoneContactModel.cs" />
+    <Compile Include="Models\UserProfile.cs" />
+    <Compile Include="SQLiteAsync.cs" />
+    <Compile Include="SQLite.cs" />
+    <Compile Include="Repositories\BookRepository.cs" />
+    <Compile Include="Repositories\ChatAttachmentRepository.cs" />
+    <Compile Include="Repositories\ChatConversationRepository.cs" />
+    <Compile Include="Repositories\ChatMessageRepository.cs" />
+    <Compile Include="Repositories\ContactRepository.cs" />
+    <Compile Include="Repositories\DBInitializer.cs" />
+    <Compile Include="Repositories\GroupRepository.cs" />
+    <Compile Include="Repositories\UserProfileRepository.cs" />
+    <Compile Include="Chats\ChatListViewController.cs" />
+    <Compile Include="Chats\ChatListViewController.designer.cs">
+      <DependentUpon>ChatListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ChatMenuCell.cs" />
+    <Compile Include="Chats\ChatMenuCell.designer.cs">
+      <DependentUpon>ChatMenuCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ContactListViewController.cs" />
+    <Compile Include="Chats\ContactListViewController.designer.cs">
+      <DependentUpon>ContactListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\MainScreenTabBarController.cs" />
+    <Compile Include="Chats\MainScreenTabBarController.designer.cs">
+      <DependentUpon>MainScreenTabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\BooksTabBarController.cs" />
+    <Compile Include="Book\BooksTabBarController.designer.cs">
+      <DependentUpon>BooksTabBarController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ChatListTableViewCell.cs" />
+    <Compile Include="Chats\ChatListTableViewCell.designer.cs">
+      <DependentUpon>ChatListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ChatListViewControllerSource.cs" />
+    <Compile Include="SignalR\ChatSignalRServices.cs" />
+    <Compile Include="Login\LoginInpowerViewController.cs" />
+    <Compile Include="Login\LoginInpowerViewController.designer.cs">
+      <DependentUpon>LoginInpowerViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ContactListTableViewCell.cs" />
+    <Compile Include="Chats\ContactListTableViewCell.designer.cs">
+      <DependentUpon>ContactListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ContactListViewControllerSource.cs" />
+    <Compile Include="Book\BookShelfReadListViewController.cs" />
+    <Compile Include="Book\BookShelfReadListViewController.designer.cs">
+      <DependentUpon>BookShelfReadListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\BookShelfWishListViewController.cs" />
+    <Compile Include="Book\BookShelfWishListViewController.designer.cs">
+      <DependentUpon>BookShelfWishListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\ReadListTableViewCell.cs" />
+    <Compile Include="Book\ReadListTableViewCell.designer.cs">
+      <DependentUpon>ReadListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\BookShelfReadListViewControllerSource.cs" />
+    <Compile Include="Book\BookWishListTableViewCell.cs" />
+    <Compile Include="Book\BookWishListTableViewCell.designer.cs">
+      <DependentUpon>BookWishListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\BookShelfWishListViewControllerSource.cs" />
+    <Compile Include="Registration\TellUSAboutYourselfViewController.cs" />
+    <Compile Include="Registration\TellUSAboutYourselfViewController.designer.cs">
+      <DependentUpon>TellUSAboutYourselfViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\PleaseComplateYourProfileViewController.cs" />
+    <Compile Include="Registration\PleaseComplateYourProfileViewController.designer.cs">
+      <DependentUpon>PleaseComplateYourProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\SelectInterestsViewController.cs" />
+    <Compile Include="Registration\SelectInterestsViewController.designer.cs">
+      <DependentUpon>SelectInterestsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\SuggestInterestTableViewCell.cs" />
+    <Compile Include="Registration\SuggestInterestTableViewCell.designer.cs">
+      <DependentUpon>SuggestInterestTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\SelectInterestsViewControllerSource.cs" />
+    <Compile Include="Setting\SettingViewController.cs" />
+    <Compile Include="Setting\SettingViewController.designer.cs">
+      <DependentUpon>SettingViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\UpdateUserProfileViewController.cs" />
+    <Compile Include="SideBarMenu\UpdateUserProfileViewController.designer.cs">
+      <DependentUpon>UpdateUserProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\BlockedContactsViewController.cs" />
+    <Compile Include="Setting\BlockedContactsViewController.designer.cs">
+      <DependentUpon>BlockedContactsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\ChangePasswordViewController.cs" />
+    <Compile Include="Setting\ChangePasswordViewController.designer.cs">
+      <DependentUpon>ChangePasswordViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\InviteFriendsViaSMSViewController.cs" />
+    <Compile Include="Setting\InviteFriendsViaSMSViewController.designer.cs">
+      <DependentUpon>InviteFriendsViaSMSViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\InviteFriendsViaSMSTableViewCell.cs" />
+    <Compile Include="Setting\PhoneContactsTableViewCell.designer.cs">
+      <DependentUpon>InviteFriendsViaSMSTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\InviteFriendsViaSMSViewControllerSource.cs" />
+    <Compile Include="Models\PhoneContactIOSModel.cs" />
+    <Compile Include="Setting\BlockedContactsViewControllerSource.cs" />
+    <Compile Include="Setting\BlockedContactsTableViewCell.cs" />
+    <Compile Include="Setting\BlockedContactsTableViewCell.designer.cs">
+      <DependentUpon>BlockedContactsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\TAC_AND_PP_ViewController.cs" />
+    <Compile Include="Setting\TAC_AND_PP_ViewController.designer.cs">
+      <DependentUpon>TAC_AND_PP_ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\PickerModel.cs" />
+    <Compile Include="Chats\CreateGroupViewController.cs" />
+    <Compile Include="Chats\CreateGroupViewController.designer.cs">
+      <DependentUpon>CreateGroupViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\SelectGroupContactListTableViewCell.cs" />
+    <Compile Include="Chats\SelectGroupContactListTableViewCell.designer.cs">
+      <DependentUpon>SelectGroupContactListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\SelectGroupContactViewController.cs" />
+    <Compile Include="Chats\SelectGroupContactViewController.designer.cs">
+      <DependentUpon>SelectGroupContactViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\SelectGroupContactViewControllerSource.cs" />
+    <Compile Include="Models\SocialLoginData.cs" />
+    <Compile Include="Book\AddBooksListViewController.cs" />
+    <Compile Include="Book\AddBooksListViewController.designer.cs">
+      <DependentUpon>AddBooksListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book\AddBooksListViewControllerSource.cs" />
+    <Compile Include="Book\AddBooksListTableViewCell.cs" />
+    <Compile Include="Book\AddBooksListTableViewCell.designer.cs">
+      <DependentUpon>AddBooksListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\AddContactsListViewControllerSource.cs" />
+    <Compile Include="Chats\AddContactsListViewController.cs" />
+    <Compile Include="Chats\AddContactsListViewController.designer.cs">
+      <DependentUpon>AddContactsListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\AddContactsTableViewCell.cs" />
+    <Compile Include="Chats\AddContactsTableViewCell.designer.cs">
+      <DependentUpon>AddContactsTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ChatTableViewCell.cs" />
+    <Compile Include="Chats\ChatTableViewCell.designer.cs">
+      <DependentUpon>ChatTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\ChatViewContarollerSource.cs" />
+    <Compile Include="NewChat\BubbleCell.cs" />
+    <Compile Include="NewChat\IncomingCell.cs" />
+    <Compile Include="NewChat\OutgoingCell.cs" />
+    <Compile Include="Models\MessageType.cs" />
+    <Compile Include="NewChat\ChatInputView.cs" />
+    <Compile Include="NewChat\Message.cs" />
+    <Compile Include="Chats\NewChatViewController.cs" />
+    <Compile Include="Chats\ChatSource.cs" />
+    <Compile Include="Chats\UserProfileViewController.cs" />
+    <Compile Include="Chats\UserProfileViewController.designer.cs">
+      <DependentUpon>UserProfileViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CustomToast.cs" />
+    <Compile Include="Common\CommonSearchView.cs" />
+    <Compile Include="Chats\GroupChatViewController.cs" />
+    <Compile Include="Chats\GroupDetailsViewControllerSource.cs" />
+    <Compile Include="Chats\GroupDetailsViewController.cs" />
+    <Compile Include="Chats\GroupDetailsViewController.designer.cs">
+      <DependentUpon>GroupDetailsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\GroupMemberListTableViewCell.cs" />
+    <Compile Include="Chats\GroupMemberListTableViewCell.designer.cs">
+      <DependentUpon>GroupMemberListTableViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\Camera.cs" />
+    <Compile Include="Models\MediaFile.cs" />
+    <Compile Include="Common\AWSUploader.cs" />
+    <Compile Include="Chats\ChatListSource.cs" />
+    <Compile Include="NewChat\ChatBubbleCell.cs" />
+    <Compile Include="NewChat\ChatBubbleWithAttachmentCell.cs" />
+    <Compile Include="Chats\GroupChatListSource.cs" />
+    <Compile Include="NewChat\GroupChatBubbleWithAttachmentCell.cs" />
+    <Compile Include="NewChat\GroupChatBubbleCell.cs" />
+    <Compile Include="Chats\GroupChatListViewController.cs" />
+    <Compile Include="Chats\GroupChatListViewController.designer.cs">
+      <DependentUpon>GroupChatListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\PrivateChatListViewController.cs" />
+    <Compile Include="Chats\PrivateChatListViewController.designer.cs">
+      <DependentUpon>PrivateChatListViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewChat\DateLabelCell.cs" />
+    <Compile Include="NewChat\DateLabelCell.designer.cs">
+      <DependentUpon>DateLabelCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserInfoViewController.cs" />
+    <Compile Include="Models\ContactSaveResponceViewModel.cs" />
+    <Compile Include="Models\ChatConversationSaveResponceViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\threelines.png" />
+    <BundleResource Include="Resources\default_book.png" />
+    <BundleResource Include="Resources\correct32.png" />
+    <BundleResource Include="Resources\layout_background_gray.xml" />
+    <BundleResource Include="Resources\edittext_bg_whiteborder.xml" />
+    <BundleResource Include="Resources\settings_right_arrow.png" />
+    <BundleResource Include="Resources\blue_button.xml" />
+    <BundleResource Include="Resources\checkbx_rounded.xml" />
+    <BundleResource Include="Resources\message.png" />
+    <BundleResource Include="Resources\circle_shape.xml" />
+    <BundleResource Include="Resources\add_ContactButton.xml" />
+    <BundleResource Include="Resources\rounded_addContactButton.xml" />
+    <BundleResource Include="Resources\rounded_cornerBlue.xml" />
+    <BundleResource Include="Resources\rounded_corneryellow.xml" />
+    <BundleResource Include="Resources\imagesPlaceholder.png" />
+    <BundleResource Include="Resources\InpowerIcon85x85.png" />
+    <BundleResource Include="Resources\reportspam.png" />
+    <BundleResource Include="Resources\arrow_back_white.png" />
+    <BundleResource Include="Resources\blockuser.png" />
+    <BundleResource Include="Resources\addBook.png" />
+    <BundleResource Include="Resources\addChat.png" />
+    <BundleResource Include="Resources\addContact.png" />
+    <BundleResource Include="Resources\addGroup.png" />
+    <BundleResource Include="Resources\searchBook.png" />
+    <BundleResource Include="Resources\searchChat.png" />
+    <BundleResource Include="Resources\searchContact.png" />
+    <BundleResource Include="Resources\searchGroup.png" />
+    <BundleResource Include="Resources\bg_Header.jpg" />
+    <BundleResource Include="Resources\ic_bookshelf32.png" />
+    <BundleResource Include="Resources\ic_chats24.png" />
+    <BundleResource Include="Resources\ic_contacts32.png" />
+    <BundleResource Include="Resources\ic_group32.png" />
+    <BundleResource Include="Resources\ic_logout32.png" />
+    <BundleResource Include="Resources\ic_settings32.png" />
+    <BundleResource Include="Resources\alert.png" />
+    <BundleResource Include="Resources\arrow_bg1.png" />
+    <BundleResource Include="Resources\arrow_bg2.png" />
+    <BundleResource Include="Resources\arrow_bg11.png" />
+    <BundleResource Include="Resources\arrow_bg22.png" />
+    <BundleResource Include="Resources\attachment_new.png" />
+    <BundleResource Include="Resources\AttachmentFile.png" />
+    <BundleResource Include="Resources\bg_app.jpg" />
+    <BundleResource Include="Resources\bg.png" />
+    <BundleResource Include="Resources\bubble1.9.png" />
+    <BundleResource Include="Resources\bubble2.9.png" />
+    <BundleResource Include="Resources\cameraImg.png" />
+    <BundleResource Include="Resources\ChatMsgShape.xml" />
+    <BundleResource Include="Resources\counter_bg.xml" />
+    <BundleResource Include="Resources\default_profile.png" />
+    <BundleResource Include="Resources\email24.png" />
+    <BundleResource Include="Resources\facebook_button.jpg" />
+    <BundleResource Include="Resources\first_page.jpg" />
+    <BundleResource Include="Resources\gray.png" />
+    <BundleResource Include="Resources\list_item_bg_normal.xml" />
+    <BundleResource Include="Resources\list_item_bg_pressed.xml" />
+    <BundleResource Include="Resources\list_selector.xml" />
+    <BundleResource Include="Resources\list.png" />
+    <BundleResource Include="Resources\location24.png" />
+    <BundleResource Include="Resources\loging_icon.png" />
+    <BundleResource Include="Resources\loging_screen.jpg" />
+    <BundleResource Include="Resources\logo512_512.png" />
+    <BundleResource Include="Resources\mail24.png" />
+    <BundleResource Include="Resources\password24.png" />
+    <BundleResource Include="Resources\pasw_icon.png" />
+    <BundleResource Include="Resources\rounded_cornerForRight.xml" />
+    <BundleResource Include="Resources\rounded_cornerLeft.xml" />
+    <BundleResource Include="Resources\rounded_cornerwhite.xml" />
+    <BundleResource Include="Resources\rounded_cornerwhiteBlackStroke.xml" />
+    <BundleResource Include="Resources\search24.png" />
+    <BundleResource Include="Resources\sendButtonNew.png" />
+    <BundleResource Include="Resources\username24.png" />
+    <BundleResource Include="Resources\welcometoinpoweraap.jpg" />
+    <BundleResource Include="Resources\welcometoinpoweraap1.jpg" />
+    <BundleResource Include="Resources\welcometoinpoweraap2.jpg" />
+    <BundleResource Include="Resources\welcometoinpoweraap3.jpg" />
+    <BundleResource Include="Resources\logout_user.png" />
+    <BundleResource Include="Resources\ReadList.png" />
+    <BundleResource Include="Resources\WishList.png" />
+    <BundleResource Include="Resources\1242x2208.png" />
+    <BundleResource Include="Resources\750x1334.png" />
+    <BundleResource Include="Resources\640x1136.png" />
+    <BundleResource Include="Resources\320X480.png" />
+    <BundleResource Include="Resources\grouplist.png" />
+    <BundleResource Include="Resources\privacypolicy.htm" />
+    <BundleResource Include="Resources\termsofuse.htm" />
+    <BundleResource Include="Resources\green.png" />
+    <BundleResource Include="Resources\grey.png" />
+    <BundleResource Include="Resources\singleGray.png" />
+    <BundleResource Include="Resources\doubleBlue.png" />
+    <BundleResource Include="Resources\date.png" />
+    <BundleResource Include="Resources\PlaceHolder.png" />
+    <BundleResource Include="Resources\loader.png" />
+    <BundleResource Include="GoogleService-Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCL\PCL.csproj">
+      <Project>{1DB11E4A-CE98-48D8-AA0A-E751C6355875}</Project>
+      <Name>PCL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.3.1.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+</Project>
