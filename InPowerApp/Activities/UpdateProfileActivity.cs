@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+
+using System.Threading.Tasks;
 using Android;
 using Android.App;
 using Android.Content;
@@ -14,6 +16,7 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using InPowerApp.Common;
+using InPowerApp.Fragments;
 using InPowerApp.ListAdapter;
 using InPowerApp.Repositories;
 using Java.IO;
@@ -21,6 +24,7 @@ using Newtonsoft.Json;
 using PCL.Common;
 using PCL.Model;
 using PCL.Service;
+
 using Square.Picasso;
 using Uri = Android.Net.Uri;
 
@@ -54,31 +58,10 @@ namespace InPowerApp.Activities
                 if (data.Data != null)
                 {
                     Android.Net.Uri uri = data.Data;
-
                     filePath = CommonHelper.GetRealPathFromURI(this, data.Data);
-                    int height = 200;
-                    int width = 200;
                     BitmapHelper._file = new File(filePath);
-
-                    Picasso.With(this).Load(BitmapHelper._file)
-                        .Transform(new CircleTransformation())
-                         .CenterCrop()
-                    .Resize(200, 150).Into(profileChange);
-
-                    BitmapHelper.bitmap = BitmapHelper._file.Path.LoadAndResizeBitmap(width, height);
-                    try
-                    {
-                        using (var os = new System.IO.FileStream(System.IO.Path.Combine(BitmapHelper._dir.ToString(), String.Format("myProfile_{0}.jpg", Guid.NewGuid())), System.IO.FileMode.CreateNew))
-                        {
-                            BitmapHelper.bitmap.Compress(Bitmap.CompressFormat.Jpeg, 95, os);
-                            filePath = os.Name;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Toast.MakeText(this, e.Message, ToastLength.Long).Show();
-                    }
-
+                    createImageEditAsync();
+                  
                     mediaType = "Photo";
                 }
             }
@@ -88,39 +71,64 @@ namespace InPowerApp.Activities
                 if (BitmapHelper._file.AbsolutePath != null)
                 {
                     Intent mediaScanIntent = new Intent(Intent.ActionMediaScannerScanFile);
-                    Android.Net.Uri contentUri = Android.Net.Uri.FromFile(BitmapHelper._file);
-                    mediaScanIntent.SetData(contentUri);
-                    //  profileChange.SetImageURI(contentUri);
-                    int height = 200;
-                    int width = 200;
 
-                    Picasso.With(this).Load(contentUri)
-                        .Transform(new CircleTransformation())
-                         .CenterCrop()
-                    .Resize(200, 150).Into(profileChange);
-
-
-                    BitmapHelper.bitmap = BitmapHelper._file.Path.LoadAndResizeBitmap(width, height);
-                    try
-                    {
-                        using (var os = new System.IO.FileStream(System.IO.Path.Combine(BitmapHelper._dir.ToString(), String.Format("myProfile_{0}.jpg", Guid.NewGuid())), System.IO.FileMode.CreateNew))
-                        {
-                            BitmapHelper.bitmap.Compress(Bitmap.CompressFormat.Jpeg, 95, os);
-                            filePath = os.Name;
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Toast.MakeText(this, e.Message, ToastLength.Long).Show();
-                    }
-
+                  
+                    createImageEditAsync();
+                    
                     mediaType = "Photo";
                 }
             }
 
 
         }
+     
+        private async System.Threading.Tasks.Task createImageEditAsync()
+        {
 
+          
+            Intent intent = new Intent(this.BaseContext, typeof(ImageCropActivity));
+            intent.AddFlags(ActivityFlags.SingleTop);
+          
+          
+            StartActivity(intent);
+
+         
+
+        }
+        protected override void OnResume()
+        {
+            base.OnResume();
+
+
+           CommonHelper.CreateDirectoryForPictures();
+
+            try
+            {
+                if (BitmapHelper.bitmap != null)
+                {
+                    using (var os = new System.IO.FileStream(System.IO.Path.Combine(BitmapHelper._dir.ToString(), String.Format("myProfile_{0}.jpg", Guid.NewGuid())), System.IO.FileMode.CreateNew))
+                    {
+                        BitmapHelper.bitmap.Compress(Bitmap.CompressFormat.Jpeg, 95, os);
+                        filePath = os.Name;
+
+                    }
+                    BitmapHelper._file = new File(filePath);
+
+
+
+                    Picasso.With(this).Load(BitmapHelper._file)
+                            .Transform(new CircleTransformation())
+                             .CenterCrop()
+                        .Resize(200, 150).Into(profileChange);
+                    BitmapHelper.bitmap = null;
+                }
+            }
+            catch (Exception e)
+            {
+                Toast.MakeText(this, e.Message, ToastLength.Long).Show();
+            }
+
+        }
 
         private async void uploadMedia(string filePath, string mediaType, UserRegisterResponseViewModel model)
         {
