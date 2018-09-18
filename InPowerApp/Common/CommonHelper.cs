@@ -358,6 +358,17 @@ namespace InPowerApp.Common
             inputManager.HideSoftInputFromWindow(window.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
 
         }
+        public byte[] ConvertBitMapToByteArray(Bitmap bitmap)
+        {
+            byte[] result = null;
+            if (bitmap != null)
+            {
+                MemoryStream stream = new MemoryStream();
+                bitmap.Compress(Bitmap.CompressFormat.Jpeg, 95, stream);
+                result = stream.ToArray();
+            }
+            return result;
+        }
 
 
     }
