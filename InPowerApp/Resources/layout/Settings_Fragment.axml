@@ -33,24 +33,7 @@
                 android:background="@drawable/checkbx_rounded"
                 android:orientation="vertical"
                 android:padding="10dp">
-                <RelativeLayout
-                    android:id="@+id/relItemFacebook"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/checkbx_rounded"
-                    android:padding="10dp"
-                    android:layout_marginTop="5dp">
-                    <TextView
-                        android:id="@+id/txtFromFacebook"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
-                        android:paddingLeft="10dp"
-                        android:drawableRight="@drawable/settings_right_arrow"
-                        android:text="INVITE FRIENDS FROM FACEBOOK"
-                        android:textColor="#2C1D30"
-                        android:textSize="15dp" />
-                </RelativeLayout>
+
                 <RelativeLayout
                     android:layout_marginTop="10dp"
                     android:id="@+id/relItemViaSMS"

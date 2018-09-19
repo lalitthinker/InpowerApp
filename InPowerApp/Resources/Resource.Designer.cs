@@ -3115,8 +3115,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c012b
 			public const int BlockContact = 2131493163;
 			
-			// aapt resource value: 0x7f0c0195
-			public const int BlockContactLayout = 2131493269;
+			// aapt resource value: 0x7f0c0193
+			public const int BlockContactLayout = 2131493267;
 			
 			// aapt resource value: 0x7f0c00ab
 			public const int BlockedContactList = 2131493035;
@@ -3184,11 +3184,11 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0134
 			public const int LinearLayout = 2131493172;
 			
-			// aapt resource value: 0x7f0c018d
-			public const int LinearLayout1 = 2131493261;
+			// aapt resource value: 0x7f0c018b
+			public const int LinearLayout1 = 2131493259;
 			
-			// aapt resource value: 0x7f0c018f
-			public const int LinearLayout2 = 2131493263;
+			// aapt resource value: 0x7f0c018d
+			public const int LinearLayout2 = 2131493261;
 			
 			// aapt resource value: 0x7f0c004e
 			public const int META = 2131492942;
@@ -3214,8 +3214,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00b4
 			public const int ReadBookTitle = 2131493044;
 			
-			// aapt resource value: 0x7f0c0197
-			public const int ReportContact = 2131493271;
+			// aapt resource value: 0x7f0c0195
+			public const int ReportContact = 2131493269;
 			
 			// aapt resource value: 0x7f0c004f
 			public const int SHIFT = 2131492943;
@@ -3226,41 +3226,41 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00fc
 			public const int ScrollViewmain = 2131493116;
 			
-			// aapt resource value: 0x7f0c0192
-			public const int UserImageView = 2131493266;
+			// aapt resource value: 0x7f0c0190
+			public const int UserImageView = 2131493264;
 			
 			// aapt resource value: 0x7f0c016e
 			public const int WebViewPrivacyPolicy = 2131493230;
 			
-			// aapt resource value: 0x7f0c0190
-			public const int WebViewTermsOfUse = 2131493264;
+			// aapt resource value: 0x7f0c018e
+			public const int WebViewTermsOfUse = 2131493262;
 			
-			// aapt resource value: 0x7f0c019c
-			public const int WishListBookList = 2131493276;
+			// aapt resource value: 0x7f0c019a
+			public const int WishListBookList = 2131493274;
 			
 			// aapt resource value: 0x7f0c0158
 			public const int action0 = 2131493208;
 			
-			// aapt resource value: 0x7f0c019f
-			public const int action_BookSearch = 2131493279;
+			// aapt resource value: 0x7f0c019d
+			public const int action_BookSearch = 2131493277;
+			
+			// aapt resource value: 0x7f0c019e
+			public const int action_ChatSearch = 2131493278;
 			
 			// aapt resource value: 0x7f0c01a0
-			public const int action_ChatSearch = 2131493280;
+			public const int action_ContactSearch = 2131493280;
+			
+			// aapt resource value: 0x7f0c019f
+			public const int action_ContactsSearch = 2131493279;
 			
 			// aapt resource value: 0x7f0c01a2
-			public const int action_ContactSearch = 2131493282;
-			
-			// aapt resource value: 0x7f0c01a1
-			public const int action_ContactsSearch = 2131493281;
+			public const int action_GroupSearch = 2131493282;
 			
 			// aapt resource value: 0x7f0c01a4
-			public const int action_GroupSearch = 2131493284;
+			public const int action_Search = 2131493284;
 			
-			// aapt resource value: 0x7f0c01a6
-			public const int action_Search = 2131493286;
-			
-			// aapt resource value: 0x7f0c01a9
-			public const int action_WishListBookSearch = 2131493289;
+			// aapt resource value: 0x7f0c01a7
+			public const int action_WishListBookSearch = 2131493287;
 			
 			// aapt resource value: 0x7f0c0090
 			public const int action_bar = 2131493008;
@@ -3295,17 +3295,17 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0156
 			public const int action_image = 2131493206;
 			
-			// aapt resource value: 0x7f0c01a7
-			public const int action_menuOK = 2131493287;
+			// aapt resource value: 0x7f0c01a5
+			public const int action_menuOK = 2131493285;
+			
+			// aapt resource value: 0x7f0c01a1
+			public const int action_menuOKOK = 2131493281;
 			
 			// aapt resource value: 0x7f0c01a3
-			public const int action_menuOKOK = 2131493283;
+			public const int action_menuSearchSearch = 2131493283;
 			
-			// aapt resource value: 0x7f0c01a5
-			public const int action_menuSearchSearch = 2131493285;
-			
-			// aapt resource value: 0x7f0c01a8
-			public const int action_menuSkip = 2131493288;
+			// aapt resource value: 0x7f0c01a6
+			public const int action_menuSkip = 2131493286;
 			
 			// aapt resource value: 0x7f0c0003
 			public const int action_menu_divider = 2131492867;
@@ -3322,8 +3322,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0070
 			public const int action_mode_close_button = 2131492976;
 			
-			// aapt resource value: 0x7f0c01ba
-			public const int action_settings = 2131493306;
+			// aapt resource value: 0x7f0c01b8
+			public const int action_settings = 2131493304;
 			
 			// aapt resource value: 0x7f0c0157
 			public const int action_text = 2131493207;
@@ -3376,11 +3376,11 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0130
 			public const int btnBackinstructionsViewPager = 2131493168;
 			
-			// aapt resource value: 0x7f0c0184
-			public const int btnBlockedContacts = 2131493252;
+			// aapt resource value: 0x7f0c0182
+			public const int btnBlockedContacts = 2131493250;
 			
-			// aapt resource value: 0x7f0c017f
-			public const int btnChangePassword = 2131493247;
+			// aapt resource value: 0x7f0c017d
+			public const int btnChangePassword = 2131493245;
 			
 			// aapt resource value: 0x7f0c00c8
 			public const int btnChangePasswordReset = 2131493064;
@@ -3388,8 +3388,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00c9
 			public const int btnChangePasswordSave = 2131493065;
 			
-			// aapt resource value: 0x7f0c018e
-			public const int btnContinue = 2131493262;
+			// aapt resource value: 0x7f0c018c
+			public const int btnContinue = 2131493260;
 			
 			// aapt resource value: 0x7f0c00f9
 			public const int btnContinueCYP = 2131493113;
@@ -3421,8 +3421,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0133
 			public const int btnSkipinstructionsViewPager = 2131493171;
 			
-			// aapt resource value: 0x7f0c019a
-			public const int btnSuggestInterestsRequest = 2131493274;
+			// aapt resource value: 0x7f0c0198
+			public const int btnSuggestInterestsRequest = 2131493272;
 			
 			// aapt resource value: 0x7f0c00b1
 			public const int btnWishList = 2131493041;
@@ -3547,23 +3547,23 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c010c
 			public const int cropImageView = 2131493132;
 			
-			// aapt resource value: 0x7f0c01b4
-			public const int crop_image_menu_crop = 2131493300;
-			
-			// aapt resource value: 0x7f0c01b1
-			public const int crop_image_menu_flip = 2131493297;
-			
 			// aapt resource value: 0x7f0c01b2
-			public const int crop_image_menu_flip_horizontally = 2131493298;
-			
-			// aapt resource value: 0x7f0c01b3
-			public const int crop_image_menu_flip_vertically = 2131493299;
+			public const int crop_image_menu_crop = 2131493298;
 			
 			// aapt resource value: 0x7f0c01af
-			public const int crop_image_menu_rotate_left = 2131493295;
+			public const int crop_image_menu_flip = 2131493295;
 			
 			// aapt resource value: 0x7f0c01b0
-			public const int crop_image_menu_rotate_right = 2131493296;
+			public const int crop_image_menu_flip_horizontally = 2131493296;
+			
+			// aapt resource value: 0x7f0c01b1
+			public const int crop_image_menu_flip_vertically = 2131493297;
+			
+			// aapt resource value: 0x7f0c01ad
+			public const int crop_image_menu_rotate_left = 2131493293;
+			
+			// aapt resource value: 0x7f0c01ae
+			public const int crop_image_menu_rotate_right = 2131493294;
 			
 			// aapt resource value: 0x7f0c0081
 			public const int custom = 2131492993;
@@ -3571,8 +3571,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0080
 			public const int customPanel = 2131492992;
 			
-			// aapt resource value: 0x7f0c0194
-			public const int cvBlockContact = 2131493268;
+			// aapt resource value: 0x7f0c0192
+			public const int cvBlockContact = 2131493266;
 			
 			// aapt resource value: 0x7f0c0129
 			public const int cvReportContact = 2131493161;
@@ -3751,8 +3751,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00d9
 			public const int ivgroupdefault = 2131493081;
 			
-			// aapt resource value: 0x7f0c0196
-			public const int ivreportspam = 2131493270;
+			// aapt resource value: 0x7f0c0194
+			public const int ivreportspam = 2131493268;
 			
 			// aapt resource value: 0x7f0c0029
 			public const int large = 2131492905;
@@ -3760,14 +3760,14 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0112
 			public const int largeLabel = 2131493138;
 			
-			// aapt resource value: 0x7f0c0182
-			public const int layoutApplication = 2131493250;
+			// aapt resource value: 0x7f0c0180
+			public const int layoutApplication = 2131493248;
 			
 			// aapt resource value: 0x7f0c0173
 			public const int layoutHeader = 2131493235;
 			
-			// aapt resource value: 0x7f0c017c
-			public const int layoutProfile = 2131493244;
+			// aapt resource value: 0x7f0c017a
+			public const int layoutProfile = 2131493242;
 			
 			// aapt resource value: 0x7f0c0174
 			public const int layoutScroll = 2131493236;
@@ -3793,11 +3793,11 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c014b
 			public const int lblOrRegisterHere = 2131493195;
 			
-			// aapt resource value: 0x7f0c0187
-			public const int lblSignupheader = 2131493255;
+			// aapt resource value: 0x7f0c0185
+			public const int lblSignupheader = 2131493253;
 			
-			// aapt resource value: 0x7f0c0198
-			public const int lblWRYIheader = 2131493272;
+			// aapt resource value: 0x7f0c0196
+			public const int lblWRYIheader = 2131493270;
 			
 			// aapt resource value: 0x7f0c00f3
 			public const int lblYourLocation = 2131493107;
@@ -3820,8 +3820,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00ce
 			public const int li_toolbarDetails = 2131493070;
 			
-			// aapt resource value: 0x7f0c017a
-			public const int linSocialNetworks = 2131493242;
+			// aapt resource value: 0x7f0c0178
+			public const int linSocialNetworks = 2131493240;
 			
 			// aapt resource value: 0x7f0c0017
 			public const int line1 = 2131492887;
@@ -3874,8 +3874,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0138
 			public const int ll_LinearLayoutRight = 2131493176;
 			
-			// aapt resource value: 0x7f0c017b
-			public const int lstOtherOptions = 2131493243;
+			// aapt resource value: 0x7f0c0179
+			public const int lstOtherOptions = 2131493241;
 			
 			// aapt resource value: 0x7f0c012c
 			public const int lvChatGroupsLayout = 2131493164;
@@ -3886,35 +3886,35 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0150
 			public const int lvGroupContactList = 2131493200;
 			
-			// aapt resource value: 0x7f0c019b
-			public const int lvInterestList = 2131493275;
-			
-			// aapt resource value: 0x7f0c01b9
-			public const int main_action_crop = 2131493305;
-			
-			// aapt resource value: 0x7f0c01b6
-			public const int main_action_flip = 2131493302;
+			// aapt resource value: 0x7f0c0199
+			public const int lvInterestList = 2131493273;
 			
 			// aapt resource value: 0x7f0c01b7
-			public const int main_action_flip_horizontally = 2131493303;
+			public const int main_action_crop = 2131493303;
 			
-			// aapt resource value: 0x7f0c01b8
-			public const int main_action_flip_vertically = 2131493304;
+			// aapt resource value: 0x7f0c01b4
+			public const int main_action_flip = 2131493300;
 			
 			// aapt resource value: 0x7f0c01b5
-			public const int main_action_rotate = 2131493301;
+			public const int main_action_flip_horizontally = 2131493301;
+			
+			// aapt resource value: 0x7f0c01b6
+			public const int main_action_flip_vertically = 2131493302;
+			
+			// aapt resource value: 0x7f0c01b3
+			public const int main_action_rotate = 2131493299;
 			
 			// aapt resource value: 0x7f0c00ba
 			public const int main_content = 2131493050;
 			
-			// aapt resource value: 0x7f0c019e
-			public const int masked = 2131493278;
+			// aapt resource value: 0x7f0c019c
+			public const int masked = 2131493276;
 			
 			// aapt resource value: 0x7f0c015b
 			public const int media_actions = 2131493211;
 			
-			// aapt resource value: 0x7f0c0191
-			public const int message = 2131493265;
+			// aapt resource value: 0x7f0c018f
+			public const int message = 2131493263;
 			
 			// aapt resource value: 0x7f0c0145
 			public const int message_timeLeft = 2131493189;
@@ -3934,20 +3934,20 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0041
 			public const int multiply = 2131492929;
 			
-			// aapt resource value: 0x7f0c01ac
-			public const int nav_bookshelf = 2131493292;
-			
 			// aapt resource value: 0x7f0c01aa
-			public const int nav_chat = 2131493290;
+			public const int nav_bookshelf = 2131493290;
+			
+			// aapt resource value: 0x7f0c01a8
+			public const int nav_chat = 2131493288;
+			
+			// aapt resource value: 0x7f0c01a9
+			public const int nav_contact = 2131493289;
+			
+			// aapt resource value: 0x7f0c01ac
+			public const int nav_logout = 2131493292;
 			
 			// aapt resource value: 0x7f0c01ab
-			public const int nav_contact = 2131493291;
-			
-			// aapt resource value: 0x7f0c01ae
-			public const int nav_logout = 2131493294;
-			
-			// aapt resource value: 0x7f0c01ad
-			public const int nav_setting = 2131493293;
+			public const int nav_setting = 2131493291;
 			
 			// aapt resource value: 0x7f0c014e
 			public const int nav_view = 2131493198;
@@ -4049,10 +4049,7 @@ namespace InPowerApp
 			public const int relGroup = 2131493086;
 			
 			// aapt resource value: 0x7f0c0176
-			public const int relItemFacebook = 2131493238;
-			
-			// aapt resource value: 0x7f0c0178
-			public const int relItemViaSMS = 2131493240;
+			public const int relItemViaSMS = 2131493238;
 			
 			// aapt resource value: 0x7f0c00a0
 			public const int resultImageText = 2131493024;
@@ -4249,8 +4246,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0083
 			public const int title_template = 2131492995;
 			
-			// aapt resource value: 0x7f0c0181
-			public const int toggleButtonShoutOut = 2131493249;
+			// aapt resource value: 0x7f0c017f
+			public const int toggleButtonShoutOut = 2131493247;
 			
 			// aapt resource value: 0x7f0c0123
 			public const int toolbar = 2131493155;
@@ -4303,32 +4300,29 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00f8
 			public const int txtAboutMe = 2131493112;
 			
-			// aapt resource value: 0x7f0c0183
-			public const int txtApplication = 2131493251;
+			// aapt resource value: 0x7f0c0181
+			public const int txtApplication = 2131493249;
 			
 			// aapt resource value: 0x7f0c00f5
 			public const int txtCity = 2131493109;
 			
-			// aapt resource value: 0x7f0c018c
-			public const int txtConfirmPassword = 2131493260;
+			// aapt resource value: 0x7f0c018a
+			public const int txtConfirmPassword = 2131493258;
 			
 			// aapt resource value: 0x7f0c00f7
 			public const int txtCountry = 2131493111;
 			
-			// aapt resource value: 0x7f0c017e
-			public const int txtDeleteAccount = 2131493246;
+			// aapt resource value: 0x7f0c017c
+			public const int txtDeleteAccount = 2131493244;
 			
-			// aapt resource value: 0x7f0c0193
-			public const int txtEmail = 2131493267;
-			
-			// aapt resource value: 0x7f0c018a
-			public const int txtEmailAddress = 2131493258;
+			// aapt resource value: 0x7f0c0191
+			public const int txtEmail = 2131493265;
 			
 			// aapt resource value: 0x7f0c0188
-			public const int txtFirstName = 2131493256;
+			public const int txtEmailAddress = 2131493256;
 			
-			// aapt resource value: 0x7f0c0177
-			public const int txtFromFacebook = 2131493239;
+			// aapt resource value: 0x7f0c0186
+			public const int txtFirstName = 2131493254;
 			
 			// aapt resource value: 0x7f0c0106
 			public const int txtGroupDescription = 2131493126;
@@ -4339,23 +4333,23 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0175
 			public const int txtInvate = 2131493237;
 			
-			// aapt resource value: 0x7f0c0179
-			public const int txtInviteViaSMS = 2131493241;
+			// aapt resource value: 0x7f0c0177
+			public const int txtInviteViaSMS = 2131493239;
 			
-			// aapt resource value: 0x7f0c0189
-			public const int txtLastName = 2131493257;
+			// aapt resource value: 0x7f0c0187
+			public const int txtLastName = 2131493255;
 			
 			// aapt resource value: 0x7f0c00dd
 			public const int txtMessageCount = 2131493085;
 			
-			// aapt resource value: 0x7f0c018b
-			public const int txtPassword = 2131493259;
+			// aapt resource value: 0x7f0c0189
+			public const int txtPassword = 2131493257;
 			
-			// aapt resource value: 0x7f0c0185
-			public const int txtPolicyPrivacy = 2131493253;
+			// aapt resource value: 0x7f0c0183
+			public const int txtPolicyPrivacy = 2131493251;
 			
-			// aapt resource value: 0x7f0c017d
-			public const int txtProfile = 2131493245;
+			// aapt resource value: 0x7f0c017b
+			public const int txtProfile = 2131493243;
 			
 			// aapt resource value: 0x7f0c0154
 			public const int txtProfileUserEmail = 2131493204;
@@ -4372,17 +4366,17 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c00a7
 			public const int txtSenderName = 2131493031;
 			
-			// aapt resource value: 0x7f0c0180
-			public const int txtShoutOut = 2131493248;
+			// aapt resource value: 0x7f0c017e
+			public const int txtShoutOut = 2131493246;
 			
 			// aapt resource value: 0x7f0c00f6
 			public const int txtState = 2131493110;
 			
-			// aapt resource value: 0x7f0c0199
-			public const int txtSuggestInterests = 2131493273;
+			// aapt resource value: 0x7f0c0197
+			public const int txtSuggestInterests = 2131493271;
 			
-			// aapt resource value: 0x7f0c0186
-			public const int txtTermsOfUse = 2131493254;
+			// aapt resource value: 0x7f0c0184
+			public const int txtTermsOfUse = 2131493252;
 			
 			// aapt resource value: 0x7f0c00db
 			public const int txtTime = 2131493083;
@@ -4429,8 +4423,8 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0c0125
 			public const int viewdob_usrinfo = 2131493157;
 			
-			// aapt resource value: 0x7f0c019d
-			public const int visible = 2131493277;
+			// aapt resource value: 0x7f0c019b
+			public const int visible = 2131493275;
 			
 			// aapt resource value: 0x7f0c0055
 			public const int withText = 2131492949;

@@ -256,7 +256,7 @@ namespace InPowerApp.ListAdapter
                 string OperationMethodName = null, SendInvitationMessage = null, SendInvitationMessageContactNumber = null;
                 SendInvitationMessageContactNumber = (string)v.Tag;
                 OperationMethodName = "SendInvitationViaSMS";
-                SendInvitationMessage = "Hey! I just installed ImPower, with  messaging & all of my favorite Book Intrest on one app. Download it now at www.ImPower.com";
+                SendInvitationMessage = "Hey! I just installed InPower, with  messaging & all of my favorite Book Intrest on one app. Download it now at https://play.google.com/store/apps/details?id=thethiinker.inPower.app";
 
                 if (SendInvitationMessageContactNumber != null && SendInvitationMessageContactNumber != "")
                 {

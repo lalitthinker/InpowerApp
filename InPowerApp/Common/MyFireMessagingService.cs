@@ -25,23 +25,30 @@ namespace InPowerApp.Common
         {
             base.OnMessageReceived(message);
 
+            var clickAction = message.GetNotification().ClickAction;
+
+
+
 
             var notification = message.GetNotification();
             var title = notification.Title;
             var body = notification.Body;
-            string userid =(CommonHelper.GetUserId().ToString());
-            if (userid != "")
-            {
-                SendNotification(title, body);
-            }
+           
+                SendNotification(title, body, clickAction);
+           
            
         }
 
-        private void SendNotification(string title, string body)
+        private void SendNotification(string title, string body,string clickaction)
         {
-           
-          
+
             var intent = new Intent(this, typeof(MainActivity));
+            if (!string.IsNullOrEmpty(clickaction))
+            {
+                //if we have a click action open corresponding activity
+                intent = new Intent(clickaction);
+            }
+         
             intent.AddFlags(ActivityFlags.ClearTop);
             // intent.PutExtra("launchArguments", "stuff");
 
