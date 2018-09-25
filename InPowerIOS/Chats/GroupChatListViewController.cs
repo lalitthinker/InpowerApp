@@ -557,16 +557,25 @@ void AddRefreshControl()
             {
             if (GroupObject != null)
             {
-                ContactName = GroupRepository.GetGroupByID(GroupObject.GroupId).GroupName;
+           var     GroupModel = GroupRepository.GetGroupByID(GroupObject.GroupId);
               
-                Title = ContactName;
+                Title = GroupModel.GroupName;
 
 
                 var titleView = new UILabel(new CGRect(0, 0, 100, 60));
-                titleView.Text = ContactName;
+                titleView.Text = GroupModel.GroupName;
                 titleView.TextColor = UIColor.White;
+                    var ShowUserProfileViewController = new UITapGestureRecognizer(() =>
+                    {
+                        var viewController = (GroupDetailsViewController)Storyboard.InstantiateViewController("GroupDetailsViewController");
+                        viewController.groupViewModel = GroupModel;
+                        NavigationController.PushViewController(viewController, true);
+                    });
 
-                NavigationItem.TitleView = titleView;
+                    titleView.UserInteractionEnabled = true;
+                    titleView.AddGestureRecognizer(ShowUserProfileViewController);
+                    NavigationItem.TitleView = titleView;
+                   
 
             }
         }
