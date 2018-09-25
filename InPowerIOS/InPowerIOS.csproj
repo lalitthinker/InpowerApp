@@ -89,6 +89,12 @@
     <CodesignProvision>ProvProfLalitMacNew</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Plugin.ImageEdit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Plugin.ImageEdit.0.1.0\lib\Xamarin.iOS10\Plugin.ImageEdit.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.ImageEdit.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Plugin.ImageEdit.0.1.0\lib\Xamarin.iOS10\Plugin.ImageEdit.Abstractions.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -359,6 +365,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />

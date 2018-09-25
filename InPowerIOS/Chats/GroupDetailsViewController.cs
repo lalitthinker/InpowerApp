@@ -15,10 +15,10 @@ namespace InPowerIOS.Chats
     {
         public List<GroupMember> GroupMemberList;
         GroupDetailsViewControllerSource groupDetailsViewControllerSource;
-        public GroupModel contactViewModel { get; set; }
+        public GroupModel groupViewModel { get; set; }
         public GroupDetailsViewController (IntPtr handle) : base (handle)
         {
-            this.contactViewModel = contactViewModel;
+            this.groupViewModel = groupViewModel;
         }
         public override void ViewDidLoad()
         {
@@ -47,13 +47,13 @@ namespace InPowerIOS.Chats
             CommonHelper.SetCircularImage(GroupImageView);
             //Title = contactViewModel.GroupName == null ? "" : contactViewModel.GroupName;
         
-            GroupIntrest.Text = ((contactViewModel.InterestId == null) ? "" : contactViewModel.InterestId.ToString()); 
-            GroupDescription.Text = ((contactViewModel.GroupDescription == null) ? "" : contactViewModel.GroupDescription); 
+            GroupIntrest.Text = ((groupViewModel.InterestId == null) ? "" : groupViewModel.InterestId.ToString()); 
+            GroupDescription.Text = ((groupViewModel.GroupDescription == null) ? "" : groupViewModel.GroupDescription); 
             //GroupType.Text = ((contactViewModel.type == null) ? "" : contactViewModel.type); 
 
-            if (!string.IsNullOrEmpty(contactViewModel.GroupPictureUrl))
+            if (!string.IsNullOrEmpty(groupViewModel.GroupPictureUrl))
             {
-                GroupImageView.SetImage(new NSUrl(contactViewModel.GroupPictureUrl), UIImage.FromBundle("grouplist.png"));
+                GroupImageView.SetImage(new NSUrl(groupViewModel.GroupPictureUrl), UIImage.FromBundle("grouplist.png"));
             }
             else
             {
@@ -69,7 +69,7 @@ namespace InPowerIOS.Chats
         {
             try
             {
-                GroupMemberList = GroupRepository.GroupMemberList(contactViewModel.GroupId);
+                GroupMemberList = GroupRepository.GroupMemberList(groupViewModel.GroupId);
 
                 if (GroupMemberList != null && GroupMemberList.Count > 0)
                 {
