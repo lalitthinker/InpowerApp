@@ -265,7 +265,7 @@ namespace InPowerApp.Activities
             //    .AddSubMenu(Color.ParseColor("#FF4B32"), Resource.Mipmap.ic_action_video)
             //    .AddSubMenu(Color.ParseColor("#8A39FF"), Resource.Mipmap.ic_action_headphones)
             //     .AddSubMenu(Color.ParseColor("#FF6A00"), Resource.Mipmap.ic_action_place)
-            //    .AddSubMenu(Color.ParseColor("#e2bf0b"), Resource.Mipmap.ic_action_chat)
+            //    .AddSubMenu(Color.ParseColor("#252525"), Resource.Mipmap.ic_action_chat)
             //    .SetOnMenuSelectedListener(this);
             //circleMenu.OpenMenu();
 

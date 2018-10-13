@@ -49,6 +49,7 @@
             android:layout_height="fill_parent"
             android:id="@+id/btnNextinstructionsViewPager"
             android:background="@drawable/rounded_corneryellow"
+			android:textColor="#ffffff"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
             android:layout_width="wrap_content" />
@@ -65,6 +66,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center"
+			android:textColor="#ffffff"
             android:id="@+id/btnSkipinstructionsViewPager"
             android:background="@drawable/rounded_corneryellow"
             android:layout_marginBottom="5dp"
