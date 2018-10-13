@@ -12,7 +12,9 @@
             android:id="@+id/sliding_tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#e2bf0b"
+            app:tabTextColor="@color/colorTransperentWhite"
+            app:tabSelectedTextColor="@color/white"
+            android:background="#252525"
             app:tabMaxWidth="0dp"
             app:tabGravity="fill"
             app:tabMode="fixed" />

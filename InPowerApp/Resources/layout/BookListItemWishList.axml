@@ -117,7 +117,8 @@
                         android:layout_width="50dp"
                         android:text="Read"
                         android:textSize="10dp"
-                        android:background="#e2bf0b"
+						android:textColor="#ffffff"
+                        android:background="@drawable/button_color"
                         android:layout_marginTop="1dp"
                         android:layout_marginRight="5dp" />
                     <Button
@@ -126,7 +127,8 @@
                         android:layout_width="50dp"
                         android:text="Remove"
                         android:textSize="10dp"
-                        android:background="#e2bf0b"
+						android:textColor="#ffffff"
+                        android:background="@drawable/button_color"
                         android:layout_marginTop="1dp"
                         android:layout_marginRight="5dp" />
                 </LinearLayout>

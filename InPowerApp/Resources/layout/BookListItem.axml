@@ -117,17 +117,19 @@
                         android:layout_height="wrap_content"
                         android:layout_width="50dp"
                         android:text="Read"
+						android:textColor="#ffffff"
                         android:textSize="10dp"
-                        android:background="#e2bf0b"
+                        android:background="@drawable/button_color"
                         android:layout_marginTop="0.5dp"
                         android:layout_marginRight="5dp" />
                     <Button
                         android:id="@+id/btnWishList"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp"
+                        android:layout_width="60dp"
                         android:text="Wish List"
                         android:textSize="10dp"
-                        android:background="#e2bf0b"
+						android:textColor="#ffffff"
+                        android:background="@drawable/button_color"
                         android:layout_marginTop="0.5dp"
                         android:layout_marginRight="5dp" />
                 </LinearLayout>

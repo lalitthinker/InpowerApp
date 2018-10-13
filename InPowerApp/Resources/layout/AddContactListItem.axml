@@ -66,6 +66,7 @@
                         android:layout_width="50dp"
                         android:text="Add"
                         android:textSize="10dp"
+						
                         android:background="@drawable/rounded_addContactButton"
                         android:gravity="center"
                         android:textColor="@android:color/white"

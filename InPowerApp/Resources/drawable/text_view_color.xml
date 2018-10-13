@@ -3,13 +3,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
 
-  <item 
+  <item
     android:state_pressed="true"
     android:state_enabled="true">
     <shape android:shape="rectangle"  >
-      <corners android:radius="10dip" />
-      <stroke android:width="1dip" android:color="#a6a6a6" />
-      <gradient android:angle="-90" android:startColor="#a6a6a6" android:endColor="#a6a6a6" />
+      <stroke android:width="1dip" android:color="#ffffff" />
+      <gradient android:angle="-90" android:startColor="#ffffff" android:endColor="#ffffff" />
     </shape>
   </item>
 
@@ -17,16 +16,14 @@
       android:state_focused="true"
       android:state_enabled="true">
     <shape android:shape="rectangle"  >
-      <corners android:radius="10dip" />
-      <stroke android:width="1dip" android:color="#262626" />
-      <gradient android:angle="-90" android:startColor="#262626" android:endColor="#262626" />
+      <stroke android:width="1dip" android:color="#ffffff" />
+      <gradient android:angle="-90" android:startColor="#ffffff" android:endColor="#ffffff" />
     </shape>
 
   </item>
   <item
       android:state_enabled="true">
     <shape android:shape="rectangle"  >
-      <corners android:radius="10dip" />
       <stroke android:width="1dip" android:color="#262626" />
       <gradient android:angle="-90" android:startColor="#262626" android:endColor="#262626" />
     </shape>

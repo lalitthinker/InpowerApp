@@ -75,7 +75,7 @@ namespace InPowerApp.Activities
             }
             catch { }
           
-            BtnFBLogin = FindViewById<LoginButton>(Resource.Id.btnFacebook);
+            //BtnFBLogin = FindViewById<LoginButton>(Resource.Id.btnFacebook);
             btnLogInWithEmail = FindViewById<Button>(Resource.Id.btnLogin);
             lblOrRegisterHere = FindViewById<TextView>(Resource.Id.lblOrRegisterHere);
             txtLoginUserName = FindViewById<EditText>(Resource.Id.txtUsername);
@@ -86,9 +86,9 @@ namespace InPowerApp.Activities
 
 
 
-            BtnFBLogin.SetReadPermissions(new List<string> { "user_friends", "public_profile", "email", "user_birthday" });
+            //BtnFBLogin.SetReadPermissions(new List<string> { "user_friends", "public_profile", "email", "user_birthday" });
             mFBCallManager = CallbackManagerFactory.Create();
-            BtnFBLogin.RegisterCallback(mFBCallManager, this);
+            //BtnFBLogin.RegisterCallback(mFBCallManager, this);
 
 
             var requiredPermissions = new String[]

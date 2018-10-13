@@ -9,59 +9,71 @@
     android:layout_height="fill_parent"
     android:paddingStart="30dp"
     android:paddingEnd="30dp"
-    android:background="@drawable/first_page"
+    android:background="@drawable/loging_screen"
     android:focusable="true">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1.5"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
         android:id="@+id/linearLayout1" />
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.7"
+        android:layout_weight="0.9"
         android:id="@+id/linearBelow">
+
+		<LinearLayout
+			android:layout_width="fill_parent"
+			android:layout_height="60dp"
+			android:orientation="vertical"
+			android:layout_gravity="center">
+			<TextView
+			    android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+				    android:text="User Name"
+			        android:textColor="#ffffff"
+			    	 android:textSize="18sp"
+			        android:layout_marginBottom="5dp" />
+				<EditText
+					android:id="@+id/txtUsername"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_gravity="center"
+					android:inputType="textEmailAddress"
+				    android:textSize="18sp"
+				    android:textColor="#a6a6a6"
+				    android:background="@drawable/text_view_color"
+			       />	
+		</LinearLayout>
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="60dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_gravity="center">
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-                <EditText
-                    android:id="@+id/txtUsername"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:inputType="textEmailAddress"
-                    android:hint="User Name"
-                    android:textColor="#000000" />
-            </android.support.design.widget.TextInputLayout>
+    		<TextView
+			    android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+				    android:text="Password"
+			        android:textColor="#ffffff"
+			    	 android:textSize="18sp"
+			        android:layout_marginBottom="5dp" />
+			<EditText
+				android:id="@+id/txtUserPassword"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:layout_gravity="center"
+				android:inputType="textEmailAddress"
+				android:textColor="#a6a6a6"
+				android:background="@drawable/text_view_color"
+				android:password="true" />
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal"
-            android:layout_gravity="center">
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:passwordToggleEnabled="true">
-                <EditText
-                    android:id="@+id/txtUserPassword"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:inputType="textEmailAddress"
-                    android:hint="User Password"
-                    android:textColor="#000000"
-                    android:password="true" />
-            </android.support.design.widget.TextInputLayout>
-        </LinearLayout>
-    </LinearLayout>
+  </LinearLayout>
+
+
+
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -76,6 +88,7 @@
             android:layout_marginBottom="10dp">
             <Button
                 android:text="Login With Email"
+				android:textColor="#ffffff"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/btnLogin"
@@ -86,16 +99,16 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp" />
         </LinearLayout>
-        <LinearLayout
+      	  <!--<LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="0dp"
             android:layout_weight="0.4">
-        <!--<Button
+        <Button
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:id="@+id/btnLoginWithFacebook"
-                android:background="@drawable/facebook_button" />-->
+                android:background="@drawable/facebook_button" />
             <com.facebook.login.widget.LoginButton
                 android:id="@+id/btnFacebook"
                 android:layout_width="match_parent"
@@ -103,7 +116,8 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginLeft="25.0dp"
                 android:layout_marginRight="25.0dp" />
-        </LinearLayout>
+        </LinearLayout>-->
+
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
@@ -113,6 +127,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
                 android:id="@+id/lblOrRegisterHere"
+				 android:textColor="#ffffff"
                 android:text="---------- Or register Here ----------"
                 android:gravity="center" />
         </LinearLayout>
