@@ -6112,6 +6112,9 @@ namespace InPowerApp
 			// aapt resource value: 0x7f0a0054
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131361876;
 			
+			// aapt resource value: 0x7f0a01a6
+			public const int TabLayoutTextStyle = 2131362214;
+			
 			// aapt resource value: 0x7f0a00e3
 			public const int TextAppearance_AppCompat = 2131362019;
 			

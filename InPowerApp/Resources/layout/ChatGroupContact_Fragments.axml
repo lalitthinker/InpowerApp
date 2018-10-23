@@ -13,10 +13,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabTextColor="@color/colorTransperentWhite"
-            app:tabSelectedTextColor="@color/white"
+            app:tabSelectedTextColor="#ffa500"
             android:background="?attr/colorPrimary"
             app:tabMaxWidth="0dp"
             app:tabGravity="fill"
+            style="@style/TabLayoutTextStyle"
             app:tabMode="fixed" />
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"

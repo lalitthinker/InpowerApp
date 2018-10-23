@@ -13,14 +13,14 @@
         android:id="@+id/Divider"
         android:background="#FFFFFF"
         android:layout_marginBottom="3dp" />
-       <ScrollView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-		   <LinearLayout
-                android:orientation="vertical"
-			android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-			   android:id="@+id/hidekeybordlayout">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/hidekeybordlayout">
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="fill_parent"
@@ -136,6 +136,7 @@
                     <Button
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:textColor="#ffffff"
                         android:id="@+id/btnContinue"
                         android:text="CONTINUE     -----&gt;"
                         android:background="@drawable/rounded_corneryellow"
@@ -151,6 +152,6 @@
                     android:layout_height="30dp"
                     android:id="@+id/LinearLayout2" />
             </LinearLayout>
-			          </LinearLayout>
-		    </ScrollView>
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
