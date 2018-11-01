@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "390111567973",
-    "firebase_url": "https://api-5372967361493082901-963717.firebaseio.com",
-    "project_id": "api-5372967361493082901-963717",
-    "storage_bucket": "api-5372967361493082901-963717.appspot.com"
+    "project_number": "1037781793958",
+    "firebase_url": "https://inpowermentapp.firebaseio.com",
+    "project_id": "inpowermentapp",
+    "storage_bucket": "inpowermentapp.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:390111567973:android:190285020a73b131",
+        "mobilesdk_app_id": "1:1037781793958:android:279ab7979a56c556",
         "android_client_info": {
-          "package_name": "thethiinker.inPower.app"
+          "package_name": "thethiinker.inPowerment.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "390111567973-stic24aa1tb0c1di8cgogfai6blcpvrh.apps.googleusercontent.com",
+          "client_id": "1037781793958-4iufp992gmj0tq5t3fcvq4ina2ovm6hi.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAJMPiuwKspqBqeqts5JtEsB7gQQaHX1v4"
+          "current_key": "AIzaSyBOwTlDmSw9WW-8MOo0Ts619h0eTp8NbdA"
         }
       ],
       "services": {
