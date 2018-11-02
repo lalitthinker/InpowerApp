@@ -158,6 +158,7 @@ namespace InPowerIOS.SideBarMenu
             {
                 profileImage.Image = new UIImage("default_profile.png");
             }
+
         }
     }
 }

@@ -15,10 +15,11 @@ namespace InPowerIOS.Chats
         //static readonly NSString OutgoingCellId = new NSString("Outgoing");
 
         IList<ListItem> messages;
-
+        UIViewController uiNewView;
       
-        public GroupChatListSource(IList<ListItem> messages)
+        public GroupChatListSource(IList<ListItem> messages, UIViewController uiNewVieww)
         {
+            this.uiNewView = uiNewVieww;
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
 
@@ -53,7 +54,7 @@ namespace InPowerIOS.Chats
                        
                         var cell = tableView.DequeueReusableCell("DateLabelCell") as DateLabelCell;
                         cell.UpdateCell(DateItem);
-                     
+                       
                         return cell;
                        
                     }
@@ -70,10 +71,12 @@ namespace InPowerIOS.Chats
 
                         if (AttachList.Count > 0)
                         {
-                            var cell = tableView.DequeueReusableCell(isLeft ? ChatBubbleWithAttachmentCell.KeyLeft : ChatBubbleWithAttachmentCell.KeyRight) as ChatBubbleWithAttachmentCell;
-                            if (cell == null)
-                                cell = new ChatBubbleWithAttachmentCell(isLeft);
-                            cell.UpdateGroup(item);
+                            //var cell = tableView.DequeueReusableCell(isLeft ? ChatBubbleWithAttachmentCell.KeyLeft : ChatBubbleWithAttachmentCell.KeyRight) as ChatBubbleWithAttachmentCell;
+                            //if (cell == null)
+                                //cell = new ChatBubbleWithAttachmentCell(isLeft);
+                            var cell = tableView.DequeueReusableCell("PrivateChatAttachmentCell") as PrivateChatAttachmentCell;
+                            cell.UpdateGroup(item, this.uiNewView, isLeft);
+                         //   cell.UpdateGroup(item);
                             return cell;
                         }
                         else
@@ -90,10 +93,13 @@ namespace InPowerIOS.Chats
                         isLeft = true;
                         if (AttachList.Count > 0)
                         {
-                            var cell = tableView.DequeueReusableCell(isLeft ? GroupChatBubbleWithAttachmentCell.KeyLeft : GroupChatBubbleWithAttachmentCell.KeyRight) as GroupChatBubbleWithAttachmentCell;
-                            if (cell == null)
-                                cell = new GroupChatBubbleWithAttachmentCell(isLeft);
-                            cell.Update(item);
+                            //var cell = tableView.DequeueReusableCell(isLeft ? GroupChatBubbleWithAttachmentCell.KeyLeft : GroupChatBubbleWithAttachmentCell.KeyRight) as GroupChatBubbleWithAttachmentCell;
+                            //if (cell == null)
+                                //cell = new GroupChatBubbleWithAttachmentCell(isLeft);
+
+                            var cell = tableView.DequeueReusableCell("GroupChatAttachmentCell") as GroupChatAttachmentCell;
+                            cell.Update(item, this.uiNewView, isLeft);
+                           // cell.Update(item);
                             return cell;
                         }
                         else
@@ -108,6 +114,7 @@ namespace InPowerIOS.Chats
             }
            
         }
+
 
         public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
         {

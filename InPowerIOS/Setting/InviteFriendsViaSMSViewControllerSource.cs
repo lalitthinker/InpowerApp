@@ -11,8 +11,10 @@ namespace InPowerIOS.Setting
         public event EventHandler<int> BtnInviteClick;
         public List<PhoneContactIOSModel> originalContact;
         int currentRowIndex = 0;
-        public InviteFriendsViaSMSViewControllerSource(List<PhoneContactIOSModel> items)
+        UIViewController uIViewController;
+        public InviteFriendsViaSMSViewControllerSource(List<PhoneContactIOSModel> items, UIViewController uIViewControllerParent)
         {
+            this.uIViewController = uIViewControllerParent;
             this.originalContact = items;
         }
 
@@ -20,7 +22,7 @@ namespace InPowerIOS.Setting
         {
             currentRowIndex = indexPath.Row;
             var cell = tableView.DequeueReusableCell("InviteFriendsViaSMSTableViewCell") as InviteFriendsViaSMSTableViewCell;
-            cell.UpdateCell(originalContact[currentRowIndex], currentRowIndex);
+            cell.UpdateCell(originalContact[currentRowIndex], currentRowIndex, this.uIViewController);
             return cell;
         }
 

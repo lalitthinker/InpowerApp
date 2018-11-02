@@ -90,6 +90,30 @@ namespace InPowerIOS
 
 
             DBInitializer.CreateDatabase();
+
+            // Override point for customization after application launch.
+            // If not required for your application you can safely delete this method
+
+            if (CommonHelper.IsUserLoggedIn())
+            {
+                //Window = new UIWindow(UIScreen.MainScreen.Bounds);
+
+                //// If you have defined a root view controller, set it here:
+                //Window.RootViewController = new RootViewController();
+
+                //// make the window visible
+                //Window.MakeKeyAndVisible();
+                GlobalConstant.AccessToken = CommonHelper.GetAccessToken();
+                var tabBarController = GetViewController(MainStoryboard, "RootViewController");
+                SetRootViewController(tabBarController, false);
+            }
+            else
+            {
+                //User needs to log in, so show the Login View Controlller
+                var loginViewController = GetViewController(MainStoryboard, "LoginInpowerViewController") as LoginInpowerViewController;
+                loginViewController.OnLoginSuccess += LoginViewController_OnLoginSuccess;
+                SetRootViewController(loginViewController, false);
+            }
             // Override point for customization after application launch.
             // If not required for your application you can safely delete this method
            
@@ -134,7 +158,7 @@ namespace InPowerIOS
 
 
             var token = Messaging.SharedInstance.FcmToken;
-            UIApplication.SharedApplication.ApplicationIconBadgeNumber = 10;
+            UIApplication.SharedApplication.ApplicationIconBadgeNumber = -1;
             count_notofication = 0;
             return true;
         }

@@ -55,10 +55,9 @@ namespace InPowerIOS.Common
 
         public static string GetImageThumbUrl(string imageUrl)
         {
-            if (!imageUrl.Contains("inpower"))
-                return imageUrl;
+          
             var thumbImage = Path.GetFileNameWithoutExtension(imageUrl);
-            return imageUrl.Replace(thumbImage, thumbImage + "-bigger");
+            return imageUrl.Replace(thumbImage, thumbImage + "-thumb");
         }
 
         public static void SetUserPreferences(string userrId, string password, string AccessToken, string email, string AWSAccessKey,

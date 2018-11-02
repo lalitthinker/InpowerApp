@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreGraphics;
+using Foundation;
 using UIKit;
 
 namespace InPowerIOS.Common
@@ -21,5 +22,13 @@ namespace InPowerIOS.Common
             UIGraphics.EndImageContext();
             return resultImage;
         }
+
+        public static UIImage FromUrl(string uri)
+        {
+            using (var url = new NSUrl(uri))
+            using (var data = NSData.FromUrl(url))
+                return UIImage.LoadFromData(data);
+        }
+
     }
 }

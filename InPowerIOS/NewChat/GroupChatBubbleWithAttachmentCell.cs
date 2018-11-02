@@ -148,6 +148,7 @@ namespace InPowerIOS.NewChat
 
         public void Update(GroupMessage item)
         {
+          
             lblSenderName.Text = item.senderName;
             lblMessage.Text = item.MessageText;
             lblTime.Text = item.MessageTime.ToString("hh:mm tt");

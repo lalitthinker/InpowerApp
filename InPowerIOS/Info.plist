@@ -13,6 +13,7 @@
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
+		<integer>2</integer>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
@@ -71,8 +72,14 @@
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>This App doesn&apos;t use this function</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.6</string>
+	<string>3.10</string>
 	<key>CFBundleVersion</key>
-	<string>3.6</string>
+	<string>3.10</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Allow Access To Save Photos to library</string>
+	<key>UIRequiresFullScreen</key>
+	<true/>
 </dict>
 </plist>

@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using BigTed;
 using Microsoft.AppCenter.Crashes;
 using System.Linq;
+using System.IO;
 
 namespace InPowerIOS
 {
@@ -56,12 +57,12 @@ namespace InPowerIOS
         NSLayoutConstraint toolbarHeightConstraint;
         int notifCount = 0;
 
-        List<ListItem> consolidatedList;
+        List<ListItem> consolidatedList = new List<ListItem>();
 
         UIImagePickerController imagePicker;
         UIImage PhotoCapture;
         string ProfileImageURL;
-        string documentsDirectory, filePath;
+        string documentsDirectory, filePath, thumbFilePath;
         string mediaType = "Photo";
         UIButton cameraButton;
         bool useRefreshControl = false;  
@@ -85,6 +86,8 @@ namespace InPowerIOS
 
             getUserDetails();
             AddRefreshControl();
+
+         
             var g = new UITapGestureRecognizer(() => View.EndEditing(false));
             g.CancelsTouchesInView = true;
             View.AddGestureRecognizer(g);
@@ -116,6 +119,7 @@ namespace InPowerIOS
             //{
             //    Loadonresume();
             //});
+
             Loadonresume();
 
         }
@@ -158,7 +162,7 @@ namespace InPowerIOS
                 // get the original image
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                 UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
-                NSData data = originalImage.AsJPEG();
+              
                 filePath = referenceURL.AbsoluteString;
 
                 if (originalImage != null)
@@ -174,8 +178,12 @@ namespace InPowerIOS
                 documentsDirectory = Environment.GetFolderPath
                                               (Environment.SpecialFolder.Personal);
                 string imagename = "myAttachmentTemp" + DateTime.UtcNow.ToString("ddMMyyyyhhmmss") + ".jpg";
+                string thumbimagename = "myAttachmentTemp" + DateTime.UtcNow.ToString("ddMMyyyyhhmmss") + "_thumb.jpg";
                 filePath = System.IO.Path.Combine(documentsDirectory, imagename);
                 NSData imgData = originalImage.AsJPEG();
+
+
+
                 NSError err = null;
 
                 if (imgData.Save(filePath, false, out err))
@@ -186,6 +194,20 @@ namespace InPowerIOS
                 {
                     Console.WriteLine("NOT saved as" + filePath + " because" + err.LocalizedDescription);
                 }
+               
+                UIImage ThumbImage = ImageClass.MaxResizeImage(originalImage, 100, 100);
+                var originalpath = NSUrl.FromFilename(filePath).RelativePath;
+                thumbFilePath = originalpath.Replace(Path.GetExtension(originalpath), "-thumb"+Path.GetExtension(originalpath));
+                NSData thumbimgData = ThumbImage.AsJPEG();
+                if (thumbimgData.Save(thumbFilePath, false, out err))
+                {
+                    Console.WriteLine("saved as " + thumbFilePath);
+                }
+                else
+                {
+                    Console.WriteLine("NOT saved as" + thumbFilePath + " because" + err.LocalizedDescription);
+                }
+
                 SendMedia(filePath, "Photo");
 
             }
@@ -219,8 +241,6 @@ namespace InPowerIOS
                 {
                     loadSignalR();
                 }
-
-
                 if (InternetConnectivityModel.CheckConnection())
                 {
                     LoadServerMessagesUpto(DateTime.UtcNow);
@@ -247,11 +267,11 @@ namespace InPowerIOS
                 loadList = false;
                 if (chatConversation != null)
                 {
+                    consolidatedList = new List<ListItem>();
                     ListChatsCon = ChatMessageRepository.GetChatMessagesForPageIndex(paginationModel, chatConversation.ChatId);
                     messages = new List<Message>();
                     if (ListChatsCon != null && ListChatsCon.Count > 0)
                     {
-                        consolidatedList = new List<ListItem>();
                         foreach (var itemm in ListChatsCon)
                         {
                             DateItem dateItem = new DateItem();
@@ -264,10 +284,14 @@ namespace InPowerIOS
                                 consolidatedList.Add(generalItem);
                             }
                         }
-                        chatSource = new ChatListSource(consolidatedList);
+                        chatSource = new ChatListSource(consolidatedList,this);
+                      
                         tblChatList.Source = chatSource;
+                        chatSource.OpenImageViewEvent += ChatSource_OpenImageViewEvent;
                         tblChatList.Add(RefreshControl);
+
                         tblChatList.ReloadData();
+
                         ScrollToBottom(true);
                     }
                 }
@@ -276,6 +300,11 @@ namespace InPowerIOS
             {
                 Crashes.TrackError(e);
             }
+        }
+
+        void ChatSource_OpenImageViewEvent(object sender, string e)
+        {
+          
         }
 
 
@@ -349,8 +378,6 @@ namespace InPowerIOS
                     await AWSUploader.AWSUploadAudioVideo(filePath, mediaName, mediaType);
                 url = AWSUploader.GetMediaUrl(mediaType) + mediaName;
 
-
-
                 try
                 {
                     if (string.IsNullOrEmpty(url))
@@ -366,8 +393,9 @@ namespace InPowerIOS
                         attachment.Type = mediaType;
                         attachment.Url = url;
                         lstAttachments.Add(attachment);
-                        BTProgressHUD.Dismiss();
-                        ButtonSendChatMessage(txt_TextMessage.Text);
+                        SendThumbMedia(thumbFilePath, mediaType);
+                        //BTProgressHUD.Dismiss();
+                        //ButtonSendChatMessage(txt_TextMessage.Text);
                     }
                 }
                 catch (Exception e)
@@ -382,6 +410,66 @@ namespace InPowerIOS
             }
 
         }
+
+        public async void SendThumbMedia(string filePath, string mediaType)
+        {
+            BTProgressHUD.Show("Please Wait", maskType: ProgressHUD.MaskType.Black);
+            var mediaName = System.IO.Path.GetFileName(filePath); //AWSUploader.SetMediaName (mediaType);
+            var url = "";
+            try
+            {
+                // BTProgressHUD.Show("Processing media..", maskType: ProgressHUD.MaskType.Black);
+                if (mediaType == "Photo")
+                    await AWSUploader.AWSUploadImage(filePath, mediaName);
+                else
+                    await AWSUploader.AWSUploadAudioVideo(filePath, mediaName, mediaType);
+                url = AWSUploader.GetMediaUrl(mediaType) + mediaName;
+
+
+
+                try
+                {
+                    if (string.IsNullOrEmpty(url))
+                    {
+                        // AlertBox.Create("Upload", "File upload failed, Please check your internet connection", null);
+
+                        return;
+                    }
+                    else
+                    {
+                        //lstAttachments = new List<AttachmentViewModel>();
+                        //var attachment = new AttachmentViewModel();
+                        //attachment.Type = mediaType;
+                        //attachment.Url = url;
+                        //lstAttachments.Add(attachment);
+                        BTProgressHUD.Dismiss();
+                        ButtonSendChatMessage(txt_TextMessage.Text);
+                       
+                    }
+                }
+                catch (Exception e)
+                {
+                    Crashes.TrackError(e);
+                }
+            }
+            catch (Exception e)
+            {
+
+                Crashes.TrackError(e);
+            }
+
+        }
+
+        void ChatSource_EventHandler(object sender, string filepath)
+        {
+            InvokeOnMainThread(delegate
+            {
+                var updateUserProfileViewcontroller = (ImageViewController)Storyboard.InstantiateViewController("ImageViewController");
+                updateUserProfileViewcontroller.filepath = filepath;
+                this.NavigationController.PushViewController(updateUserProfileViewcontroller, true);
+            });
+        }
+
 
         partial void BtnAttachment_TouchUpInside(UIButton sender)
         {
@@ -434,6 +522,19 @@ namespace InPowerIOS
                 {
                     Console.WriteLine("NOT saved as" + filePath + " because" + err.LocalizedDescription);
                 }
+                UIImage ThumbImage = ImageClass.MaxResizeImage(PhotoCapture, 100, 100);
+                var originalpath = NSUrl.FromFilename(filePath).RelativePath;
+                thumbFilePath = originalpath.Replace(Path.GetExtension(originalpath), "-thumb" + Path.GetExtension(originalpath));
+                NSData thumbimgData = ThumbImage.AsJPEG();
+                if (thumbimgData.Save(thumbFilePath, false, out err))
+                {
+                    Console.WriteLine("saved as " + thumbFilePath);
+                }
+                else
+                {
+                    Console.WriteLine("NOT saved as" + thumbFilePath + " because" + err.LocalizedDescription);
+                }
+
                 SendMedia(filePath,"Photo");
                
             });
@@ -457,7 +558,6 @@ namespace InPowerIOS
         {
             try
             {
-
                 if (!string.IsNullOrEmpty(sMessageText) || lstAttachments.Count > 0)
                 {
 
@@ -471,8 +571,6 @@ namespace InPowerIOS
                         IsSend = false,
                         MessageTime = DateTime.Now.ToUniversalTime()
                     };
-
-
                    var  chatConversationResponse = ChatConversationRepository.GetConversationbyContactId(contactId);
                     if (chatConversationResponse.success)
                     {
@@ -490,25 +588,14 @@ namespace InPowerIOS
                             //    Text = sMessageText.Trim()
                             //};
 
-                            //DateItem dateItem = new DateItem();
-                            //dateItem.setDate(chatModel.MessageTime.ToShortDateString());
-                            //if(!consolidatedList.Contains(dateItem))
-                            //{
-                            //    consolidatedList.Add(dateItem);
-                            //}
-
-                            //    GeneralItem generalItem = new GeneralItem();
-                            //generalItem.setChatMessagearray(message);
-                            //    consolidatedList.Add(generalItem);
-
+                          
+                       
 
                             //tblChatList.InsertRows(new NSIndexPath[] { NSIndexPath.FromRowSection(messages.Count - 1, 0) }, UITableViewRowAnimation.None);
 
                             //ScrollToBottom(true);
                         }
                     }
-
-                   
 
                     lstAttachments = new List<AttachmentViewModel>();
                     try
@@ -521,50 +608,77 @@ namespace InPowerIOS
 
                             if (chatConversationResponse.chatConversation == null)
                             {
+                                ChatMessage savedMessages = new  ChatMessage();
                                 ChatConversationRepository.SaveConverstionNewFromServer(ChatResponse.Chat);
                                 chatConversationResponse = ChatConversationRepository.GetConversationbyContactId(contactId);
                                 if (chatConversationResponse.success)
                                 {
                                     ChatConversationRepository.UpdateChatLastMessage(chatConversationResponse.chatConversation.id, ChatResponse.ChatMessage.Message, "");
 
-                                    var savedMessages = ChatMessageRepository.SaveChatMessage(ChatResponse.ChatMessage, chatConversationResponse.chatConversation.ChatId);
+                                     savedMessages = ChatMessageRepository.SaveChatMessage(ChatResponse.ChatMessage, chatConversationResponse.chatConversation.ChatId);
                                 }
-                                LoadLocalLatestMessages();
+
+                                RefreshNewAddedRows(chatModel, savedMessages);
+                                //LoadLocalLatestMessages();
                                 Console.WriteLine("CHAT POSTED : " + result);
                             }
                             else
                             {
-                                
-                                 chatConversationResponse = ChatConversationRepository.GetConversationbyContactId(contactId);
+                                chatConversationResponse = ChatConversationRepository.GetConversationbyContactId(contactId);
                                 if (chatConversationResponse.success)
                                 {
                                     ChatConversationRepository.UpdateChatLastMessage(chatConversationResponse.chatConversation.id, ChatResponse.ChatMessage.Message, "");
 
                                     var savedMessages = ChatMessageRepository.updateChatMessage(ChatResponse.ChatMessage);
-                                    LoadLocalLatestMessages();
+                                    RefreshNewAddedRows(chatModel, savedMessages);
+                                  //  tblChatList.ScrollToRow(NSIndexPath.FromRowSection(consolidatedList.Count, 0), UITableViewScrollPosition.Bottom, true);
+                                    //LoadLocalLatestMessages();
                                     await _objChatSignalRService.Send(chatConversationResponse.chatConversation.ContactId.ToString(), ChatResponse.ChatMessage);
                                 }
                             }
                         }
-
-
                     }
-
                     catch (Exception ex)
                     {
                         Crashes.TrackError(ex);
                     }
                 }
-
                 txt_TextMessage.Text = "";
             }
             catch (Exception ex)
             {
                 Crashes.TrackError(ex);
             }
-
         }
 
+        public void RefreshNewAddedRows(ChatMessageViewModel chatModel,ChatMessage savedMessages)
+        {
+            DateItem dateItem = new DateItem();
+            dateItem.setDate(chatModel.MessageTime.ToShortDateString());
+            var listofDates = consolidatedList.Where(a => a.getType() == 0).ToList();
+            bool dateExist = false;
+            for (int i = 0; i < listofDates.Count; i++)
+            {
+                ListItem msg = listofDates[i];
+                DateItem DateItem = (DateItem)msg;
+                if (DateItem.getDate() == dateItem.getDate())
+                {
+                    dateExist = true;
+                }
+            }
+            if (!dateExist)
+            {
+                consolidatedList.Add(dateItem);
+            }
+
+            GeneralItem generalItem = new GeneralItem();
+            generalItem.setChatMessagearray(savedMessages);
+            consolidatedList.Add(generalItem);
+            tblChatList.ReloadData();
+            ScrollToBottom(true);
+            filePath = "";
+            thumbFilePath = "";
+        }
 
         public void ScrollToBottom(bool animated)
         {
@@ -594,7 +708,6 @@ namespace InPowerIOS
                     contactId = contactViewModel.ContactId;
                     Title = ContactName;
 
-
                     var titleView = new UILabel(new CGRect(0, 0, 100, 60));
                     titleView.Text = ContactName;
                     titleView.TextColor = UIColor.White;
@@ -607,9 +720,7 @@ namespace InPowerIOS
                     titleView.UserInteractionEnabled = true;
                     titleView.AddGestureRecognizer(ShowUserProfileViewController);
                     NavigationItem.TitleView = titleView;
-
                 }
-
         }
 
         private async void loadSignalR()
@@ -625,9 +736,6 @@ namespace InPowerIOS
                 {
                     await _objChatSignalRService.Reload(contactViewModel.ContactId.ToString());
                 }
-
-
-
             }
             catch (Exception e)
             {
@@ -675,9 +783,7 @@ namespace InPowerIOS
 
                             UpdateChatMessage(chatConversation.ContactId.ToString(), e, "Private");
                         }
-
                     }
-
                 }
             }
             catch (Exception ex)
@@ -771,8 +877,9 @@ namespace InPowerIOS
                     }
 
 
-                    chatSource = new ChatListSource(consolidatedList);
+                    chatSource = new ChatListSource(consolidatedList,this);
                     tblChatList.Source = chatSource;
+                    chatSource.OpenImageViewEvent += ChatSource_EventHandler;
                     tblChatList.ReloadData();
                     ScrollToBottom(true);
                 }

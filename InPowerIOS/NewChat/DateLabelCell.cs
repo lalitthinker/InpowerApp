@@ -28,8 +28,14 @@ namespace InPowerIOS
                         {
                 lblDate.SetTitle(datetimedata.ToString("MMM dd, yyyy"), UIControlState.Normal);
                         }
+           // lblDate.TouchUpInside += LblDate_TouchUpInside;
 
         }
 
+      
+partial void LblDate_TouchUpInside(UIButton sender)
+        {
+            
+        }
     }
 }

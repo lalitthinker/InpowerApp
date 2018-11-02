@@ -7,6 +7,7 @@ using InPowerIOS.Model;
 using UIKit;
 using SDWebImage;
 using System.Linq;
+using InPowerIOS.Common;
 
 namespace InPowerIOS.NewChat
 {
@@ -20,13 +21,15 @@ namespace InPowerIOS.NewChat
         public static UIFont font = UIFont.SystemFontOfSize(14);
         public static UIFont fontDateStamp = UIFont.SystemFontOfSize(10);
         UIView view;
-        UIView imageView;
-        UIImageView AttachmentImageView;
+        UIImageView imageView;
+        public UIButton AttachmentImageView;
         UIImageView StatusTick;
         UILabel lblMessage;
         UILabel lblTime;
         bool isLeft;
-
+        string ImagePath;
+        public event EventHandler<string> OpenImageViewEvent;
+     
         static ChatBubbleWithAttachmentCell()
         {
             bright = UIImage.FromFile("green.png");
@@ -74,10 +77,13 @@ namespace InPowerIOS.NewChat
             {
                 StatusTick = new UIImageView(doubleBlue);
                 view.AddSubview(StatusTick);
+
             }
 
-            AttachmentImageView = new UIImageView(attachmentImage);
+            AttachmentImageView = new UIButton(UIButtonType.Plain);
+            AttachmentImageView.SetImage(attachmentImage,UIControlState.Normal);
             view.AddSubview(AttachmentImageView);
+           
 
             ContentView.Add(view);
         }
@@ -113,8 +119,15 @@ namespace InPowerIOS.NewChat
             }
                 AttachmentImageView.Frame = new RectangleF(new PointF((float)(frame.X + (isLeft ? 12 : 8)), (float)(frame.Y + 5)), AttachmentImageSize - BubblePadding);
 
-
         }
+
+       
+
+        void AttachmentImageView_TouchUpInside(object sender, EventArgs e)
+        {
+            this.OpenImageViewEvent(this, ImagePath);
+        }
+
 
         static internal SizeF BubblePadding = new SizeF(22, 16);
         //static internal SizeF label1Padding = new SizeF(10, 0);
@@ -136,6 +149,7 @@ namespace InPowerIOS.NewChat
 
         public void Update(ChatMessage item)
         {
+           
             lblMessage.Text = item.MessageText;
             lblTime.Text = item.MessageTime.ToString("hh:mm tt"); ;
 
@@ -143,7 +157,8 @@ namespace InPowerIOS.NewChat
 
             if (AttachList.Count > 0)
             {
-                AttachmentImageView.SetImage(new NSUrl(AttachList.FirstOrDefault().url), UIImage.FromBundle("PlaceHolder.png"));
+                AttachmentImageView.SetImage(ImageClass.FromUrl(AttachList.FirstOrDefault().url), UIControlState.Normal);
+                ImagePath = AttachList.FirstOrDefault().url;
             }
             else
             {
@@ -184,7 +199,7 @@ namespace InPowerIOS.NewChat
             var AttachList = (item.MessageId != 0) ? Repositories.GroupRepository.GetGroupMessageAttachList(item.MessageId) : new List<GroupAttachment>();
             if (AttachList.Count > 0)
             {
-                AttachmentImageView.SetImage(new NSUrl(AttachList.FirstOrDefault().url), UIImage.FromBundle("PlaceHolder.png"));
+                AttachmentImageView.SetImage(ImageClass.FromUrl(AttachList.FirstOrDefault().url), UIControlState.Normal);
             }
             else
             {
