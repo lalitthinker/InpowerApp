@@ -16,10 +16,6 @@ namespace InPowerIOS.Registration
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem BBIDone { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnRequest { get; set; }
 
         [Outlet]
@@ -28,15 +24,7 @@ namespace InPowerIOS.Registration
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIToolbar TBSelectYourInterests { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtSuggestInterest { get; set; }
-
-        [Action ("BBIDone_Activated:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BBIDone_Activated (UIKit.UIBarButtonItem sender);
 
         [Action ("BtnRequest_TouchUpInside:")]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -44,11 +32,6 @@ namespace InPowerIOS.Registration
 
         void ReleaseDesignerOutlets ()
         {
-            if (BBIDone != null) {
-                BBIDone.Dispose ();
-                BBIDone = null;
-            }
-
             if (btnRequest != null) {
                 btnRequest.Dispose ();
                 btnRequest = null;
@@ -57,11 +40,6 @@ namespace InPowerIOS.Registration
             if (tblSuggestInterest != null) {
                 tblSuggestInterest.Dispose ();
                 tblSuggestInterest = null;
-            }
-
-            if (TBSelectYourInterests != null) {
-                TBSelectYourInterests.Dispose ();
-                TBSelectYourInterests = null;
             }
 
             if (txtSuggestInterest != null) {

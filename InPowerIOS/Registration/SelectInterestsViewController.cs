@@ -25,8 +25,11 @@ namespace InPowerIOS.Registration
         {
             base.ViewDidLoad();
           
-            NavigationItem.SetRightBarButtonItem(
-                BBIDone, true);
+            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Done", UIBarButtonItemStyle.Plain, (sender, args) =>
+            {
+                BBIDone_Activated();
+            }), true);
+            
             NavigationItem.SetHidesBackButton(true, false);
 
             Title = "Select Interest";
@@ -83,7 +86,7 @@ namespace InPowerIOS.Registration
             }
         }
 
-        partial void BBIDone_Activated(UIBarButtonItem sender)
+        public void BBIDone_Activated()
         {
             UserInterestInfoInsertAsync();
             //this.DismissViewController(true, null);

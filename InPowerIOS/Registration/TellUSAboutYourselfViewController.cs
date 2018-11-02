@@ -26,10 +26,29 @@ namespace InPowerIOS.Registration
         {
             base.ViewDidLoad();
           
-            NavigationItem.SetRightBarButtonItem(
-               BBIContinue, true);
+            this.NavigationController.NavigationBar.BarTintColor = ColorExtensions.NavigationColor();//102, 50, 178
+            this.NavigationController.NavigationBar.BackgroundColor = ColorExtensions.NavigationColor();//0,51,102 - dark blue 146, 30, 146 - red purplle
+            this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
 
-            NavigationItem.SetHidesBackButton(true, false);
+            this.NavigationItem.SetLeftBarButtonItem(new UIBarButtonItem("Cancel", UIBarButtonItemStyle.Plain, (sender, args) =>
+            {
+                InvokeOnMainThread(delegate
+                {
+                    UIStoryboard storyboard = this.Storyboard;
+                    LoginInpowerViewController viewController = (LoginInpowerViewController)
+                        storyboard.InstantiateViewController("LoginInpowerViewController");
+                    this.PresentViewController(viewController, true, null);
+                });
+            }), true);
+
+            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Continue", UIBarButtonItemStyle.Plain, (sender, args) =>
+            {
+                BBIContinue_Activated();
+            }), true);
+
+            Title = "Profile Details";
+
+            //NavigationItem.SetHidesBackButton(true, false);
 
             //Title = "Tell US About Your self";
             txtFirstName.BecomeFirstResponder();
@@ -44,15 +63,20 @@ namespace InPowerIOS.Registration
             //this.toolbarAboutyourself.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
         }
 
-        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
+
+        public void clearAll()
         {
-            if (segue.Identifier == "TellUSAboutYourselSegue")
-            {
-                TellUSAboutYourselfInfoInsertAsync(segue);
-            }
+            txtFirstName.Text = "";
+            txtLastName.Text = "";
+            txtEmailAddress.Text = "";
+            txtPassword.Text = "";
+            txtConfirmPassword.Text = "";
+            txtFirstName.BecomeFirstResponder();
         }
 
-        public async Task TellUSAboutYourselfInfoInsertAsync(UIStoryboardSegue segue)
+
+
+        async public void BBIContinue_Activated()
         {
             InpowerResult Result = null;
             try
@@ -114,7 +138,7 @@ namespace InPowerIOS.Registration
 
                                                     };
                                                     UserProfileRepository.SaveUserProfile(profile);
-                                                    CommonHelper.SetUserPreferences(modelReporeg.UserId.ToString(),modelReporeg.Password, ResultToken.access_token, modelReporeg.Email, modelReporeg.AWSAccessKey, modelReporeg.AWSSecretKey);
+                                                    CommonHelper.SetUserPreferences(modelReporeg.UserId.ToString(), modelReporeg.Password, ResultToken.access_token, modelReporeg.Email, modelReporeg.AWSAccessKey, modelReporeg.AWSSecretKey);
                                                     GlobalConstant.AccessToken = ResultToken.access_token;
                                                     new UIAlertView("About You", Result.Message, null, "OK", null).Show();
                                                     clearAll();
@@ -124,9 +148,11 @@ namespace InPowerIOS.Registration
                                                     InvokeOnMainThread(delegate
                                                     {
                                                         UIStoryboard storyboard = this.Storyboard;
-                                                        var changeTellUSAboutYourselfInfoInsertAsyncController = (PleaseComplateYourProfileViewController)segue.DestinationViewController;
-
+                                                        PleaseComplateYourProfileViewController viewController = (PleaseComplateYourProfileViewController)
+                                                            storyboard.InstantiateViewController("PleaseComplateYourProfileViewController");
+                                                        this.NavigationController.PushViewController(viewController, true);
                                                     });
+
                                                 }
                                             }
 
@@ -162,21 +188,21 @@ namespace InPowerIOS.Registration
                             }
                             else
                             {
-                                 txtPassword.BecomeFirstResponder();
+                                txtPassword.BecomeFirstResponder();
                                 new UIAlertView("About You", "Please Enter Password First", null, "OK", null).Show();
                                 return;
                             }
                         }
                         else
                         {
-                          txtEmailAddress.BecomeFirstResponder();
+                            txtEmailAddress.BecomeFirstResponder();
                             new UIAlertView("About You", "Please Enter Email Address First", null, "OK", null).Show();
                             return;
                         }
                     }
                     else
                     {
-                       txtLastName.BecomeFirstResponder();
+                        txtLastName.BecomeFirstResponder();
                         new UIAlertView("About You", "Please Enter Last Name First", null, "OK", null).Show();
                         return;
                     }
@@ -198,28 +224,6 @@ namespace InPowerIOS.Registration
                 new UIAlertView("Error", ErrorMsg, null, "OK", null).Show();
                 return;
             }
-        }
-
-       
-
-        public void clearAll()
-        {
-            txtFirstName.Text = "";
-            txtLastName.Text = "";
-            txtEmailAddress.Text = "";
-            txtPassword.Text = "";
-            txtConfirmPassword.Text = "";
-            txtFirstName.BecomeFirstResponder();
-        }
-
-        partial void BBICancel_Activated(UIBarButtonItem sender)
-        {
-            this.DismissViewController(true, null);
-        }
-
-        partial void BBIContinue_Activated(UIBarButtonItem sender)
-        {
-           // TellUSAboutYourselfInfoInsertAsync();
         }
     }
 }

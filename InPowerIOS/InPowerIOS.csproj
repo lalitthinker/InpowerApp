@@ -179,8 +179,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242x2208.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750x1334.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %281%29.png" />
     <ImageAsset Include="Resources\Images.xcassets\Contents.json" />
     <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\Contents.json" />
@@ -197,22 +195,7 @@
     <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\ReadList.png" />
     <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\WishList.png" />
     <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\ic_chats24.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x960.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320X480.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-7.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-9.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-14.png" />
     <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40X40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60X60.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87X87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120X120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180X180.png" />
     <ImageAsset Include="Assets.xcassets\Chat.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contact.imageset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Readlist.imageset\Contents.json" />
@@ -229,19 +212,21 @@
     <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-24.png" />
     <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-48.png" />
     <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-96.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1004.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2008.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1024.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2048.png" />
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1536x2048.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152X152.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167X167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76X76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20X20.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29X29.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125x2436.png" />
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\320X480.png" />
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\640x960.png" />
+    <ImageAsset Include="Assets.xcassets\AppColor.colorset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125X2436.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242X2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750X1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320X480.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640X960.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60X60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87X87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120X120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180X180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40X40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1242x2208-Login.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -264,6 +249,8 @@
     <Folder Include="Assets.xcassets\Contact.imageset\" />
     <Folder Include="Assets.xcassets\Readlist.imageset\" />
     <Folder Include="Assets.xcassets\Wishlist.imageset\" />
+    <Folder Include="Resources\Images.xcassets\LogInScreenImage.imageset\" />
+    <Folder Include="Assets.xcassets\AppColor.colorset\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -521,6 +508,10 @@
     <Compile Include="GroupChatAttachmentCell.designer.cs">
       <DependentUpon>GroupChatAttachmentCell.cs</DependentUpon>
     </Compile>
+    <Compile Include="Login\FromLoginNavigationController.cs" />
+    <Compile Include="Login\FromLoginNavigationController.designer.cs">
+      <DependentUpon>FromLoginNavigationController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\threelines.png" />
@@ -616,6 +607,12 @@
     <BundleResource Include="Resources\PlaceHolder.png" />
     <BundleResource Include="Resources\loader.png" />
     <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_bookshelf32.png" />
+    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_chats24.png" />
+    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_contacts32.png" />
+    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_group32.png" />
+    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_logout32.png" />
+    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_settings32.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCL\PCL.csproj">

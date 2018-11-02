@@ -16,14 +16,6 @@ namespace InPowerIOS.Registration
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem BBICancel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem BBIContinue { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtConfirmPassword { get; set; }
 
         [Outlet]
@@ -42,26 +34,8 @@ namespace InPowerIOS.Registration
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtPassword { get; set; }
 
-        [Action ("BBICancel_Activated:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BBICancel_Activated (UIKit.UIBarButtonItem sender);
-
-        [Action ("BBIContinue_Activated:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BBIContinue_Activated (UIKit.UIBarButtonItem sender);
-
         void ReleaseDesignerOutlets ()
         {
-            if (BBICancel != null) {
-                BBICancel.Dispose ();
-                BBICancel = null;
-            }
-
-            if (BBIContinue != null) {
-                BBIContinue.Dispose ();
-                BBIContinue = null;
-            }
-
             if (txtConfirmPassword != null) {
                 txtConfirmPassword.Dispose ();
                 txtConfirmPassword = null;

@@ -51,9 +51,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3251" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="bg_Header.jpg">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="3251" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                         <rect key="frame" x="0.0" y="0.0" width="225" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0" green="0" blue="0" alpha="1"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1781">
                                         <rect key="frame" x="8" y="123" width="191" height="21"/>
@@ -264,7 +266,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <size key="titleShadowOffset" width="0" height="0"/>
                                 <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.73725490196078436" blue="0.12549019607843137" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <connections>
                                     <segue id="63898" destination="63253" kind="show"/>
                                 </connections>
@@ -424,7 +426,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.4" blue="1" alpha="1"/>
-                        <color key="selectedImageTintColor" colorSpace="calibratedRGB" red="0" green="0.4" blue="1" alpha="1"/>
+                        <color key="selectedImageTintColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
                         <color key="barTintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                     </tabBar>
                     <connections>
@@ -443,7 +445,7 @@
                         <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" colorSpace="calibratedRGB" red="0" green="0.4" blue="1" alpha="1"/>
-                        <color key="selectedImageTintColor" colorSpace="calibratedRGB" red="0" green="0.4" blue="1" alpha="1"/>
+                        <color key="selectedImageTintColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
                         <color key="barTintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                         <color key="backgroundColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                     </tabBar>
@@ -520,8 +522,8 @@
                                                     <rect key="frame" x="84" y="82" width="74" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
-                                                    <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
+                                                    <color key="tintColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <state key="normal" title="READ">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                                     </state>
@@ -539,8 +541,8 @@
                                                     <rect key="frame" x="163" y="82" width="74" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
-                                                    <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
+                                                    <color key="tintColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <state key="normal" title="REMOVE">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                                     </state>
@@ -576,7 +578,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <size key="titleShadowOffset" width="0" height="0"/>
                                 <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.73725490196078436" blue="0.12549019607843137" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <state key="normal" image="addBook.png"/>
                                 <connections>
                                     <action selector="BtnAddBook_TouchUpInside:" destination="61969" id="61968" eventType="touchUpInside"/>
@@ -670,8 +672,8 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="80336" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
                                                     <rect key="frame" x="84" y="82" width="74" height="23"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
-                                                    <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
+                                                    <color key="tintColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <state key="normal" title="REMOVE">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                                     </state>
@@ -706,7 +708,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <size key="titleShadowOffset" width="0" height="0"/>
                                 <color key="tintColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.99215686274509807" green="0.73725490196078436" blue="0.12549019607843137" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <state key="normal" image="addBook.png"/>
                                 <connections>
                                     <segue id="62496" destination="59398" kind="show"/>
@@ -803,23 +805,7 @@
                         <outlet property="txtEmailAddress" destination="14310" id="name-outlet-14310"/>
                         <outlet property="txtPassword" destination="14311" id="name-outlet-14311"/>
                         <outlet property="txtConfirmPassword" destination="14312" id="name-outlet-14312"/>
-                        <outlet property="BBICancel" destination="52997" id="name-outlet-52997"/>
-                        <outlet property="BBIContinue" destination="55104" id="name-outlet-55104"/>
                     </connections>
-                    <navigationItem title="Profile Details" id="50842" key="navigationItem">
-                        <barButtonItem key="leftBarButtonItem" id="52997" systemItem="cancel" width="67">
-                            <connections>
-                                <action selector="BBICancel_Activated:" destination="13748" id="54701"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" id="55104" springLoaded="YES" title="Continue" width="81">
-                            <connections>
-                                <action selector="BBICancel_Activated:" destination="55106" id="55105"/>
-                                <action selector="BBIContinue_Activated:" destination="13748" id="56726"/>
-                                <segue id="124210" destination="16659" kind="show" identifier="TellUSAboutYourselSegue"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="13750" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -827,7 +813,7 @@
         </scene>
         <scene sceneID="16658">
             <objects>
-                <viewController id="16659" sceneMemberID="viewController" customClass="PleaseComplateYourProfileViewController" storyboardIdentifier="PleaseComplateYourProfileViewController">
+                <viewController id="16659" sceneMemberID="viewController" customClass="PleaseComplateYourProfileViewController" storyboardIdentifier="PleaseComplateYourProfileViewController" title="Hello">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="16656"/>
                         <viewControllerLayoutGuide type="bottom" id="16657"/>
@@ -914,17 +900,8 @@
                         <outlet property="txtAboutMe" destination="17061" id="name-outlet-17061"/>
                         <outlet property="txtCountry" destination="17060" id="name-outlet-17060"/>
                         <outlet property="txtState" destination="17059" id="name-outlet-17059"/>
-                        <outlet property="BBIContinue" destination="57132" id="name-outlet-57132"/>
                     </connections>
                 </viewController>
-                <barButtonItem id="57132" springLoaded="YES" title="Continue" width="82">
-                    <connections>
-                        <action selector="BBICancel_Activated:" destination="57134" id="57133"/>
-                        <action selector="BBIContinue_Activated:" destination="57136" id="57135"/>
-                        <action selector="BBIContinue_Activated:" destination="16659" id="57461"/>
-                        <segue id="125976" destination="17437" kind="show" identifier="SelectInterestSegue"/>
-                    </connections>
-                </barButtonItem>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="16661" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1023" y="1498"/>
@@ -976,24 +953,10 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="57242" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
-                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <items>
-                                    <barButtonItem id="57243" width="302"/>
-                                    <barButtonItem id="57349" springLoaded="YES" systemItem="done">
-                                        <connections>
-                                            <action selector="BBICancel_Activated:" destination="57351" id="57350"/>
-                                            <action selector="BBIContinue_Activated:" destination="57353" id="57352"/>
-                                            <action selector="BBIDone_Activated:" destination="17437" id="57567"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </items>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="127188" translatesAutoresizingMaskIntoConstraints="NO" adjustsImageWhenDisabled="NO">
                                 <rect key="frame" x="253" y="119" width="81" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <state key="normal" title="REQUEST">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                 </state>
@@ -1029,8 +992,6 @@
                     <connections>
                         <outlet property="txtSuggestInterest" destination="17808" id="name-outlet-17808"/>
                         <outlet property="tblSuggestInterest" destination="17870" id="name-outlet-17870"/>
-                        <outlet property="TBSelectYourInterests" destination="57242" id="name-outlet-57242"/>
-                        <outlet property="BBIDone" destination="57349" id="name-outlet-57349"/>
                         <outlet property="btnRequest" destination="127188" id="name-outlet-127188"/>
                     </connections>
                 </viewController>
@@ -1309,7 +1270,7 @@
                                                         <action selector="BtnContinue_TouchUpInside:" destination="26529" id="26528" eventType="touchUpInside"/>
                                                         <action selector="BtnInvite_TouchUpInside:" destination="26060" id="73320" eventType="touchUpInside"/>
                                                     </connections>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
                                                     <state key="normal" title="INVITE">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -1399,7 +1360,7 @@
                                     <action selector="BtnContinue_TouchUpInside:" destination="23956" id="23955" eventType="touchUpInside"/>
                                     <action selector="BtnReset_TouchUpInside:" destination="21681" id="24050" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="heavy"/>
                                 <state key="normal" title="RESET">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -1422,7 +1383,7 @@
                                     <action selector="BtnContinue_TouchUpInside:" destination="23970" id="23969" eventType="touchUpInside"/>
                                     <action selector="BtnSave_TouchUpInside:" destination="21681" id="24051" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="heavy"/>
                                 <state key="normal" title="SAVE">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -1514,7 +1475,7 @@
                                                         <action selector="btnLoginClicked:" destination="28086" id="28085" eventType="touchUpInside"/>
                                                         <action selector="BtnContinue_TouchUpInside:" destination="28088" id="28087" eventType="touchUpInside"/>
                                                     </connections>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12" weight="heavy"/>
                                                     <state key="normal" title="Unblock">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -1631,7 +1592,7 @@
                                     <action selector="BtnContinue_TouchUpInside:" destination="22104" id="22103" eventType="touchUpInside"/>
                                     <action selector="BtnUpdateProfile_TouchUpInside:" destination="21894" id="25605" eventType="touchUpInside"/>
                                 </connections>
-                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12" weight="heavy"/>
                                 <state key="normal" title="Update Profile">
                                     <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -1969,7 +1930,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="114.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="59413" key="tableFooterView" fixedFrame="YES" image="default_book.png">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="59413" key="tableFooterView" fixedFrame="YES">
                                                     <rect key="frame" x="11" y="13" width="65" height="72"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <userDefinedRuntimeAttributes>
@@ -2010,8 +1971,8 @@
                                                     <rect key="frame" x="84" y="82" width="74" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
-                                                    <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
+                                                    <color key="tintColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <state key="normal" title="READ">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                                     </state>
@@ -2029,8 +1990,8 @@
                                                     <rect key="frame" x="163" y="82" width="74" height="23"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="10" weight="heavy"/>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
-                                                    <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.8" blue="0" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
+                                                    <color key="tintColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <state key="normal" title="WISH LIST">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
                                                     </state>
@@ -2126,7 +2087,7 @@
                                                         <action selector="BtnContinue_TouchUpInside:" destination="63278" id="63277" eventType="touchUpInside"/>
                                                         <action selector="BtnAdd_TouchUpInside:" destination="63267" id="63743" eventType="touchUpInside"/>
                                                     </connections>
-                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.984313725490196" green="0.72549019607843135" blue="0.070588235294117646" alpha="1"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12" weight="heavy"/>
                                                     <state key="normal" title="ADD">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -2444,7 +2405,7 @@
         </scene>
         <scene sceneID="123492">
             <objects>
-                <navigationController id="123493" sceneMemberID="viewController">
+                <navigationController id="123493" sceneMemberID="viewController" customClass="FromLoginNavigationController" storyboardIdentifier="FromLoginNavigationController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="123495">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -2781,7 +2742,10 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2313" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="88" y="7" width="200" height="30"/>
-                                                    <state key="normal" title="LOGIN WITH EMAIL"/>
+                                                    <color key="backgroundColor" colorSpace="calibratedRGB" red="0.14117647058823529" green="0.14117647058823529" blue="0.14117647058823529" alpha="1"/>
+                                                    <state key="normal" title="LOGIN WITH EMAIL">
+                                                        <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="btnLoginClicked:" destination="2081" id="2314" eventType="touchUpInside"/>
                                                         <action selector="BtnLogin_TouchUpInside:" destination="180309" id="180334" eventType="touchUpInside"/>
@@ -2789,6 +2753,11 @@
                                                     <constraints>
                                                         <constraint id="224611" firstItem="2313" firstAttribute="height" constant="30"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
+                                                            <real key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -2809,7 +2778,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14635" translatesAutoresizingMaskIntoConstraints="NO">
                                                     <rect key="frame" x="88" y="7" width="200" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                    <state key="normal" title="--------  Or Register Here  --------"/>
+                                                    <state key="normal" title="--------  Or Register Here  --------">
+                                                        <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="btnLoginClicked:" destination="14637" id="14636" eventType="touchUpInside"/>
                                                         <segue id="123634" destination="123493" kind="show"/>
@@ -2840,7 +2811,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="180315" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2420" y="1492"/>
+            <point key="canvasLocation" x="-2631" y="1500"/>
         </scene>
         <scene sceneID="223527">
             <objects>
@@ -3054,11 +3025,10 @@
     <resources>
         <image name="addBook.png" width="50" height="50"/>
         <image name="addContact.png" width="30" height="30"/>
-        <image name="bg_Header.jpg" width="548" height="460"/>
         <image name="ic_logout32.png" width="32" height="32"/>
         <image name="default_profile.png" width="178" height="178"/>
         <image name="grouplist.png" width="100" height="100"/>
-        <image name="default_book.png" width="50" height="50"/>
+        <image name="default_book.png" width="100" height="100"/>
         <image name="settings_right_arrow.png" width="10" height="14"/>
         <image name="reportspam.png" width="96" height="96"/>
         <image name="blockuser.png" width="96" height="96"/>
@@ -3069,5 +3039,5 @@
         <image name="Readlist" width="24" height="24"/>
         <image name="Wishlist" width="24" height="24"/>
     </resources>
-    <color key="tintColor" colorSpace="calibratedRGB" red="0.2" green="0.36470588235294116" blue="0.94509803921568625" alpha="1"/>
+    <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
 </document>
