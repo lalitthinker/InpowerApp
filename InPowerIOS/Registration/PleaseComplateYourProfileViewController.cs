@@ -42,8 +42,10 @@ namespace InPowerIOS.Registration
                 
             }
 
-            NavigationItem.SetRightBarButtonItem(
-                BBIContinue,true);
+            this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Continue", UIBarButtonItemStyle.Plain, (sender, args) =>
+            {
+                PleaseComplateYourProfileInfoInsertAsync();
+            }), true);
 
             NavigationItem.SetHidesBackButton(true, false);
 
@@ -68,14 +70,6 @@ namespace InPowerIOS.Registration
 
         }
 
-        public override void PrepareForSegue(UIStoryboardSegue segue, NSObject sender)
-        {
-            if (segue.Identifier == "SelectInterestSegue")
-            {
-                PleaseComplateYourProfileInfoInsertAsync(segue);
-              
-            }
-        }
         protected void Handle_FinishedPickingMedia(object sender, UIImagePickerMediaPickedEventArgs e)
         {
             // determine what was selected, video or image
@@ -220,13 +214,9 @@ namespace InPowerIOS.Registration
 
         }
 
+       
 
-        partial void BBIContinue_Activated(UIBarButtonItem sender)
-        {
-          
-        }        
-
-        public async Task PleaseComplateYourProfileInfoInsertAsync(UIStoryboardSegue segue)
+        public async Task PleaseComplateYourProfileInfoInsertAsync()
         {
             InpowerResult Result = null;
             try
@@ -279,7 +269,7 @@ namespace InPowerIOS.Registration
 
                                             if (!string.IsNullOrEmpty(filePath))
                                             {
-                                                uploadMedia(filePath, mediaType, modelReporeg,segue);
+                                                uploadMedia(filePath, mediaType, modelReporeg);
 
                                             }
                                             else
@@ -292,7 +282,10 @@ namespace InPowerIOS.Registration
                                                 //this.DismissViewController(true, null);
                                                 InvokeOnMainThread(delegate
                                                 {
-                                                    var changeSegueController = (SelectInterestsViewController)segue.DestinationViewController;
+                                                    UIStoryboard storyboard = this.Storyboard;
+                                                    SelectInterestsViewController viewController = (SelectInterestsViewController)
+                                                        storyboard.InstantiateViewController("SelectInterestsViewController");
+                                                    this.NavigationController.PushViewController(viewController, true);
                                                 });
                                             }
 
@@ -365,7 +358,7 @@ namespace InPowerIOS.Registration
         }
 
 
-        private async void uploadMedia(string filePath, string mediaType, UserRegisterResponseViewModel model,UIStoryboardSegue segue)
+        private async void uploadMedia(string filePath, string mediaType, UserRegisterResponseViewModel model)
         {
             var mediaName = System.IO.Path.GetFileName(filePath); //AWSUploader.SetMediaName (mediaType);
             var url = "";
@@ -425,7 +418,10 @@ namespace InPowerIOS.Registration
                             //this.DismissViewController(true, null);
                             InvokeOnMainThread(delegate
                             {
-                                var changeSegueController = (SelectInterestsViewController)segue.DestinationViewController;
+                                UIStoryboard storyboard = this.Storyboard;
+                                SelectInterestsViewController viewController = (SelectInterestsViewController)
+                                    storyboard.InstantiateViewController("SelectInterestsViewController");
+                                this.NavigationController.PushViewController(viewController, true);
                             });
                         }
 

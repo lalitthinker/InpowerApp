@@ -16,10 +16,6 @@ namespace InPowerIOS.Registration
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIBarButtonItem BBIContinue { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView ivUserProfilePic { get; set; }
 
         [Outlet]
@@ -42,17 +38,8 @@ namespace InPowerIOS.Registration
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtZipCode { get; set; }
 
-        [Action ("BBIContinue_Activated:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void BBIContinue_Activated (UIKit.UIBarButtonItem sender);
-
         void ReleaseDesignerOutlets ()
         {
-            if (BBIContinue != null) {
-                BBIContinue.Dispose ();
-                BBIContinue = null;
-            }
-
             if (ivUserProfilePic != null) {
                 ivUserProfilePic.Dispose ();
                 ivUserProfilePic = null;

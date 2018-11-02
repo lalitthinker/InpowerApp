@@ -32,7 +32,6 @@
       "idiom": "iphone"
     },
     {
-      "filename": "icons8-speech-bubble-48.png",
       "subtype": "retina4",
       "scale": "2x",
       "idiom": "iphone"
@@ -86,6 +85,7 @@
   ],
   "info": {
     "version": 1,
-    "author": "xcode"
+    "author": "xcode",
+    "template-rendering-intent": "original"
   }
 }
