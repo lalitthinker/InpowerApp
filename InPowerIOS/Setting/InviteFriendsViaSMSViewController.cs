@@ -31,7 +31,7 @@ namespace InPowerIOS.Setting
             {
                 tblPhoneContacts.TableFooterView = new UIView();
 
-                inviteFriendsViaSMSViewControllerSource = new InviteFriendsViaSMSViewControllerSource(_Originalitems);
+                inviteFriendsViaSMSViewControllerSource = new InviteFriendsViaSMSViewControllerSource(_Originalitems,this);
 
                 tblPhoneContacts.Source = inviteFriendsViaSMSViewControllerSource;
                 tblPhoneContacts.RowHeight = 60;

@@ -14,11 +14,16 @@ namespace InPowerIOS.Setting
     public partial class InviteFriendsViaSMSTableViewCell : UITableViewCell
     {
         PhoneContactIOSModel _PhoneContactIOSModel = new PhoneContactIOSModel();
+        UIViewController uIViewController;
 
         public InviteFriendsViaSMSTableViewCell (IntPtr handle) : base (handle)
         {
         }
 
+        partial void BtnInvite_TouchUpInside(UIButton sender)
+        {
+            SendInvites();
+        }
 
 
         public void SendInvites()
@@ -36,32 +41,27 @@ namespace InPowerIOS.Setting
                 }
 
                 var smsController = new MFMessageComposeViewController();
-              
                 if (MFMessageComposeViewController.CanSendText)
                 {
-                    
-                    smsController.Body = "Hey! I just installed ImPower, with  messaging & all of my favorite Book Intrest on one app. Download it now at www.ImPower.com";
+                    smsController.Body = "Hey! I just installed InPower, with  messaging & all of my favorite Book Intrest on one app. Download it now at https://play.google.com/store/apps/details?id=thethiinker.inPower.app";
                     smsController.Recipients = lstContactNumbers.ToArray();
                     smsController.Finished += (object sender, MFMessageComposeResultEventArgs e) =>
                     {
-
                         if (e.Result == MessageComposeResult.Sent)
                         {
-                            new UIAlertView("Alert", "Invite has been sent", null, "OK", null).Show();
+                            BTProgressHUD.ShowSuccessWithStatus("Invite has been sent", 2000);
                         }
                         else
                         {
                             new UIAlertView("Alert", e.Result.ToString(), null, "OK", null).Show();
                         }
+                        this.uIViewController.DismissViewController(false,HandleAction);
+                      
                     };
-
-                 
+                    this.uIViewController.PresentViewController(smsController, true, null);
                 }
-             
-
                 BTProgressHUD.Dismiss();
-                BTProgressHUD.ShowSuccessWithStatus("Invite has been sent", 2000);
-
+               
             }
             catch (Exception ex)
             {
@@ -72,8 +72,15 @@ namespace InPowerIOS.Setting
             }
         }
 
-        public void UpdateCell(PhoneContactIOSModel phoneContact, int row)
+        void HandleAction()
         {
+            
+        }
+
+
+        public void UpdateCell(PhoneContactIOSModel phoneContact, int row, UIViewController uiViewNew)
+        {
+            this.uIViewController = uiViewNew;
             _PhoneContactIOSModel = phoneContact;
             if (_PhoneContactIOSModel != null)
             {
@@ -83,20 +90,20 @@ namespace InPowerIOS.Setting
                 //ivPhoneContact.Image = new UIImage("default_profile.png");
                 if (_PhoneContactIOSModel.ThumbnailImageData != null)
                 {
-                    ivPhoneContact.SetImage(new NSUrl(_PhoneContactIOSModel.ThumbnailImageData.ToString()), UIImage.FromBundle("default_profile.png"));
+                    ivPhoneContact.Image = UIImage.LoadFromData(_PhoneContactIOSModel.ThumbnailImageData);//  .SetImage(UIImage.LoadFromData(_PhoneContactIOSModel.ThumbnailImageData), UIImage.FromBundle("default_profile.png"));
                 }
                 else
                 {
                     ivPhoneContact.Image = new UIImage("default_profile.png");
                 }
 
-                btnInvite.TouchUpInside += BtnInvite_TouchUpInside;
+               // btnInvite.TouchUpInside += BtnInvite_TouchUpInside;
             }
         }
 
         public void BtnInvite_TouchUpInside(object sender, EventArgs e)
         {
-            SendInvites();
+           
         }
 
     }

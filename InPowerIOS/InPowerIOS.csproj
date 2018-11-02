@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.props')" />
   <PropertyGroup>
@@ -28,15 +28,13 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <DeviceSpecificBuild>false</DeviceSpecificBuild>
-    <MtouchVerbosity>
-    </MtouchVerbosity>
+    <MtouchVerbosity></MtouchVerbosity>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
+    <Optimise>true</Optimise>
     <OutputPath>bin\iPhone\Release</OutputPath>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Distribution: Kara Ferrier (5QKVBJ98HF)</CodesignKey>
@@ -45,16 +43,14 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <MtouchVerbosity>
-    </MtouchVerbosity>
+    <MtouchVerbosity></MtouchVerbosity>
     <CodesignProvision>LalitMacProvProfDevelopment</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodesignKey>iPhone Developer</CodesignKey>
@@ -62,8 +58,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <MtouchVerbosity>
-    </MtouchVerbosity>
+    <MtouchVerbosity></MtouchVerbosity>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -73,7 +68,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Kara Ferrier (RW6DAMUGAC)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -84,17 +79,9 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
-    <MtouchVerbosity>
-    </MtouchVerbosity>
-    <CodesignProvision>ProvProfLalitMacNew</CodesignProvision>
+    <MtouchVerbosity></MtouchVerbosity>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Plugin.ImageEdit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Plugin.ImageEdit.0.1.0\lib\Xamarin.iOS10\Plugin.ImageEdit.dll</HintPath>
-    </Reference>
-    <Reference Include="Plugin.ImageEdit.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Xamarin.Plugin.ImageEdit.0.1.0\lib\Xamarin.iOS10\Plugin.ImageEdit.Abstractions.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -134,6 +121,7 @@
     </Reference>
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Net.Http" />
+
     <Reference Include="PCLStorage.Abstractions">
       <HintPath>..\packages\PCLStorage.1.0.2\lib\portable-Xamarin.iOS+Xamarin.Mac\PCLStorage.Abstractions.dll</HintPath>
     </Reference>
@@ -180,192 +168,104 @@
     <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
       <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
     </Reference>
+    <Reference Include="TOCrop">
+      <HintPath>..\..\..\..\..\Downloads\xamarin-bindings-master\TOCrop-iOS\bin\Debug\TOCrop.dll</HintPath>
+    </Reference>
     <Reference Include="IQKeyboardManager">
       <HintPath>..\packages\Xamarin.IQKeyboardManager.1.4.1\lib\Xamarin.iOS10\IQKeyboardManager.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242x2208.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750x1334.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %281%29.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular%402x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular%403x.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\ReadList.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\WishList.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\ic_chats24.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x960.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320X480.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-7.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-9.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-10.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-11.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-12.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-13.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-14.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125x2436.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40X40.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60X60.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87X87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120X120.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180X180.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1242x2208.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Chat.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Contact.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Readlist.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-24.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-48.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-96.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-24.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-48.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-96.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-24.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-96.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-48.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-24.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-48.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-96.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242x2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750x1334.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage %281%29.png" />
+    <ImageAsset Include="Resources\Images.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleOutgoing.imageset\bubble_regular%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular%402x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\BubbleIncoming.imageset\bubble_regular%403x.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Images.xcassets\ReadBookTabImage.imageset\ReadList.png" />
+    <ImageAsset Include="Resources\Images.xcassets\WishListBookTabImage.imageset\WishList.png" />
+    <ImageAsset Include="Resources\Images.xcassets\ChatsTabImage.imageset\ic_chats24.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x960.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320X480.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-7.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-9.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Webp.net-resizeimage-14.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40X40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60X60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87X87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120X120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180X180.png" />
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-24.png" />
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-48.png" />
+    <ImageAsset Include="Assets.xcassets\Chat.imageset\icons8-speech-bubble-96.png" />
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-24.png" />
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-48.png" />
+    <ImageAsset Include="Assets.xcassets\Contact.imageset\icons8-user-account-96.png" />
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-24.png" />
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-96.png" />
+    <ImageAsset Include="Assets.xcassets\Readlist.imageset\icons8-reading-filled-48.png" />
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-24.png" />
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-48.png" />
+    <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-96.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1004.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2008.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1024.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2048.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1536x2048.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152X152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167X167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76X76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20X20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29X29.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125x2436.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\320X480.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\640x960.png" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <None Include="app.config" />
+    <Folder Include="Resources\" />
+    <Folder Include="SideBarMenu\" />
+    <Folder Include="Models\" />
+    <Folder Include="Login\" />
+    <Folder Include="Chats\" />
+    <Folder Include="Book\" />
+    <Folder Include="SignalR\" />
+    <Folder Include="Registration\" />
+    <Folder Include="Setting\" />
+    <Folder Include="NewChat\" />
+    <Folder Include="Resources\Images.xcassets\BubbleIncoming.imageset\" />
+    <Folder Include="Resources\Images.xcassets\BubbleOutgoing.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ReadBookTabImage.imageset\" />
+    <Folder Include="Resources\Images.xcassets\WishListBookTabImage.imageset\" />
+    <Folder Include="Resources\Images.xcassets\ChatsTabImage.imageset\" />
+    <Folder Include="Assets.xcassets\LoginScreen.imageset\" />
+    <Folder Include="Assets.xcassets\Chat.imageset\" />
+    <Folder Include="Assets.xcassets\Contact.imageset\" />
+    <Folder Include="Assets.xcassets\Readlist.imageset\" />
+    <Folder Include="Assets.xcassets\Wishlist.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
     <None Include="packages.config" />
@@ -571,6 +471,7 @@
     <Compile Include="Chats\UserProfileViewController.cs" />
     <Compile Include="Chats\UserProfileViewController.designer.cs">
       <DependentUpon>UserProfileViewController.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Common\CustomToast.cs" />
     <Compile Include="Common\CommonSearchView.cs" />
@@ -608,6 +509,18 @@
     <Compile Include="UserInfoViewController.cs" />
     <Compile Include="Models\ContactSaveResponceViewModel.cs" />
     <Compile Include="Models\ChatConversationSaveResponceViewModel.cs" />
+    <Compile Include="ImageViewController.cs" />
+    <Compile Include="ImageViewController.designer.cs">
+      <DependentUpon>ImageViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PrivateChatAttachmentCell.cs" />
+    <Compile Include="PrivateChatAttachmentCell.designer.cs">
+      <DependentUpon>PrivateChatAttachmentCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupChatAttachmentCell.cs" />
+    <Compile Include="GroupChatAttachmentCell.designer.cs">
+      <DependentUpon>GroupChatAttachmentCell.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\threelines.png" />

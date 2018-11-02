@@ -665,7 +665,7 @@ namespace InPowerIOS.Chats
                     var ShowGroupDetailsViewController = new UITapGestureRecognizer(() =>
                     {
                     var viewController = (GroupDetailsViewController)Storyboard.InstantiateViewController("GroupDetailsViewController");
-                        viewController.groupViewModel = contactViewModel;
+                        viewController.contactViewModel = contactViewModel;
                         NavigationController.PushViewController(viewController, true);
                     });
                     titleView.UserInteractionEnabled = true;

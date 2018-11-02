@@ -1,4 +1,4 @@
-﻿// WARNING
+// WARNING
 //
 // This file has been generated automatically by Visual Studio from the outlets and
 // actions declared in your storyboard file.
@@ -17,6 +17,10 @@ namespace InPowerIOS
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton lblDate { get; set; }
+
+        [Action ("LblDate_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void LblDate_TouchUpInside (UIKit.UIButton sender);
 
         void ReleaseDesignerOutlets ()
         {

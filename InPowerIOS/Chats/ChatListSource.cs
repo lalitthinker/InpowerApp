@@ -18,10 +18,13 @@ namespace InPowerIOS.Chats
 
         IList<ListItem> messages;
 
-        readonly ChatBubbleCell[] sizingCells;
+        public event EventHandler<string> OpenImageViewEvent;
 
-        public ChatListSource(IList<ListItem> messages)
+        readonly ChatBubbleCell[] sizingCells;
+        UIViewController uiNewView;
+        public ChatListSource(IList<ListItem> messages, UIViewController uiNewView)
         {
+            this.uiNewView = uiNewView;
             if (messages == null)
                 throw new ArgumentNullException(nameof(messages));
 
@@ -32,6 +35,11 @@ namespace InPowerIOS.Chats
         public override nint RowsInSection(UITableView tableview, nint section)
         {
             return messages.Count;
+        }
+
+        public override void RowSelected(UITableView tableView, NSIndexPath indexPath)
+        {
+            
         }
 
         public override UITableViewCell GetCell(UITableView tableView, NSIndexPath indexPath)
@@ -61,6 +69,7 @@ namespace InPowerIOS.Chats
                        
                     }
                 default :
+                    
                     GeneralItem GeneralItem = (GeneralItem)msg;
                     item = GeneralItem.getChatMessagearray();
 
@@ -71,7 +80,6 @@ namespace InPowerIOS.Chats
                     {
                         isLeft = false;
 
-
                     }
                     else
                     {
@@ -80,10 +88,14 @@ namespace InPowerIOS.Chats
 
                     if (AttachList.Count > 0)
                     {
-                        var cell = tableView.DequeueReusableCell(isLeft ? ChatBubbleWithAttachmentCell.KeyLeft : ChatBubbleWithAttachmentCell.KeyRight) as ChatBubbleWithAttachmentCell;
-                        if (cell == null)
-                            cell = new ChatBubbleWithAttachmentCell(isLeft);
-                        cell.Update(item);
+                        var cell = tableView.DequeueReusableCell("PrivateChatAttachmentCell") as PrivateChatAttachmentCell;
+                        cell.Update(item,this.uiNewView,isLeft);
+                        cell.OpenImageViewEvent += Cell_OpenImageViewEvent;
+                      //  var cell = tableView.DequeueReusableCell(isLeft ? PrivateChatAttachmentCell.KeyLeft : PrivateChatAttachmentCell.KeyRight) as PrivateChatAttachmentCell;
+                        //if (cell == null)
+                            //cell = new PrivateChatAttachmentCell(isLeft);
+                        //cell.Update(item);
+                      
                         return cell;
                     }
                     else
@@ -155,5 +167,21 @@ namespace InPowerIOS.Chats
         //{
         //    return msgType == MessageType.Incoming ? IncomingCellId : OutgoingCellId;
         //}
+
+        void Cell_ImageClickEventHandler(object sender, string e)
+        {
+           
+        }
+
+        void AttachmentImageView_TouchUpInside(object sender, EventArgs e)
+        {
+           
+        }
+
+        void Cell_OpenImageViewEvent(object sender, string e)
+        {
+           //  this.OpenImageViewEvent(this, e);
+        }
+
     }
 }

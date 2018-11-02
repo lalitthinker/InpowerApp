@@ -21,6 +21,8 @@ using BigTed;
 using PCL;
 using System.Linq;
 using static InPowerIOS.Chats.GroupChatViewController;
+using System.IO;
+using Microsoft.AppCenter.Crashes;
 
 namespace InPowerIOS
 {
@@ -43,7 +45,7 @@ namespace InPowerIOS
 
         UIImagePickerController imagePicker;
         UIImage PhotoCapture;
-        string documentsDirectory, filePath;
+        string documentsDirectory, filePath, thumbFilePath;
         string mediaType = "Photo";
         UIButton cameraButton;
         bool useRefreshControl = false;  
@@ -177,6 +179,21 @@ namespace InPowerIOS
                 {
                     Console.WriteLine("NOT saved as" + filePath + " because" + err.LocalizedDescription);
                 }
+
+                UIImage ThumbImage = ImageClass.MaxResizeImage(originalImage, 100, 100);
+                var originalpath = NSUrl.FromFilename(filePath).RelativePath;
+                thumbFilePath = originalpath.Replace(Path.GetExtension(originalpath), "-thumb" + Path.GetExtension(originalpath));
+                NSData thumbimgData = originalImage.AsJPEG();
+                if (thumbimgData.Save(thumbFilePath, false, out err))
+                {
+                    Console.WriteLine("saved as " + thumbFilePath);
+                }
+                else
+                {
+                    Console.WriteLine("NOT saved as" + thumbFilePath + " because" + err.LocalizedDescription);
+                }
+
+
                 SendMedia(filePath, "Photo");
 
             }
@@ -227,7 +244,7 @@ namespace InPowerIOS
                         }
 
 
-                        chatSource = new GroupChatListSource(consolidatedList);
+                        chatSource = new GroupChatListSource(consolidatedList,this);
                         tblChatList.Source = chatSource;
                       
                        
@@ -310,7 +327,7 @@ void AddRefreshControl()
                     }
 
 
-                    chatSource = new GroupChatListSource(consolidatedList);
+                    chatSource = new GroupChatListSource(consolidatedList, this);
                     tblChatList.Source = chatSource;
                    
                     tblChatList.ReloadData();
@@ -378,8 +395,10 @@ void AddRefreshControl()
                         attachment.Type = mediaType;
                         attachment.Url = url;
                         lstAttachments.Add(attachment);
-                        BTProgressHUD.Dismiss();
-                        ButtonSendChatMessage();
+
+                        SendThumbMedia(thumbFilePath, mediaType);
+                        //BTProgressHUD.Dismiss();
+                        //ButtonSendChatMessage();
                     }
                 }
                 catch (Exception e)
@@ -391,6 +410,55 @@ void AddRefreshControl()
             {
 
                 // Crashes.TrackError(e);
+            }
+
+        }
+
+        public async void SendThumbMedia(string filePath, string mediaType)
+        {
+            BTProgressHUD.Show("Please Wait", maskType: ProgressHUD.MaskType.Black);
+            var mediaName = System.IO.Path.GetFileName(filePath); //AWSUploader.SetMediaName (mediaType);
+            var url = "";
+            try
+            {
+                // BTProgressHUD.Show("Processing media..", maskType: ProgressHUD.MaskType.Black);
+                if (mediaType == "Photo")
+                    await AWSUploader.AWSUploadImage(filePath, mediaName);
+                else
+                    await AWSUploader.AWSUploadAudioVideo(filePath, mediaName, mediaType);
+                url = AWSUploader.GetMediaUrl(mediaType) + mediaName;
+
+
+
+                try
+                {
+                    if (string.IsNullOrEmpty(url))
+                    {
+                        // AlertBox.Create("Upload", "File upload failed, Please check your internet connection", null);
+
+                        return;
+                    }
+                    else
+                    {
+                        //lstAttachments = new List<AttachmentViewModel>();
+                        //var attachment = new AttachmentViewModel();
+                        //attachment.Type = mediaType;
+                        //attachment.Url = url;
+                        //lstAttachments.Add(attachment);
+                        BTProgressHUD.Dismiss();
+                        ButtonSendChatMessage();
+
+                    }
+                }
+                catch (Exception e)
+                {
+                    Crashes.TrackError(e);
+                }
+            }
+            catch (Exception e)
+            {
+
+                Crashes.TrackError(e);
             }
 
         }
@@ -446,6 +514,20 @@ void AddRefreshControl()
                 {
                     Console.WriteLine("NOT saved as" + filePath + " because" + err.LocalizedDescription);
                 }
+
+                UIImage ThumbImage = ImageClass.MaxResizeImage(PhotoCapture, 100, 100);
+                var originalpath = NSUrl.FromFilename(filePath).RelativePath;
+                thumbFilePath = originalpath.Replace(Path.GetExtension(originalpath), "-thumb" + Path.GetExtension(originalpath));
+                NSData thumbimgData = PhotoCapture.AsJPEG();
+                if (thumbimgData.Save(thumbFilePath, false, out err))
+                {
+                    Console.WriteLine("saved as " + thumbFilePath);
+                }
+                else
+                {
+                    Console.WriteLine("NOT saved as" + thumbFilePath + " because" + err.LocalizedDescription);
+                }
+
                 SendMedia(filePath, "Photo");
 
             });
@@ -557,25 +639,16 @@ void AddRefreshControl()
             {
             if (GroupObject != null)
             {
-           var     GroupModel = GroupRepository.GetGroupByID(GroupObject.GroupId);
+                ContactName = GroupRepository.GetGroupByID(GroupObject.GroupId).GroupName;
               
-                Title = GroupModel.GroupName;
+                Title = ContactName;
 
 
                 var titleView = new UILabel(new CGRect(0, 0, 100, 60));
-                titleView.Text = GroupModel.GroupName;
+                titleView.Text = ContactName;
                 titleView.TextColor = UIColor.White;
-                    var ShowUserProfileViewController = new UITapGestureRecognizer(() =>
-                    {
-                        var viewController = (GroupDetailsViewController)Storyboard.InstantiateViewController("GroupDetailsViewController");
-                        viewController.groupViewModel = GroupModel;
-                        NavigationController.PushViewController(viewController, true);
-                    });
 
-                    titleView.UserInteractionEnabled = true;
-                    titleView.AddGestureRecognizer(ShowUserProfileViewController);
-                    NavigationItem.TitleView = titleView;
-                   
+                NavigationItem.TitleView = titleView;
 
             }
         }
