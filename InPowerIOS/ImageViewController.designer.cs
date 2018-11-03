@@ -9,20 +9,24 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace InPowerIOS.Chats
+namespace InPowerIOS
 {
-    [Register ("SelectGroupContactViewController")]
-    partial class SelectGroupContactViewController
+    [Register ("ImageViewController")]
+    partial class ImageViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITableView tblSelectGroupContacts { get; set; }
+        UIKit.UIBarButtonItem SaveImage { get; set; }
+
+        [Action ("BBSaveImageClick:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BBSaveImageClick (UIKit.UIBarButtonItem sender);
 
         void ReleaseDesignerOutlets ()
         {
-            if (tblSelectGroupContacts != null) {
-                tblSelectGroupContacts.Dispose ();
-                tblSelectGroupContacts = null;
+            if (SaveImage != null) {
+                SaveImage.Dispose ();
+                SaveImage = null;
             }
         }
     }
