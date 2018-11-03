@@ -226,7 +226,20 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png" />
-    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1242x2208-Login.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20x20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29x29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76x76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152x152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167x167.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512x512.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1024.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2048.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1004.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2008.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\320x320blank.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\640x640blanck.png" />
+    <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436ba.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -607,12 +620,6 @@
     <BundleResource Include="Resources\PlaceHolder.png" />
     <BundleResource Include="Resources\loader.png" />
     <BundleResource Include="GoogleService-Info.plist" />
-    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_bookshelf32.png" />
-    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_chats24.png" />
-    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_contacts32.png" />
-    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_group32.png" />
-    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_logout32.png" />
-    <BundleResource Include="Resources\TheInpowermentApp\lalitbokde\InpowerApp.git\InPowerApp\Resources\drawable\ic_settings32.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCL\PCL.csproj">
@@ -622,6 +629,10 @@
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />

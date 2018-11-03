@@ -24,6 +24,10 @@ namespace InPowerIOS.Login
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView ivLogo { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txt_UserName { get; set; }
 
         [Outlet]
@@ -44,6 +48,11 @@ namespace InPowerIOS.Login
             if (btnRegisterHere != null) {
                 btnRegisterHere.Dispose ();
                 btnRegisterHere = null;
+            }
+
+            if (ivLogo != null) {
+                ivLogo.Dispose ();
+                ivLogo = null;
             }
 
             if (txt_UserName != null) {

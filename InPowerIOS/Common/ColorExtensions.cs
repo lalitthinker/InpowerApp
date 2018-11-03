@@ -8,22 +8,22 @@ namespace InPowerIOS.Common
     {
         public static UIColor LoginHeader()
         {
-            return UIColor.FromRGB(36, 36, 36);
+            return UIColor.FromRGB(37,37,37);
         }
 
         public static UIColor LoginBackgound()
         {
-            return UIColor.FromRGB(36, 36, 36);
+            return UIColor.FromRGB(37,37,37);
         }
 
 		public static UIColor NavigationColor()
 		{
-            return UIColor.FromRGB(36, 36, 36);
+            return UIColor.FromRGB(37,37,37);
 		}
 
 		public static UIColor SideHeaderBackground()
 		{
-            return UIColor.FromRGB(36, 36, 36);
+            return UIColor.FromRGB(37,37,37);
 		}
 
         public static UIColor ErrorToast()
@@ -38,7 +38,7 @@ namespace InPowerIOS.Common
 
         public static UIColor DefaultToast()
         {
-            return UIColor.FromRGB(36, 36, 36);
+            return UIColor.FromRGB(37,37,37);
         }
 
     }

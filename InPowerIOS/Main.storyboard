@@ -6,6 +6,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -258,7 +259,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="63862" translatesAutoresizingMaskIntoConstraints="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
-                                <rect key="frame" x="298" y="562" width="51" height="46"/>
+                                <rect key="frame" x="299" y="542" width="50" height="50"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
                                         <real key="value" value="25"/>
@@ -272,8 +273,8 @@
                                 </connections>
                                 <state key="normal" image="addContact.png"/>
                                 <constraints>
-                                    <constraint id="172897" firstItem="63862" firstAttribute="height" constant="46"/>
-                                    <constraint id="172898" firstItem="63862" firstAttribute="width" constant="51"/>
+                                    <constraint id="295192" firstAttribute="height" constant="50"/>
+                                    <constraint id="295193" firstAttribute="width" constant="50"/>
                                 </constraints>
                             </button>
                         </subviews>
@@ -282,8 +283,8 @@
                             <constraint id="153783" firstItem="10573" firstAttribute="trailing" secondItem="2061" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="153784" firstItem="10573" firstAttribute="top" secondItem="2061" secondAttribute="top"/>
                             <constraint id="153785" firstItem="2061" firstAttribute="bottom" secondItem="10573" secondAttribute="bottom" constant="49"/>
-                            <constraint id="172895" firstItem="10573" firstAttribute="trailing" secondItem="63862" secondAttribute="trailing" constant="26"/>
-                            <constraint id="173926" firstItem="2056" firstAttribute="top" secondItem="63862" secondAttribute="bottom" constant="10"/>
+                            <constraint id="295194" firstItem="10573" firstAttribute="trailing" secondItem="63862" secondAttribute="trailing" constant="26"/>
+                            <constraint id="295195" firstItem="10573" firstAttribute="bottom" secondItem="63862" secondAttribute="bottom" constant="26"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="2062" landscapeImage="Contact" largeContentSizeImage="Contact" selectedImage="Contact" image="Contact" title="Contact"/>
@@ -570,7 +571,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="61967" translatesAutoresizingMaskIntoConstraints="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
-                                <rect key="frame" x="298" y="562" width="51" height="46"/>
+                                <rect key="frame" x="298" y="542" width="50" height="50"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
                                         <real key="value" value="25"/>
@@ -585,8 +586,8 @@
                                     <segue id="62046" destination="59398" kind="show"/>
                                 </connections>
                                 <constraints>
-                                    <constraint id="157960" firstItem="61967" firstAttribute="width" constant="51"/>
-                                    <constraint id="157961" firstItem="61967" firstAttribute="height" constant="46"/>
+                                    <constraint id="294758" firstAttribute="height" constant="50"/>
+                                    <constraint id="294759" firstAttribute="width" constant="50"/>
                                 </constraints>
                             </button>
                         </subviews>
@@ -595,8 +596,8 @@
                             <constraint id="157953" firstItem="7601" firstAttribute="leadingMargin" secondItem="12828" secondAttribute="leading" constant="16"/>
                             <constraint id="157954" firstItem="12828" firstAttribute="trailing" secondItem="7601" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="157955" firstItem="7601" firstAttribute="bottom" secondItem="12828" secondAttribute="bottom" constant="49"/>
-                            <constraint id="157958" firstItem="12828" firstAttribute="trailing" secondItem="61967" secondAttribute="trailing" constant="26"/>
-                            <constraint id="175980" firstItem="7604" firstAttribute="top" secondItem="61967" secondAttribute="bottom" constant="10"/>
+                            <constraint id="294762" firstItem="12828" firstAttribute="trailing" secondItem="61967" secondAttribute="trailing" constant="27"/>
+                            <constraint id="294763" firstItem="12828" firstAttribute="bottom" secondItem="61967" secondAttribute="bottom" constant="26"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="7602" landscapeImage="Wishlist" largeContentSizeImage="Wishlist" selectedImage="Wishlist" title="WISH LIST" image="Wishlist"/>
@@ -700,7 +701,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="58852" translatesAutoresizingMaskIntoConstraints="NO" adjustsImageSizeForAccessibilityContentSizeCategory="YES">
-                                <rect key="frame" x="298" y="562" width="51" height="46"/>
+                                <rect key="frame" x="298" y="542" width="50" height="50"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute keyPath="layer.cornerRadius" type="number">
                                         <real key="value" value="25"/>
@@ -714,8 +715,8 @@
                                     <segue id="62496" destination="59398" kind="show"/>
                                 </connections>
                                 <constraints>
-                                    <constraint id="157946" firstItem="58852" firstAttribute="height" constant="46"/>
-                                    <constraint id="157947" firstItem="58852" firstAttribute="width" constant="51"/>
+                                    <constraint id="294325" firstAttribute="height" constant="50"/>
+                                    <constraint id="294326" firstAttribute="width" constant="50"/>
                                 </constraints>
                             </button>
                         </subviews>
@@ -724,8 +725,8 @@
                             <constraint id="157941" firstItem="12257" firstAttribute="trailing" secondItem="7607" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="157942" firstItem="12257" firstAttribute="top" secondItem="7607" secondAttribute="top"/>
                             <constraint id="157943" firstItem="7607" firstAttribute="bottom" secondItem="12257" secondAttribute="bottom" constant="49"/>
-                            <constraint id="157944" firstItem="12257" firstAttribute="trailing" secondItem="58852" secondAttribute="trailing" constant="26"/>
-                            <constraint id="177008" firstItem="7610" firstAttribute="top" secondItem="58852" secondAttribute="bottom" constant="10"/>
+                            <constraint id="294327" firstItem="12257" firstAttribute="trailing" secondItem="58852" secondAttribute="trailing" constant="27"/>
+                            <constraint id="294328" firstItem="12257" firstAttribute="bottom" secondItem="58852" secondAttribute="bottom" constant="26"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="7608" largeContentSizeImage="Readlist" landscapeImage="Readlist" selectedImage="Readlist" title="READ" image="Readlist"/>
@@ -2673,17 +2674,23 @@
                         <sections>
                             <tableViewSection id="180317">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="180318" rowHeight="331" opaque="NO" clearsContextBeforeDrawing="NO">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="180318" rowHeight="300" opaque="NO" clearsContextBeforeDrawing="NO">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="180318" id="180319">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="331"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="296274" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES" image="logo512_512.png">
+                                                    <rect key="frame" x="113" y="75" width="150" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinX="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
+                                                </imageView>
+                                            </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="180320">
-                                        <rect key="frame" x="0.0" y="331" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="300" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="180320" id="180321">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2708,7 +2715,7 @@
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="180322">
-                                        <rect key="frame" x="0.0" y="375" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="344" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="180322" id="180323">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -2734,8 +2741,8 @@
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="180324" opaque="NO" clearsContextBeforeDrawing="NO">
-                                        <rect key="frame" x="0.0" y="419" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
+                                        <rect key="frame" x="0.0" y="388" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" heightSizable="YES" widthSizable="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="180324" id="180325">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
@@ -2769,14 +2776,14 @@
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="180326">
-                                        <rect key="frame" x="0.0" y="463" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="432" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="180326" id="180327">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14635" translatesAutoresizingMaskIntoConstraints="NO">
-                                                    <rect key="frame" x="88" y="7" width="200" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="14635" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                                                    <rect key="frame" x="33" y="7" width="308" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <state key="normal" title="--------  Or Register Here  --------">
                                                         <color key="titleColor" colorSpace="calibratedWhite" white="1" alpha="1"/>
@@ -2785,16 +2792,18 @@
                                                         <action selector="btnLoginClicked:" destination="14637" id="14636" eventType="touchUpInside"/>
                                                         <segue id="123634" destination="123493" kind="show"/>
                                                     </connections>
-                                                    <constraints>
-                                                        <constraint id="224615" firstItem="14635" firstAttribute="height" constant="30"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES" flexibleMinY="YES"/>
                                                 </button>
                                             </subviews>
-                                            <constraints>
-                                                <constraint id="224612" firstItem="14635" firstAttribute="top" secondItem="180327" secondAttribute="top" constant="7"/>
-                                                <constraint id="224613" firstItem="14635" firstAttribute="leading" secondItem="180327" secondAttribute="leading" constant="88"/>
-                                                <constraint id="224614" firstItem="180327" firstAttribute="trailing" secondItem="14635" secondAttribute="trailing" constant="87"/>
-                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="293886" rowHeight="44">
+                                        <rect key="frame" x="0.0" y="476" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="293886" id="293887">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" colorSpace="calibratedWhite" white="0" alpha="0"/>
                                     </tableViewCell>
@@ -2807,6 +2816,7 @@
                         <outlet property="txtPassword" destination="9759" id="name-outlet-9759"/>
                         <outlet property="btnLogin" destination="2313" id="name-outlet-2313"/>
                         <outlet property="btnRegisterHere" destination="14635" id="name-outlet-14635"/>
+                        <outlet property="ivLogo" destination="296274" id="name-outlet-296274"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="180315" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3038,6 +3048,7 @@
         <image name="Contact" width="24" height="24"/>
         <image name="Readlist" width="24" height="24"/>
         <image name="Wishlist" width="24" height="24"/>
+        <image name="logo512_512.png" width="512" height="512"/>
     </resources>
     <color key="tintColor" colorSpace="calibratedRGB" red="1" green="0.49803921568627452" blue="0" alpha="1"/>
 </document>
