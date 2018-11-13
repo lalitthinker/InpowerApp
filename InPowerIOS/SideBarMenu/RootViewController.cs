@@ -47,7 +47,7 @@ namespace InPowerIOS.SideBarMenu
 
             NavController.PushViewController(introController, false);
             SidebarController = new SidebarNavigation.SidebarController(this, NavController, menuController);
-            SidebarController.MenuWidth = 220;
+            SidebarController.MenuWidth = 240;
             SidebarController.ReopenOnRotate = false;
             SidebarController.MenuLocation = MenuLocations.Left;
            

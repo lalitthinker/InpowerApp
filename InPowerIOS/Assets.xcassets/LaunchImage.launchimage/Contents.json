@@ -85,6 +85,7 @@
       "minimum-system-version": "7.0",
       "orientation": "portrait",
       "extent": "full-screen",
+      "filename": "640x1136.png",
       "size": "320x568",
       "subtype": "retina4",
       "scale": "2x",

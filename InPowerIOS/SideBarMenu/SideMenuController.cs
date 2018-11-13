@@ -46,7 +46,7 @@ namespace InPowerIOS.SideBarMenu
             _ObjMenuList.Add(_ContactsMenu);
 
             MenuListItem _BookShelfMenu = new MenuListItem();
-            _BookShelfMenu.Name = "Book Shelf";
+            _BookShelfMenu.Name = "Inpowerment Institute";
             _BookShelfMenu.ImageUrl = "ic_bookshelf32.png";
             _ObjMenuList.Add(_BookShelfMenu);
 
@@ -89,7 +89,7 @@ namespace InPowerIOS.SideBarMenu
 
                         SidebarController.CloseMenu();
                         break;
-                    case "Book Shelf":
+                    case "Inpowerment Institute":
                         var BookShelfcontroller = (BooksTabBarController)Storyboard.InstantiateViewController("BooksTabBarController");
                         //  if (NavController.TopViewController as MainScreenTabBarController == null)
                         NavController.PushViewController(BookShelfcontroller, true);
@@ -123,11 +123,6 @@ namespace InPowerIOS.SideBarMenu
                 NavController.PushViewController(updateUserProfileViewcontroller, true);
                 SidebarController.CloseMenu();
             });
-        }
-
-        partial void UIButton7616_TouchUpInside(UIButton sender)
-        {
-         
         }
 
         private void LogoutUser()

@@ -38,10 +38,6 @@ namespace InPowerIOS.SideBarMenu
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel userName { get; set; }
 
-        [Action ("UIButton7616_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton7616_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (profileImage != null) {

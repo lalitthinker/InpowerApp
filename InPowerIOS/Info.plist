@@ -9,7 +9,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
-	<string>11.2</string>
+	<string>11.0</string>
 	<key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
@@ -24,8 +24,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>UIStatusBarStyle</key>
@@ -77,8 +75,10 @@
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CFBundleShortVersionString</key>
-	<string>4.0</string>
+	<string>4.3</string>
 	<key>CFBundleVersion</key>
-	<string>4.0</string>
+	<string>4.3</string>
+	<key>XSAppIconAssets</key>
+	<string>Assets.xcassets/AppIcon.appiconset</string>
 </dict>
 </plist>

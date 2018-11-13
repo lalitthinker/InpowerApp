@@ -31,13 +31,13 @@
       "idiom": "iphone"
     },
     {
-      "filename": "120X120.png",
+      "filename": "120x120New.png",
       "size": "40x40",
       "scale": "3x",
       "idiom": "iphone"
     },
     {
-      "filename": "120X120.png",
+      "filename": "120x120New.png",
       "size": "60x60",
       "scale": "2x",
       "idiom": "iphone"
@@ -103,7 +103,7 @@
       "idiom": "ipad"
     },
     {
-      "filename": "1024X1024.png",
+      "filename": "1024x1024New.png",
       "size": "1024x1024",
       "scale": "1x",
       "idiom": "ios-marketing"
@@ -192,7 +192,7 @@
       "idiom": "watch"
     },
     {
-      "filename": "1024x1024.png",
+      "filename": "1024x1024New.png",
       "size": "1024x1024",
       "scale": "1x",
       "idiom": "watch-marketing"
@@ -233,7 +233,6 @@
       "idiom": "mac"
     },
     {
-      "filename": "512x512.png",
       "size": "256x256",
       "scale": "2x",
       "idiom": "mac"

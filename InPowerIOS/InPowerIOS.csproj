@@ -37,14 +37,12 @@
     <DefineConstants></DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Distribution: Kara Ferrier (5QKVBJ98HF)</CodesignKey>
-    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
-    <CodesignProvision>LalitMacProvProfDevelopment</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>pdbonly</DebugType>
@@ -168,9 +166,6 @@
     <Reference Include="Microsoft.AppCenter.Crashes.iOS.Bindings">
       <HintPath>..\packages\Microsoft.AppCenter.Crashes.1.9.0\lib\Xamarin.iOS10\Microsoft.AppCenter.Crashes.iOS.Bindings.dll</HintPath>
     </Reference>
-    <Reference Include="TOCrop">
-      <HintPath>..\..\..\..\..\Downloads\xamarin-bindings-master\TOCrop-iOS\bin\Debug\TOCrop.dll</HintPath>
-    </Reference>
     <Reference Include="IQKeyboardManager">
       <HintPath>..\packages\Xamarin.IQKeyboardManager.1.4.1\lib\Xamarin.iOS10\IQKeyboardManager.dll</HintPath>
     </Reference>
@@ -220,18 +215,15 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640X960.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\60X60.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\87X87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120X120.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180X180.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\40X40.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80X80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024X1024.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58X58.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\20x20.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\29x29.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76x76.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152x152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\167x167.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512x512.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\768x1024.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1536x2048.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\640x1136.png" />
@@ -240,6 +232,8 @@
     <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\320x320blank.png" />
     <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\640x640blanck.png" />
     <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436ba.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120New.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024x1024New.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

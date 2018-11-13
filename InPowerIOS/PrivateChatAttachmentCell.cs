@@ -174,6 +174,8 @@ namespace InPowerIOS
             this.OpenImageViewEvent(this, ImagePath);
         }
 
+     
+
         partial void AttahmentImageButton_TouchUpInside(UIButton sender)
         {
             var imageViewcontroller = (ImageViewController)uiNewView.Storyboard.InstantiateViewController("ImageViewController");
