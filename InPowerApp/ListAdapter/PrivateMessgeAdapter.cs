@@ -249,11 +249,21 @@ namespace InPowerApp.ListAdapter
                  Android.OS.Environment.GetExternalStoragePublicDirectory(
                      Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(AttachList.FirstOrDefault().url)));
                 Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
+                uri = Android.Net.Uri.Parse(uri.EncodedPath.ToString());
                 intent.SetDataAndType(uri, "image/*");
                 context.StartActivity(intent);
             }
+            else
+            {
+
+                Toast.MakeText(context, "Picture Not Available", ToastLength.Long).Show();
+            }
         }
     }
+
+  
+
+
 
     internal class iv_AttachImageLeftClikLitener : Java.Lang.Object, View.IOnClickListener
     {
@@ -281,8 +291,14 @@ namespace InPowerApp.ListAdapter
                  Android.OS.Environment.GetExternalStoragePublicDirectory(
                      Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(AttachList.FirstOrDefault().url)));
                 Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
+                uri = Android.Net.Uri.Parse(uri.EncodedPath.ToString());
                 intent.SetDataAndType(uri, "image/*");
                 context.StartActivity(intent);
+            }
+            else
+            {
+
+                Toast.MakeText(context, "Picture Not Available", ToastLength.Long).Show();
             }
 
         }

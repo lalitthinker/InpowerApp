@@ -129,16 +129,25 @@ namespace InPowerApp.Activities
 
         private void CircularimgUser_Click(object sender, EventArgs e)
         {
-            Intent intent = new Intent();
-            intent.SetAction(Intent.ActionView);
+            if (ContactObject.ProfileImageUrl != "")
+            {
+                Intent intent = new Intent();
+                intent.SetAction(Intent.ActionView);
 
-            var fileAndpath = new Java.IO.File(
-             Android.OS.Environment.GetExternalStoragePublicDirectory(
-                 Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(ContactObject.ProfileImageUrl)));
-            Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
-            intent.SetDataAndType(uri, "image/*");
-            this.StartActivity(intent);
+                var fileAndpath = new Java.IO.File(
+                 Android.OS.Environment.GetExternalStoragePublicDirectory(
+                     Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(ContactObject.ProfileImageUrl)));
+                Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
+                uri = Android.Net.Uri.Parse(uri.EncodedPath.ToString());
+                intent.SetDataAndType(uri, "image/*");
+                this.StartActivity(intent);
+            }
+            else
+            {
+                Toast.MakeText(this, "Picture not available", ToastLength.Long).Show();
+            }
         }
+
 
      
      

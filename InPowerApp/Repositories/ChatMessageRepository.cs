@@ -52,7 +52,7 @@ namespace InPowerApp.Repositories
                         chatMessage.ChatId = ChatId;
                         chatMessage.ChatMessageId = model.ChatMessageId;
                         chatMessage.MessageText = model.Message;
-                        chatMessage.MessageTime = model.MessageTime;
+                        chatMessage.MessageTime = TimeZone.CurrentTimeZone.ToLocalTime(Convert.ToDateTime(model.MessageTime));
                         chatMessage.IsRead = model.IsRead;
                         chatMessage.IsRecieved = model.IsRecieved;
                         chatMessage.IsSend = model.IsSend;
@@ -87,7 +87,7 @@ namespace InPowerApp.Repositories
                     chatMessage.IsRecieved = model.IsRecieved;
                     chatMessage.IsRead = model.IsRead;
                     chatMessage.IsSend = model.IsSend;
-                    chatMessage.MessageTime = model.MessageTime;
+                    chatMessage.MessageTime = TimeZone.CurrentTimeZone.ToLocalTime(Convert.ToDateTime(model.MessageTime));
                     chatMessage.UserId = CommonHelper.GetUserId();
                     db.Update(chatMessage);
                     if (model.Attachments.Count > 0)
@@ -190,7 +190,7 @@ namespace InPowerApp.Repositories
                             chatMessage.IsRecieved = chat.IsRecieved;
                             chatMessage.IsRead = chat.IsRead;
                             chatMessage.IsSend = chat.IsSend;
-                            chatMessage.MessageTime = chat.MessageTime;
+                            chatMessage.MessageTime = TimeZone.CurrentTimeZone.ToLocalTime(Convert.ToDateTime(chat.MessageTime));
                             chatMessage.UserId = CommonHelper.GetUserId();
                             db.Update(chatMessage);
                         }
