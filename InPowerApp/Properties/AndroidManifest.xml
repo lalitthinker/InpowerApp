@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="thethiinker.TheInPowerment.app" android:installLocation="preferExternal" android:versionName="1" android:versionCode="00001">
-	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="27" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="thethiinker.TheInPowerment.app" android:installLocation="preferExternal" android:versionCode="00004" android:versionName="4">
+	<uses-sdk android:minSdkVersion="19" android:targetSdkVersion="26" />
 	<uses-permission android:name="android.permission.READ_CONTACTS" />
 	<uses-permission android:name="android.permission.INTERNET" />
 	<uses-permission android:name="android.permission.CAMERA" />

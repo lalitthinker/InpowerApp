@@ -198,6 +198,9 @@ namespace InPowerApp.Common
             }
         }
 
+
+      
+
         public static string GetRealPathFromURI(Activity act, Android.Net.Uri contentURI)
         {
             try

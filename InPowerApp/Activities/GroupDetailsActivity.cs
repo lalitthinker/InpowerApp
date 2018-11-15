@@ -87,7 +87,7 @@ namespace InPowerApp.Activities
 
         private void GroupImageView_Click(object sender, EventArgs e)
         {
-            if (GroupObject.GroupPictureUrl != "")
+            if (GroupObject.GroupPictureUrl != null)
             {
                 Intent intent = new Intent();
                 intent.SetAction(Intent.ActionView);
@@ -96,6 +96,7 @@ namespace InPowerApp.Activities
                  Android.OS.Environment.GetExternalStoragePublicDirectory(
                      Android.OS.Environment.DirectoryPictures), System.IO.Path.Combine("Inpower", System.IO.Path.GetFileName(GroupObject.GroupPictureUrl)));
                 Android.Net.Uri uri = Android.Net.Uri.FromFile(fileAndpath);
+                uri = Android.Net.Uri.Parse(uri.EncodedPath.ToString());
                 intent.SetDataAndType(uri, "image/*");
                 this.StartActivity(intent);
 
