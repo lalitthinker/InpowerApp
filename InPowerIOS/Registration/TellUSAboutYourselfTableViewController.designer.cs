@@ -11,8 +11,8 @@ using UIKit;
 
 namespace InPowerIOS.Registration
 {
-    [Register ("TellUSAboutYourselfViewController")]
-    partial class TellUSAboutYourselfViewController
+    [Register ("TellUSAboutYourselfTableViewController")]
+    partial class TellUSAboutYourselfTableViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

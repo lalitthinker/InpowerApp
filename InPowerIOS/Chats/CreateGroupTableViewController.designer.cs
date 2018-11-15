@@ -11,8 +11,8 @@ using UIKit;
 
 namespace InPowerIOS.Chats
 {
-    [Register ("CreateGroupViewController")]
-    partial class CreateGroupViewController
+    [Register ("CreateGroupTableViewController")]
+    partial class CreateGroupTableViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -33,6 +33,10 @@ namespace InPowerIOS.Chats
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UISwitch switchMakeThisGroupPrivate { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UITableView tblCreateGroup { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -71,6 +75,11 @@ namespace InPowerIOS.Chats
             if (switchMakeThisGroupPrivate != null) {
                 switchMakeThisGroupPrivate.Dispose ();
                 switchMakeThisGroupPrivate = null;
+            }
+
+            if (tblCreateGroup != null) {
+                tblCreateGroup.Dispose ();
+                tblCreateGroup = null;
             }
 
             if (txtDescription != null) {

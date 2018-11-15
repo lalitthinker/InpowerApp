@@ -45,8 +45,8 @@ namespace InPowerIOS.Chats
         {
             if(indexPath.Row == 0)
             {
-                var createGroupViewController = (CreateGroupViewController)uiNewView.Storyboard.InstantiateViewController("CreateGroupViewController");
-                uiNewView.NavigationController.PushViewController(createGroupViewController, true);
+                var createGroupTableViewController = (CreateGroupTableViewController)uiNewView.Storyboard.InstantiateViewController("CreateGroupTableViewController");
+                uiNewView.NavigationController.PushViewController(createGroupTableViewController, true);
             }
             else
             {

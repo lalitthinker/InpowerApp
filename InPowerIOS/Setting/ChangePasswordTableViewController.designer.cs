@@ -11,8 +11,8 @@ using UIKit;
 
 namespace InPowerIOS.Setting
 {
-    [Register ("ChangePasswordViewController")]
-    partial class ChangePasswordViewController
+    [Register ("ChangePasswordTableViewController")]
+    partial class ChangePasswordTableViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

@@ -11,8 +11,8 @@ using UIKit;
 
 namespace InPowerIOS.Registration
 {
-    [Register ("SelectInterestsViewController")]
-    partial class SelectInterestsViewController
+    [Register ("SelectInterestsTableViewController")]
+    partial class SelectInterestsTableViewController
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]

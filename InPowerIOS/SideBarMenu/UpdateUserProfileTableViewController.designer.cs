@@ -9,11 +9,15 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace InPowerIOS.Registration
+namespace InPowerIOS.SideBarMenu
 {
-    [Register ("PleaseComplateYourProfileViewController")]
-    partial class PleaseComplateYourProfileViewController
+    [Register ("UpdateUserProfileTableViewController")]
+    partial class UpdateUserProfileTableViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton btnUpdateProfile { get; set; }
+
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView ivUserProfilePic { get; set; }
@@ -38,8 +42,17 @@ namespace InPowerIOS.Registration
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField txtZipCode { get; set; }
 
+        [Action ("BtnUpdateProfile_TouchUpInside:")]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        partial void BtnUpdateProfile_TouchUpInside (UIKit.UIButton sender);
+
         void ReleaseDesignerOutlets ()
         {
+            if (btnUpdateProfile != null) {
+                btnUpdateProfile.Dispose ();
+                btnUpdateProfile = null;
+            }
+
             if (ivUserProfilePic != null) {
                 ivUserProfilePic.Dispose ();
                 ivUserProfilePic = null;

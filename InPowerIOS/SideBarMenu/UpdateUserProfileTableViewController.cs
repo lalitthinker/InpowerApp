@@ -15,22 +15,22 @@ using Microsoft.AppCenter.Crashes;
 
 namespace InPowerIOS.SideBarMenu
 {
-    public partial class UpdateUserProfileViewController : UIViewController
+    public partial class UpdateUserProfileTableViewController : UITableViewController
     {
         UIImagePickerController imagePicker;
         UIImage PhotoCapture;
         string ProfileImageURL;
-        string documentsDirectory,filePath;
-        string mediaType= "Photo";
+        string documentsDirectory, filePath;
+        string mediaType = "Photo";
         UIButton cameraButton;
-        public UpdateUserProfileViewController(IntPtr handle) : base(handle)
+        public UpdateUserProfileTableViewController(IntPtr handle) : base(handle)
         {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-           
+
             ivUserProfilePic.UserInteractionEnabled = true;
             var selectivUserProfilePicTapped = new UITapGestureRecognizer(() => { ImageAttacted(); });
 
@@ -67,21 +67,21 @@ namespace InPowerIOS.SideBarMenu
             var referenceURL = (NSUrl)e.Info.ValueForKey(new NSString("UIImagePickerControllerImageURL"));
 
 
-          //  stringTaskCompletionSource.SetResult(url.Path);
-           // NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceURL")] as NSUrl;
+            //  stringTaskCompletionSource.SetResult(url.Path);
+            // NSUrl referenceURL = e.Info[new NSString("UIImagePickerControllerReferenceURL")] as NSUrl;
             if (referenceURL != null)
                 Console.WriteLine("Url:" + referenceURL.Path.ToString());
 
             // if it was an image, get the other image info
             if (isImage)
             {
-               
+
                 // get the original image
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
                 UIImage originalImage = e.Info[UIImagePickerController.OriginalImage] as UIImage;
                 NSData data = originalImage.AsJPEG();
                 filePath = referenceURL.AbsoluteString;
-          
+
                 if (originalImage != null)
                 {
                     // do something with the image
@@ -144,7 +144,7 @@ namespace InPowerIOS.SideBarMenu
 
         private void SelectImageFromCamera()
         {
-            
+
             #region FromCamera      
             Camera.TakePicture(this, (obj) =>
             {
@@ -185,14 +185,14 @@ namespace InPowerIOS.SideBarMenu
 
         private void cancelUploadImage()
         {
-            
+
         }
 
         private void FillProfileData()
         {
             CommonHelper.SetCircularImage(ivUserProfilePic);
             var UserprofileRepo = UserProfileRepository.GetUserProfile(CommonHelper.GetUserId());
-            txtZipCode.Text = (UserprofileRepo.ZipCode.ToString() != null ) ? UserprofileRepo.ZipCode.ToString() : "";
+            txtZipCode.Text = (UserprofileRepo.ZipCode.ToString() != null) ? UserprofileRepo.ZipCode.ToString() : "";
             txtCity.Text = (UserprofileRepo.City != null) ? UserprofileRepo.City.ToString() : "";
             txtState.Text = (UserprofileRepo.State != null) ? UserprofileRepo.State.ToString() : "";
             txtCountry.Text = (UserprofileRepo.Country != null) ? UserprofileRepo.Country.ToString() : "";
@@ -214,6 +214,7 @@ namespace InPowerIOS.SideBarMenu
             UpdateProfileData();
         }
 
+
         public async void UpdateProfileData()
         {
             InpowerResult Result = null;
@@ -234,21 +235,21 @@ namespace InPowerIOS.SideBarMenu
 
                                         BTProgressHUD.Show("Please Wait", maskType: ProgressHUD.MaskType.Black);
 
-                                    var UserprofileRepo = UserProfileRepository.GetUserProfile(CommonHelper.GetUserId());
+                                        var UserprofileRepo = UserProfileRepository.GetUserProfile(CommonHelper.GetUserId());
 
-                                    Result = await new AccountService().Registration(new UserRegisterRequestViewModel
-                                    {
-                                        Email = UserprofileRepo.Email,
-                                        Password = UserprofileRepo.Password,
+                                        Result = await new AccountService().Registration(new UserRegisterRequestViewModel
+                                        {
+                                            Email = UserprofileRepo.Email,
+                                            Password = UserprofileRepo.Password,
 
-                                        ZipCode = Convert.ToInt32(txtZipCode.Text),
-                                        City = txtCity.Text,
-                                        State = txtState.Text,
-                                        Country = txtCountry.Text,
-                                        AboutMe = txtAboutMe.Text,
+                                            ZipCode = Convert.ToInt32(txtZipCode.Text),
+                                            City = txtCity.Text,
+                                            State = txtState.Text,
+                                            Country = txtCountry.Text,
+                                            AboutMe = txtAboutMe.Text,
 
 
-                                    }, GlobalConstant.AccountUrls.RegisterServiceUrl);
+                                        }, GlobalConstant.AccountUrls.RegisterServiceUrl);
 
                                         if (Result.Status == 1)
                                         {
@@ -271,7 +272,7 @@ namespace InPowerIOS.SideBarMenu
 
 
                                                 UserProfileRepository.UpdateUserProfile(UserprofileRepo);
-                                                new UIAlertView("Update Your Profile", "Profile Updated Successfully",null, "OK", null).Show();
+                                                new UIAlertView("Update Your Profile", "Profile Updated Successfully", null, "OK", null).Show();
 
                                                 BTProgressHUD.Dismiss();
                                                 this.DismissViewController(true, null);

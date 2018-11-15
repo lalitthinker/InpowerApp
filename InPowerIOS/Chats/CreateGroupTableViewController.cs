@@ -1,4 +1,4 @@
-﻿using Foundation;
+using Foundation;
 using System;
 using UIKit;
 using System.Collections.Generic;
@@ -13,9 +13,8 @@ using Microsoft.AppCenter.Crashes;
 
 namespace InPowerIOS.Chats
 {
-    public partial class CreateGroupViewController : UIViewController
+    public partial class CreateGroupTableViewController : UITableViewController
     {
-
         UIImagePickerController imagePicker;
         UIImage PhotoCapture;
         string ProfileImageURL;
@@ -32,14 +31,14 @@ namespace InPowerIOS.Chats
         private const int GROUP_NAME = 30;
         private const int GROUP_DESCRIPTION = 180;
 
-        public CreateGroupViewController(IntPtr handle) : base(handle)
+        public CreateGroupTableViewController(IntPtr handle) : base(handle)
         {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-           
+
             NavigationItem.SetRightBarButtonItems(
                new[]
                {
@@ -48,15 +47,15 @@ namespace InPowerIOS.Chats
                         ,
                         (esender, args) =>
                         {
-                    
+
                     InsertCreateGroupdata();
                 })
             }, true);
-                
-            
+
+
             Title = "Create Group";
-        
-          
+
+
             GetAllInterest();
             MakeThisGroupPrivate();
             SetTextFieldTextLimit();
@@ -73,6 +72,8 @@ namespace InPowerIOS.Chats
             imagePicker.FinishedPickingMedia += Handle_FinishedPickingMedia;
             imagePicker.Canceled += Handle_Canceled;
 
+
+            tblCreateGroup.BackgroundColor = UIColor.GroupTableViewBackgroundColor;
 
             var g = new UITapGestureRecognizer(() => View.EndEditing(false));
             g.CancelsTouchesInView = false;
@@ -174,7 +175,7 @@ namespace InPowerIOS.Chats
             this.PresentViewController(_ImageSelection, true, null);
         }
 
-      
+
         private void SelectImageFromCamera()
         {
 
@@ -244,7 +245,7 @@ namespace InPowerIOS.Chats
                     return true;
                 };
         }
-    
+
         public void MakeThisGroupPrivate()
         {
             lblMakeThisGroupPrivate.UserInteractionEnabled = true;
@@ -255,7 +256,7 @@ namespace InPowerIOS.Chats
         private void MakeThisGroupPrivateClickedEvent()
         {
 
-            if(switchMakeThisGroupPrivate.On == true)
+            if (switchMakeThisGroupPrivate.On == true)
             {
                 switchMakeThisGroupPrivate.On = false;
                 privategroup = false;
@@ -322,12 +323,12 @@ namespace InPowerIOS.Chats
                 (s, e) =>
                 {
                     //interestID = drpInterestList.ToArray();
-    
-                interestID = Convert.ToInt32(drpInterestList.Where(sa => sa.Key == cmbInterestPicker.Text).FirstOrDefault().Value);
+
+                    interestID = Convert.ToInt32(drpInterestList.Where(sa => sa.Key == cmbInterestPicker.Text).FirstOrDefault().Value);
 
 
-                cmbInterestPicker.ResignFirstResponder();
-                //CommonHelper.SetDefaultInterest(cmbInterestPicker.Text);
+                    cmbInterestPicker.ResignFirstResponder();
+                    //CommonHelper.SetDefaultInterest(cmbInterestPicker.Text);
 
 
 
@@ -339,25 +340,26 @@ namespace InPowerIOS.Chats
             cmbInterestPicker.InputView = picker;
             // Display the toolbar over the pickers
             cmbInterestPicker.InputAccessoryView = toolbar;
-                cmbInterestPicker.Text = "--Select Interest--";
+            cmbInterestPicker.Text = "--Select Interest--";
 
         }
 
+
         partial void GroupTypeUISC_ValueChanged(UISegmentedControl sender)
         {
-            var index = GroupTypeUISC.SelectedSegment;  
-            if(index == 0)  
-            {  
-                 grouptype = 1;
-            }  
-            else if(index == 1)  
-            {  
+            var index = GroupTypeUISC.SelectedSegment;
+            if (index == 0)
+            {
+                grouptype = 1;
+            }
+            else if (index == 1)
+            {
                 grouptype = 2;
-            }  
-            else if(index == 2)  
-            {  
+            }
+            else if (index == 2)
+            {
                 grouptype = 3;
-            }  
+            }
 
         }
 
@@ -388,11 +390,11 @@ namespace InPowerIOS.Chats
             model = new GroupRequestViewModel
             {
                 Name = txtGroupName.Text,
-                    Description = txtDescription.Text,
-                    GroupType = (GroupType)grouptype,
-                    InterestId = interestID,
-                    IsPrivate = privategroup
-                };
+                Description = txtDescription.Text,
+                GroupType = (GroupType)grouptype,
+                InterestId = interestID,
+                IsPrivate = privategroup
+            };
             if (!string.IsNullOrEmpty(filePath))
             {
                 uploadMedia(filePath, mediaType, model);
@@ -404,10 +406,10 @@ namespace InPowerIOS.Chats
                 viewController.groupmodel = model;
                 NavigationController.PushViewController(viewController, true);
 
-              
+
             }
 
-        
+
         }
 
 
@@ -446,7 +448,7 @@ namespace InPowerIOS.Chats
                             PictureUrl = url
                         };
                         BTProgressHUD.Dismiss();
-                       
+
                         InvokeOnMainThread(delegate
                         {
                             var viewController = (SelectGroupContactViewController)Storyboard.InstantiateViewController("SelectGroupContactViewController");

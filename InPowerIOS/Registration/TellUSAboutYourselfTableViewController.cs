@@ -1,4 +1,4 @@
-﻿using Foundation;
+using Foundation;
 using System;
 using UIKit;
 using PCL.Model;
@@ -13,19 +13,18 @@ using InPowerIOS.Login;
 using System.Threading.Tasks;
 using BigTed;
 using Microsoft.AppCenter.Crashes;
-
 namespace InPowerIOS.Registration
 {
-    public partial class TellUSAboutYourselfViewController : UIViewController
+    public partial class TellUSAboutYourselfTableViewController : UITableViewController
     {
-        public TellUSAboutYourselfViewController(IntPtr handle) : base(handle)
+        public TellUSAboutYourselfTableViewController(IntPtr handle) : base(handle)
         {
         }
 
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-          
+
             this.NavigationController.NavigationBar.BarTintColor = ColorExtensions.NavigationColor();//102, 50, 178
             this.NavigationController.NavigationBar.BackgroundColor = ColorExtensions.NavigationColor();//0,51,102 - dark blue 146, 30, 146 - red purplle
             this.NavigationController.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
@@ -148,8 +147,8 @@ namespace InPowerIOS.Registration
                                                     InvokeOnMainThread(delegate
                                                     {
                                                         UIStoryboard storyboard = this.Storyboard;
-                                                        PleaseComplateYourProfileViewController viewController = (PleaseComplateYourProfileViewController)
-                                                            storyboard.InstantiateViewController("PleaseComplateYourProfileViewController");
+                                                        PleaseComplateYourProfileTableViewController viewController = (PleaseComplateYourProfileTableViewController)
+                                                            storyboard.InstantiateViewController("PleaseComplateYourProfileTableViewController");
                                                         this.NavigationController.PushViewController(viewController, true);
                                                     });
 

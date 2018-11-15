@@ -1,4 +1,3 @@
-﻿using Foundation;
 using System;
 using UIKit;
 using PCL.Model;
@@ -7,14 +6,13 @@ using InPowerIOS.Common;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Threading.Tasks;
-using InPowerIOS.SideBarMenu;
 using Microsoft.AppCenter.Crashes;
 
 namespace InPowerIOS.Registration
 {
-    public partial class SelectInterestsViewController : UIViewController
+    public partial class SelectInterestsTableViewController : UITableViewController
     {
-        public SelectInterestsViewController(IntPtr handle) : base(handle)
+        public SelectInterestsTableViewController(IntPtr handle) : base(handle)
         {
         }
 
@@ -24,12 +22,12 @@ namespace InPowerIOS.Registration
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-          
+
             this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Done", UIBarButtonItemStyle.Plain, (sender, args) =>
             {
                 BBIDone_Activated();
             }), true);
-            
+
             NavigationItem.SetHidesBackButton(true, false);
 
             Title = "Select Interest";
@@ -38,12 +36,12 @@ namespace InPowerIOS.Registration
 
 
 
-        partial  void BtnRequest_TouchUpInside(UIButton sender)
+        partial void BtnRequest_TouchUpInside(UIButton sender)
         {
             SuggestInterestRequestAsync();
         }
 
-    
+
 
         private async Task SuggestInterestRequestAsync()
         {

@@ -119,8 +119,8 @@ namespace InPowerIOS.SideBarMenu
         {
             InvokeOnMainThread(delegate
             {
-                var updateUserProfileViewcontroller = (UpdateUserProfileViewController)Storyboard.InstantiateViewController("UpdateUserProfileViewController");
-                NavController.PushViewController(updateUserProfileViewcontroller, true);
+                var updateUserProfileTableViewController = (UpdateUserProfileTableViewController)Storyboard.InstantiateViewController("UpdateUserProfileTableViewController");
+                NavController.PushViewController(updateUserProfileTableViewController, true);
                 SidebarController.CloseMenu();
             });
         }

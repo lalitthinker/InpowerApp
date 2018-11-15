@@ -22,10 +22,9 @@ namespace InPowerIOS.Login
             this.NavigationBar.BackgroundColor = ColorExtensions.NavigationColor();//0,51,102 - dark blue 146, 30, 146 - red purplle
             this.NavigationBar.TitleTextAttributes = new UIStringAttributes() { ForegroundColor = UIColor.White };
 
-
             InvokeOnMainThread(delegate
             {
-                var registersViewController = (TellUSAboutYourselfViewController)Storyboard.InstantiateViewController("TellUSAboutYourselfViewController");
+                var registersViewController = (TellUSAboutYourselfTableViewController)Storyboard.InstantiateViewController("TellUSAboutYourselfTableViewController");
                 this.PushViewController(registersViewController, true);
             });
         }

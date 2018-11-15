@@ -364,18 +364,6 @@
       <DependentUpon>BookWishListTableViewCell.cs</DependentUpon>
     </Compile>
     <Compile Include="Book\BookShelfWishListViewControllerSource.cs" />
-    <Compile Include="Registration\TellUSAboutYourselfViewController.cs" />
-    <Compile Include="Registration\TellUSAboutYourselfViewController.designer.cs">
-      <DependentUpon>TellUSAboutYourselfViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registration\PleaseComplateYourProfileViewController.cs" />
-    <Compile Include="Registration\PleaseComplateYourProfileViewController.designer.cs">
-      <DependentUpon>PleaseComplateYourProfileViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Registration\SelectInterestsViewController.cs" />
-    <Compile Include="Registration\SelectInterestsViewController.designer.cs">
-      <DependentUpon>SelectInterestsViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registration\SuggestInterestTableViewCell.cs" />
     <Compile Include="Registration\SuggestInterestTableViewCell.designer.cs">
       <DependentUpon>SuggestInterestTableViewCell.cs</DependentUpon>
@@ -385,17 +373,9 @@
     <Compile Include="Setting\SettingViewController.designer.cs">
       <DependentUpon>SettingViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SideBarMenu\UpdateUserProfileViewController.cs" />
-    <Compile Include="SideBarMenu\UpdateUserProfileViewController.designer.cs">
-      <DependentUpon>UpdateUserProfileViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Setting\BlockedContactsViewController.cs" />
     <Compile Include="Setting\BlockedContactsViewController.designer.cs">
       <DependentUpon>BlockedContactsViewController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Setting\ChangePasswordViewController.cs" />
-    <Compile Include="Setting\ChangePasswordViewController.designer.cs">
-      <DependentUpon>ChangePasswordViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Setting\InviteFriendsViaSMSViewController.cs" />
     <Compile Include="Setting\InviteFriendsViaSMSViewController.designer.cs">
@@ -417,10 +397,6 @@
       <DependentUpon>TAC_AND_PP_ViewController.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\PickerModel.cs" />
-    <Compile Include="Chats\CreateGroupViewController.cs" />
-    <Compile Include="Chats\CreateGroupViewController.designer.cs">
-      <DependentUpon>CreateGroupViewController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Chats\SelectGroupContactListTableViewCell.cs" />
     <Compile Include="Chats\SelectGroupContactListTableViewCell.designer.cs">
       <DependentUpon>SelectGroupContactListTableViewCell.cs</DependentUpon>
@@ -518,6 +494,30 @@
     <Compile Include="Login\FromLoginNavigationController.cs" />
     <Compile Include="Login\FromLoginNavigationController.designer.cs">
       <DependentUpon>FromLoginNavigationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SideBarMenu\UpdateUserProfileTableViewController.cs" />
+    <Compile Include="SideBarMenu\UpdateUserProfileTableViewController.designer.cs">
+      <DependentUpon>UpdateUserProfileTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\TellUSAboutYourselfTableViewController.cs" />
+    <Compile Include="Registration\TellUSAboutYourselfTableViewController.designer.cs">
+      <DependentUpon>TellUSAboutYourselfTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\PleaseComplateYourProfileTableViewController.cs" />
+    <Compile Include="Registration\PleaseComplateYourProfileTableViewController.designer.cs">
+      <DependentUpon>PleaseComplateYourProfileTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Registration\SelectInterestsTableViewController.cs" />
+    <Compile Include="Registration\SelectInterestsTableViewController.designer.cs">
+      <DependentUpon>SelectInterestsTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Setting\ChangePasswordTableViewController.cs" />
+    <Compile Include="Setting\ChangePasswordTableViewController.designer.cs">
+      <DependentUpon>ChangePasswordTableViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Chats\CreateGroupTableViewController.cs" />
+    <Compile Include="Chats\CreateGroupTableViewController.designer.cs">
+      <DependentUpon>CreateGroupTableViewController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -622,11 +622,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Main.storyboard" />
-  </ItemGroup>
-  <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.11\build\Xamarin.Build.Download.targets')" />

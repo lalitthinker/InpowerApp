@@ -1,4 +1,4 @@
-﻿using Foundation;
+using Foundation;
 using System;
 using UIKit;
 using Plugin.Connectivity;
@@ -10,25 +10,22 @@ using InPowerIOS.Repositories;
 using PCL.Service;
 using System.Threading.Tasks;
 using BigTed;
-using CoreGraphics;
-using System.IO;
-using InPowerIOS.SideBarMenu;
 using InPowerIOS.Model;
 using Microsoft.AppCenter.Crashes;
 
 namespace InPowerIOS.Registration
 {
-    public partial class PleaseComplateYourProfileViewController : UIViewController
+    public partial class PleaseComplateYourProfileTableViewController : UITableViewController
     {
-
         UIImagePickerController imagePicker;
         UIImage PhotoCapture;
         string ProfileImageURL;
         string documentsDirectory, filePath;
         string mediaType = "Photo";
         UIButton cameraButton;
-        public UserProfile userProfile { get; set; } 
-        public PleaseComplateYourProfileViewController(IntPtr handle) : base(handle)
+        public UserProfile userProfile { get; set; }
+
+        public PleaseComplateYourProfileTableViewController(IntPtr handle) : base(handle)
         {
             this.userProfile = userProfile;
         }
@@ -37,9 +34,9 @@ namespace InPowerIOS.Registration
         {
             base.ViewDidLoad();
 
-            if(userProfile != null)
+            if (userProfile != null)
             {
-                
+
             }
 
             this.NavigationItem.SetRightBarButtonItem(new UIBarButtonItem("Continue", UIBarButtonItemStyle.Plain, (sender, args) =>
@@ -149,7 +146,7 @@ namespace InPowerIOS.Registration
             imagePicker.DismissModalViewController(true);
         }
 
-       
+
         private void ImageAttacted()
         {
             UIAlertController _ImageSelection = new UIAlertController();
@@ -204,7 +201,7 @@ namespace InPowerIOS.Registration
         {
             #region FromLibrary
             //for selecting image from library
-           base.NavigationController.PresentModalViewController(imagePicker, true);
+            base.NavigationController.PresentModalViewController(imagePicker, true);
             #endregion
         }
 
@@ -214,7 +211,7 @@ namespace InPowerIOS.Registration
 
         }
 
-       
+
 
         public async Task PleaseComplateYourProfileInfoInsertAsync()
         {
@@ -283,13 +280,13 @@ namespace InPowerIOS.Registration
                                                 InvokeOnMainThread(delegate
                                                 {
                                                     UIStoryboard storyboard = this.Storyboard;
-                                                    SelectInterestsViewController viewController = (SelectInterestsViewController)
-                                                        storyboard.InstantiateViewController("SelectInterestsViewController");
+                                                    SelectInterestsTableViewController viewController = (SelectInterestsTableViewController)
+                                                        storyboard.InstantiateViewController("SelectInterestsTableViewController");
                                                     this.NavigationController.PushViewController(viewController, true);
                                                 });
                                             }
 
-                                           
+
                                         }
 
                                         else
@@ -419,8 +416,8 @@ namespace InPowerIOS.Registration
                             InvokeOnMainThread(delegate
                             {
                                 UIStoryboard storyboard = this.Storyboard;
-                                SelectInterestsViewController viewController = (SelectInterestsViewController)
-                                    storyboard.InstantiateViewController("SelectInterestsViewController");
+                                SelectInterestsTableViewController viewController = (SelectInterestsTableViewController)
+                                    storyboard.InstantiateViewController("SelectInterestsTableViewController");
                                 this.NavigationController.PushViewController(viewController, true);
                             });
                         }
