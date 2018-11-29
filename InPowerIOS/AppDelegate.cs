@@ -241,7 +241,7 @@ namespace InPowerIOS
 
             //// make the window visible
             //Window.MakeKeyAndVisible();
-
+            count_notofication = 0;
             var tabBarController = GetViewController(MainStoryboard, "RootViewController");
             SetRootViewController(tabBarController, true);
         }
