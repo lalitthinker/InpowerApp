@@ -269,9 +269,9 @@
                             <constraint id="153782" firstItem="2061" firstAttribute="leadingMargin" secondItem="10573" secondAttribute="leading" constant="16"/>
                             <constraint id="153783" firstItem="10573" firstAttribute="trailing" secondItem="2061" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="153784" firstItem="10573" firstAttribute="top" secondItem="2061" secondAttribute="top"/>
-                            <constraint id="153785" firstItem="2061" firstAttribute="bottom" secondItem="10573" secondAttribute="bottom" constant="49"/>
                             <constraint id="295194" firstItem="10573" firstAttribute="trailing" secondItem="63862" secondAttribute="trailing" constant="26"/>
                             <constraint id="295195" firstItem="10573" firstAttribute="bottom" secondItem="63862" secondAttribute="bottom" constant="26"/>
+                            <constraint id="335722" firstItem="10573" firstAttribute="bottom" secondItem="2056" secondAttribute="top"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="2062" landscapeImage="Contact" largeContentSizeImage="Contact" selectedImage="Contact" image="Contact" title="Contact"/>
@@ -393,7 +393,7 @@
                             <constraint id="153013" firstItem="10013" firstAttribute="trailing" secondItem="2066" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="153014" firstItem="2066" firstAttribute="leadingMargin" secondItem="10013" secondAttribute="leading" constant="16"/>
                             <constraint id="153015" firstItem="10013" firstAttribute="top" secondItem="2066" secondAttribute="top"/>
-                            <constraint id="153016" firstItem="2066" firstAttribute="bottom" secondItem="10013" secondAttribute="bottom" constant="49"/>
+                            <constraint id="335721" firstItem="10013" firstAttribute="bottom" secondItem="2058" secondAttribute="top"/>
                         </constraints>
                     </view>
                     <connections>
@@ -582,9 +582,9 @@
                             <constraint id="157952" firstItem="12828" firstAttribute="top" secondItem="7601" secondAttribute="top"/>
                             <constraint id="157953" firstItem="7601" firstAttribute="leadingMargin" secondItem="12828" secondAttribute="leading" constant="16"/>
                             <constraint id="157954" firstItem="12828" firstAttribute="trailing" secondItem="7601" secondAttribute="trailingMargin" constant="16"/>
-                            <constraint id="157955" firstItem="7601" firstAttribute="bottom" secondItem="12828" secondAttribute="bottom" constant="49"/>
                             <constraint id="294762" firstItem="12828" firstAttribute="trailing" secondItem="61967" secondAttribute="trailing" constant="27"/>
                             <constraint id="294763" firstItem="12828" firstAttribute="bottom" secondItem="61967" secondAttribute="bottom" constant="26"/>
+                            <constraint id="335724" firstItem="12828" firstAttribute="bottom" secondItem="7604" secondAttribute="top"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="7602" landscapeImage="Wishlist" largeContentSizeImage="Wishlist" selectedImage="Wishlist" title="WISH LIST" image="Wishlist"/>
@@ -711,9 +711,9 @@
                             <constraint id="157940" firstItem="7607" firstAttribute="leadingMargin" secondItem="12257" secondAttribute="leading" constant="16"/>
                             <constraint id="157941" firstItem="12257" firstAttribute="trailing" secondItem="7607" secondAttribute="trailingMargin" constant="16"/>
                             <constraint id="157942" firstItem="12257" firstAttribute="top" secondItem="7607" secondAttribute="top"/>
-                            <constraint id="157943" firstItem="7607" firstAttribute="bottom" secondItem="12257" secondAttribute="bottom" constant="49"/>
                             <constraint id="294327" firstItem="12257" firstAttribute="trailing" secondItem="58852" secondAttribute="trailing" constant="27"/>
                             <constraint id="294328" firstItem="12257" firstAttribute="bottom" secondItem="58852" secondAttribute="bottom" constant="26"/>
+                            <constraint id="335725" firstItem="12257" firstAttribute="bottom" secondItem="7610" secondAttribute="top"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" id="7608" largeContentSizeImage="Readlist" landscapeImage="Readlist" selectedImage="Readlist" title="READ" image="Readlist"/>

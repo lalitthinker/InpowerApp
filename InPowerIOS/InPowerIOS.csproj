@@ -66,7 +66,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Developer: Kara Ferrier (RW6DAMUGAC)</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -78,6 +78,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
+    <CodesignProvision>InPowermentAppIOSDevelopmentCert</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -208,7 +209,6 @@
     <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-48.png" />
     <ImageAsset Include="Assets.xcassets\Wishlist.imageset\icons8-heart-outline-96.png" />
     <ImageAsset Include="Assets.xcassets\AppColor.colorset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125X2436.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1242X2208.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\750X1334.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\320X480.png" />
@@ -234,6 +234,7 @@
     <ImageAsset Include="Assets.xcassets\LoginScreen.imageset\1125x2436ba.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120x120New.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024x1024New.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\1125x2436.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -524,17 +525,8 @@
     <BundleResource Include="Resources\threelines.png" />
     <BundleResource Include="Resources\default_book.png" />
     <BundleResource Include="Resources\correct32.png" />
-    <BundleResource Include="Resources\layout_background_gray.xml" />
-    <BundleResource Include="Resources\edittext_bg_whiteborder.xml" />
     <BundleResource Include="Resources\settings_right_arrow.png" />
-    <BundleResource Include="Resources\blue_button.xml" />
-    <BundleResource Include="Resources\checkbx_rounded.xml" />
     <BundleResource Include="Resources\message.png" />
-    <BundleResource Include="Resources\circle_shape.xml" />
-    <BundleResource Include="Resources\add_ContactButton.xml" />
-    <BundleResource Include="Resources\rounded_addContactButton.xml" />
-    <BundleResource Include="Resources\rounded_cornerBlue.xml" />
-    <BundleResource Include="Resources\rounded_corneryellow.xml" />
     <BundleResource Include="Resources\imagesPlaceholder.png" />
     <BundleResource Include="Resources\InpowerIcon85x85.png" />
     <BundleResource Include="Resources\reportspam.png" />
@@ -567,16 +559,11 @@
     <BundleResource Include="Resources\bubble1.9.png" />
     <BundleResource Include="Resources\bubble2.9.png" />
     <BundleResource Include="Resources\cameraImg.png" />
-    <BundleResource Include="Resources\ChatMsgShape.xml" />
-    <BundleResource Include="Resources\counter_bg.xml" />
     <BundleResource Include="Resources\default_profile.png" />
     <BundleResource Include="Resources\email24.png" />
     <BundleResource Include="Resources\facebook_button.jpg" />
     <BundleResource Include="Resources\first_page.jpg" />
     <BundleResource Include="Resources\gray.png" />
-    <BundleResource Include="Resources\list_item_bg_normal.xml" />
-    <BundleResource Include="Resources\list_item_bg_pressed.xml" />
-    <BundleResource Include="Resources\list_selector.xml" />
     <BundleResource Include="Resources\list.png" />
     <BundleResource Include="Resources\location24.png" />
     <BundleResource Include="Resources\loging_icon.png" />
@@ -585,10 +572,6 @@
     <BundleResource Include="Resources\mail24.png" />
     <BundleResource Include="Resources\password24.png" />
     <BundleResource Include="Resources\pasw_icon.png" />
-    <BundleResource Include="Resources\rounded_cornerForRight.xml" />
-    <BundleResource Include="Resources\rounded_cornerLeft.xml" />
-    <BundleResource Include="Resources\rounded_cornerwhite.xml" />
-    <BundleResource Include="Resources\rounded_cornerwhiteBlackStroke.xml" />
     <BundleResource Include="Resources\search24.png" />
     <BundleResource Include="Resources\sendButtonNew.png" />
     <BundleResource Include="Resources\username24.png" />
