@@ -28,10 +28,6 @@ namespace InPowerIOS.Setting
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton btnInviteFriendsFromFacebook { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton btnPrivacyPolicy { get; set; }
 
         [Outlet]
@@ -69,11 +65,6 @@ namespace InPowerIOS.Setting
             if (btnDeleteAccount != null) {
                 btnDeleteAccount.Dispose ();
                 btnDeleteAccount = null;
-            }
-
-            if (btnInviteFriendsFromFacebook != null) {
-                btnInviteFriendsFromFacebook.Dispose ();
-                btnInviteFriendsFromFacebook = null;
             }
 
             if (btnPrivacyPolicy != null) {

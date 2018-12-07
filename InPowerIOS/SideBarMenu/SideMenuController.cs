@@ -56,6 +56,11 @@ namespace InPowerIOS.SideBarMenu
             _SettingMenu.ImageUrl = "ic_settings32.png";
             _ObjMenuList.Add(_SettingMenu);
 
+            MenuListItem _InviteFriendsMenu = new MenuListItem();
+            _InviteFriendsMenu.Name = "Invite Friends";
+            _InviteFriendsMenu.ImageUrl = "InviteFriends.png";
+            _ObjMenuList.Add(_InviteFriendsMenu);
+
             MenuListItem _LogoutMenu = new MenuListItem();
             _LogoutMenu.Name = "Logout";
             _LogoutMenu.ImageUrl = "ic_logout32.png";
@@ -101,6 +106,14 @@ namespace InPowerIOS.SideBarMenu
                         NavController.PushViewController(Settingcontroller, true);
                         SidebarController.CloseMenu();
                         break;
+
+                    case "Invite Friends":
+                        var inviteFriendsViaSMSViewController = (InviteFriendsViaSMSViewController)Storyboard.InstantiateViewController("InviteFriendsViaSMSViewController");
+                        NavController.PushViewController(inviteFriendsViaSMSViewController, true);
+                        SidebarController.CloseMenu();
+                        break;
+
+
                     case "Logout":
                         LogoutUser();
                         break;

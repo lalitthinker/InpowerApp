@@ -66,7 +66,7 @@
     <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodesignKey>iPhone Developer: Kara Ferrier (RW6DAMUGAC)</CodesignKey>
+    <CodesignKey>iPhone Developer</CodesignKey>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchDebug>true</MtouchDebug>
     <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
@@ -78,7 +78,6 @@
     <MtouchArch>ARM64</MtouchArch>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
     <MtouchVerbosity></MtouchVerbosity>
-    <CodesignProvision>InPowermentAppIOSDevelopmentCert</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -597,6 +596,7 @@
     <BundleResource Include="Resources\PlaceHolder.png" />
     <BundleResource Include="Resources\loader.png" />
     <BundleResource Include="GoogleService-Info.plist" />
+    <BundleResource Include="Resources\InviteFriends.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCL\PCL.csproj">

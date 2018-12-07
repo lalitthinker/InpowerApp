@@ -75,9 +75,9 @@
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CFBundleShortVersionString</key>
-	<string>4.5</string>
+	<string>4.7</string>
 	<key>CFBundleVersion</key>
-	<string>4.5</string>
+	<string>4.7</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIBackgroundModes</key>
