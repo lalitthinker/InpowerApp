@@ -85,10 +85,13 @@ namespace InPowerIOS
         {
             Profile.EnableUpdatesOnAccessTokenChange(true);
 
+
+            application.SetStatusBarStyle(UIStatusBarStyle.LightContent, true);
+
             Settings.AppID = SocialConstants.fbClientId;
             Settings.DisplayName = SocialConstants.appName;
 
-
+          
             DBInitializer.CreateDatabase();
 
             // Override point for customization after application launch.
@@ -121,6 +124,8 @@ namespace InPowerIOS
             AppCenter.Start("890484fd-ac71-4775-9baf-fbe55397bbc6", typeof(Analytics), typeof(Crashes));
 
             App.Configure();
+
+            
           
             // Register your app for remote notifications.
             if (UIDevice.CurrentDevice.CheckSystemVersion(11, 0))

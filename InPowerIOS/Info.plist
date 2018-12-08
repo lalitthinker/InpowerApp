@@ -75,14 +75,19 @@
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CFBundleShortVersionString</key>
-	<string>4.7</string>
+	<string>4.8</string>
 	<key>CFBundleVersion</key>
-	<string>4.7</string>
+	<string>4.8</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>remote-notification</string>
 	</array>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+	<key>Custom Property1</key>
+	<string></string>
 </dict>
 </plist>
