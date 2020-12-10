@@ -9,10 +9,10 @@ namespace PCL.Common
 {
     public class GlobalConstant
     {
-        public static string BaseUrl = "http://54.187.241.103:8070/api/";
+        public static string BaseUrl = "http://154.27.80.52:8005/api/";
         // public static string BaseUrl = "http://localhost:54386/api/";
-        public static string BaseUrlSignalR = "http://54.187.241.103:8070";
-        public static string TokenURL = "http://54.187.241.103:8070/token";
+        public static string BaseUrlSignalR = "http://154.27.80.52:8005";
+        public static string TokenURL = "http://154.27.80.52:8005/token";
         public static string AccessToken { get; set; }
         public static string DefaultProfile = "http://d25g1coazea76c.cloudfront.net/default_profile.png";
         public static string DefaultBook = "http://d25g1coazea76c.cloudfront.net/default_Book.png";

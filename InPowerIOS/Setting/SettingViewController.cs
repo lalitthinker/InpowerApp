@@ -77,16 +77,16 @@ namespace InPowerIOS.Setting
 
         partial void BtnPrivacyPolicy_TouchUpInside(UIButton sender)
         {
-            var tac_AND_PP_ViewController = (TAC_AND_PP_ViewController)Storyboard.InstantiateViewController("TAC_AND_PP_ViewController");
-            tac_AND_PP_ViewController.isPrivacyPolicy = true;
-            NavigationController.PushViewController(tac_AND_PP_ViewController, true);
+            //    var tac_AND_PP_ViewController = (TAC_AND_PP_ViewController)Storyboard.InstantiateViewController("TAC_AND_PP_ViewController");
+            //    tac_AND_PP_ViewController.isPrivacyPolicy = true;
+            //    NavigationController.PushViewController(tac_AND_PP_ViewController, true);
         }
 
         partial void BtnTermsOfUse_TouchUpInside(UIButton sender)
         {
-            var tac_AND_PP_ViewController = (TAC_AND_PP_ViewController)Storyboard.InstantiateViewController("TAC_AND_PP_ViewController");
-            tac_AND_PP_ViewController.isPrivacyPolicy = false;
-            NavigationController.PushViewController(tac_AND_PP_ViewController, true);
+            //var tac_AND_PP_ViewController = (TAC_AND_PP_ViewController)Storyboard.InstantiateViewController("TAC_AND_PP_ViewController");
+            //tac_AND_PP_ViewController.isPrivacyPolicy = false;
+            //NavigationController.PushViewController(tac_AND_PP_ViewController, true);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace InPowerIOS.Setting
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIWebView TermsofuseWebview { get; set; }
+        WebKit.WKWebView TermsofuseWebview { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

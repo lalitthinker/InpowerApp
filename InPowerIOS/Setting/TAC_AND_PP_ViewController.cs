@@ -25,16 +25,16 @@ namespace InPowerIOS.Setting
         {
             base.ViewDidLoad();
           
-            var fileName = "termsofuse.htm"; // remember case-sensitive
-            Title = "Terms of Use";
-            if (isPrivacyPolicy)
-            {
-                fileName = "privacypolicy.htm";
-                Title = "Privacy Policy";
-            }
-            var localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
+            //var fileName = "termsofuse.htm"; // remember case-sensitive
+            //Title = "Terms of Use";
+            //if (isPrivacyPolicy)
+            //{
+            //    fileName = "privacypolicy.htm";
+            //    Title = "Privacy Policy";
+            //}
+            //var localHtmlUrl = Path.Combine(NSBundle.MainBundle.BundlePath, fileName);
 
-            TermsofuseWebview.LoadRequest(new NSUrlRequest(new NSUrl(localHtmlUrl, false)));
+            //TermsofuseWebview.LoadRequest(new NSUrlRequest(new NSUrl(localHtmlUrl, false)));
         }
     }
 }
